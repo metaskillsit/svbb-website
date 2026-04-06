@@ -53,7 +53,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-navy border-t border-gold/20 px-4 pb-6">
+        <div className="md:hidden bg-navy border-t border-gold/20 px-4 pb-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
