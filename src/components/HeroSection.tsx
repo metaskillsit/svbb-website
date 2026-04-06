@@ -21,7 +21,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-2 mb-6 animate-fade-in-up">
             <Award className="text-gold" size={20} />
             <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">
-              Enterprise SG MRA Grant Specialist
+              Singapore–Vietnam Market Entry Specialists
             </span>
           </div>
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
             className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
-            Your Gateway to <span className="text-gradient-gold">Vietnam's</span> Booming Market
+            Your Strategic Gateway to <span className="text-gradient-gold">Vietnam's</span> Market
           </h1>
 
           <p
