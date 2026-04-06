@@ -1,5 +1,6 @@
 import { ArrowRight, Award } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import esgBadge from "@/assets/enterprise-sg-badge.png";
 
 const HeroSection = () => {
   return (
