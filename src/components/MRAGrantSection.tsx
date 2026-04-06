@@ -35,8 +35,6 @@ const eligibilityQuestions = [
 ];
 
 const MRAGrantSection = () => {
-  const [answers, setAnswers] = useState<Record<string, boolean | null>>({});
-  const [showResult, setShowResult] = useState(false);
 
   const allYes = Object.values(answers).every((v) => v === true) && Object.keys(answers).length === 3;
 
