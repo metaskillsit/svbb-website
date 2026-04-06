@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { X, Play } from "lucide-react";
 import businessTripImg from "@/assets/business-trip.jpg";
+import galleryMinister from "@/assets/gallery-minister.png";
+import galleryAwards from "@/assets/gallery-awards.png";
 
 const galleryItems = [
   {
-    img: "https://svbb.sg/wp-content/uploads/2024/06/PL-WithMinisterOfTradeAndAffairs2-300x225.jpg",
+    img: galleryMinister,
     title: "Meeting with Vietnam's Minister of Trade",
     desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam.",
   },
@@ -14,7 +16,7 @@ const galleryItems = [
     desc: "President's invitation of Top 100 Talent to help build Vietnam — featuring SVBB's recognition.",
   },
   {
-    img: "https://svbb.sg/wp-content/uploads/2024/06/PL-WithExPMPresidentVn-300x188.jpg",
+    img: galleryAwards,
     title: "Receipt of Awards",
     desc: "SVBB leadership receiving awards for contributions to Singapore-Vietnam bilateral relations.",
   },
