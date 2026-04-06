@@ -1,5 +1,5 @@
 import { CheckCircle2, DollarSign, FileCheck, Rocket } from "lucide-react";
-import esgBadge from "@/assets/enterprise-sg-badge.png";
+
 
 const steps = [
   {
