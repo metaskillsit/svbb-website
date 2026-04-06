@@ -1,10 +1,9 @@
-import { ArrowRight, Award } from "lucide-react";
+import { ArrowRight, Award, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import esgBadge from "@/assets/enterprise-sg-badge.png";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-[75vh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -17,9 +16,9 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy/80 to-navy-dark/60" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 pt-24 pb-16">
+      <div className="container relative z-10 mx-auto px-4 pt-20 pb-12">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-6 animate-fade-in-up">
+          <div className="flex items-center gap-2 mb-5 animate-fade-in-up">
             <Award className="text-gold" size={20} />
             <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">
               Singapore–Vietnam Market Entry Specialists
@@ -27,37 +26,30 @@ const HeroSection = () => {
           </div>
 
           <h1
-            className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up"
+            className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-5 animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
             Your Strategic Gateway to <span className="text-gradient-gold">Vietnam's</span> Market
           </h1>
 
-          <div
-            className="flex items-center gap-6 mb-8 animate-fade-in-up"
+          <p
+            className="font-body text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <p className="font-body text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
-              Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam recognizes.
-            </p>
-            <img
-              src={esgBadge}
-              alt="Supported by Enterprise Singapore – Market Readiness Assistance (MRA) Grant"
-              className="hidden sm:block w-36 md:w-44 flex-shrink-0 bg-white rounded-md p-2"
-            />
-          </div>
+            Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam recognizes.
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
+          <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-base shadow-gold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-7 py-3.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 transition-opacity"
             >
               Explore Our Services
-              <ArrowRight size={18} />
+              <ArrowRight size={16} />
             </a>
             <a
               href="#mra-grant"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-8 py-4 rounded-lg font-body font-semibold text-base hover:bg-gold/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
             >
               Learn About MRA Grant
             </a>
@@ -65,8 +57,8 @@ const HeroSection = () => {
 
           {/* Trust badges */}
           <div
-            className="flex flex-wrap items-center gap-8 mt-12 pt-8 border-t border-gold/20 animate-fade-in-up"
-            style={{ animationDelay: "0.6s" }}
+            className="flex flex-wrap items-center gap-6 mt-8 pt-6 border-t border-gold/20 animate-fade-in-up"
+            style={{ animationDelay: "0.55s" }}
           >
             {[
               { value: "11+", label: "Years Experience" },
@@ -74,8 +66,8 @@ const HeroSection = () => {
               { value: "S$39.95B", label: "Bilateral Trade" },
             ].map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <div className="font-heading text-2xl md:text-3xl font-bold text-gold">{stat.value}</div>
-                <div className="font-body text-xs text-primary-foreground/60 uppercase tracking-wider mt-1">
+                <div className="font-heading text-xl md:text-2xl font-bold text-gold">{stat.value}</div>
+                <div className="font-body text-xs text-primary-foreground/60 uppercase tracking-wider mt-0.5">
                   {stat.label}
                 </div>
               </div>
@@ -83,6 +75,16 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <a
+        href="#trips"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-primary-foreground/60 hover:text-gold transition-colors animate-fade-in-up"
+        style={{ animationDelay: "0.7s" }}
+      >
+        <span className="font-body text-xs tracking-wider uppercase">See us in action</span>
+        <ChevronDown size={20} className="animate-bounce" />
+      </a>
     </section>
   );
 };
