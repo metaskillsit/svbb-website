@@ -21,7 +21,7 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-3 gap-6 mt-10">
               {[
-                { value: "37%", label: "Success Rate" },
+                { value: "50+", label: "Trips Led" },
                 { value: "11+", label: "Years Combined" },
                 { value: "3K+", label: "Clients Served" },
               ].map((s) => (

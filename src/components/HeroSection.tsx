@@ -1,5 +1,6 @@
 import { ArrowRight, Award } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import VideoModal from "@/components/VideoModal";
 
 const HeroSection = () => {
   return (
@@ -26,29 +27,23 @@ const HeroSection = () => {
           </div>
 
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            Your Gateway to{" "}
-            <span className="text-gradient-gold">Vietnam's</span>{" "}
-            Booming Market
+            Your MRA-Funded Gateway to{" "}
+            <span className="text-gradient-gold">Vietnam</span>
           </h1>
 
           <p className="font-body text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Singapore Vietnam Business Bridge (SVBB) is the go-to consulting partner for Singapore businesses expanding into Vietnam — powered by the MRA Grant with up to 70% funding support from Enterprise Singapore.
+            One click to see the package, watch the real trip footage, and speak to a consultant. SVBB handles your MRA Grant application and Vietnam market entry end-to-end — up to 70% funded.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
             <a
-              href="#services"
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-base shadow-gold hover:opacity-90 transition-opacity"
             >
-              Explore Our Services
+              Speak to a Consultant
               <ArrowRight size={18} />
             </a>
-            <a
-              href="#mra-grant"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-8 py-4 rounded-lg font-body font-semibold text-base hover:bg-gold/10 transition-colors"
-            >
-              Learn About MRA Grant
-            </a>
+            <VideoModal thumbnailText="Watch Our Video" />
           </div>
 
           {/* Trust badges */}
