@@ -4,12 +4,12 @@ import svbbLogo from "@/assets/svbb-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Packages", href: "#packages" },
   { label: "MRA Grant", href: "#mra-grant" },
-  { label: "Vietnam Market", href: "#vietnam-market" },
-  { label: "Our Team", href: "#team" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Partners", href: "#partners" },
+  { label: "Why Vietnam", href: "#vietnam-market" },
+  { label: "Trips & Events", href: "#trips" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
