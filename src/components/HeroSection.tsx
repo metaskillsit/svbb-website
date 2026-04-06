@@ -43,7 +43,7 @@ const HeroSection = () => {
             <img
               src={esgBadge}
               alt="Supported by Enterprise Singapore – Market Readiness Assistance (MRA) Grant"
-              className="hidden sm:block w-48 md:w-56 lg:w-64 flex-shrink-0 bg-white rounded-lg p-3"
+              className="hidden sm:block w-36 md:w-44 flex-shrink-0 bg-white rounded-md p-2"
             />
           </div>
 
