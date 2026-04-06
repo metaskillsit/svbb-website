@@ -38,14 +38,27 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Video embed placeholder */}
-        <div className="mb-12 rounded-2xl overflow-hidden bg-navy-light/30 border border-gold/20 aspect-video max-w-4xl mx-auto flex items-center justify-center">
-          <div className="text-center">
-            <Play size={64} className="text-gold mx-auto mb-4" />
-            <p className="font-heading text-xl font-bold">Trip Video Coming Soon</p>
-            <p className="font-body text-primary-foreground/60 text-sm mt-2">
-              Contact us for exclusive trip footage and event recordings
-            </p>
+        {/* Video embeds */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="rounded-2xl overflow-hidden border border-gold/20 aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/hXLQ_x2jHlw"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="SVBB Video 1"
+              loading="lazy"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-gold/20 aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/KiN47XWso24"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="SVBB Video 2"
+              loading="lazy"
+            />
           </div>
         </div>
 
