@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { CheckCircle2, DollarSign, FileCheck, Rocket, CircleCheck, CircleX } from "lucide-react";
+import { CheckCircle2, DollarSign, FileCheck, Rocket } from "lucide-react";
+import esgBadge from "@/assets/enterprise-sg-badge.png";
 
 const steps = [
   {
@@ -28,28 +28,12 @@ const steps = [
   },
 ];
 
-const eligibilityQuestions = [
-  { q: "Is your business registered in Singapore?", key: "sg" },
-  { q: "Does the company have at least 30% local shareholding?", key: "share" },
-  { q: "Is your company's annual revenue under S$100M?", key: "rev" },
-];
-
 const MRAGrantSection = () => {
-  const [answers, setAnswers] = useState<Record<string, boolean | null>>({});
-  const [showResult, setShowResult] = useState(false);
-
-  const allYes = Object.values(answers).every((v) => v === true) && Object.keys(answers).length === 3;
-
-  const handleAnswer = (key: string, val: boolean) => {
-    const updated = { ...answers, [key]: val };
-    setAnswers(updated);
-    if (Object.keys(updated).length === 3) setShowResult(true);
-  };
-
   return (
     <section id="mra-grant" className="py-24 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          <img src={esgBadge} alt="Supported by Enterprise Singapore MRA Grant" className="mx-auto w-64 bg-white rounded-lg p-3 mb-6" />
           <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">Government-Backed Funding</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3">
             MRA Grant — <span className="text-gradient-gold">Up to 70% Funded</span>
@@ -72,45 +56,6 @@ const MRAGrantSection = () => {
           ))}
         </div>
 
-        {/* Eligibility Checker */}
-        <div className="mt-16 bg-navy-light/40 border border-gold/20 rounded-xl p-8 md:p-12">
-          <h3 className="font-heading text-2xl font-bold text-center mb-8">Check Your Eligibility</h3>
-          <div className="max-w-xl mx-auto space-y-6">
-            {eligibilityQuestions.map((eq) => (
-              <div key={eq.key} className="flex items-center justify-between gap-4">
-                <p className="font-body text-sm text-primary-foreground/80">{eq.q}</p>
-                <div className="flex gap-2 flex-shrink-0">
-                  <button
-                    onClick={() => handleAnswer(eq.key, true)}
-                    className={`px-4 py-1.5 rounded-lg font-body text-sm font-semibold transition-colors ${answers[eq.key] === true ? "bg-gold text-secondary-foreground" : "border border-gold/40 text-gold hover:bg-gold/10"}`}
-                  >
-                    Yes
-                  </button>
-                  <button
-                    onClick={() => handleAnswer(eq.key, false)}
-                    className={`px-4 py-1.5 rounded-lg font-body text-sm font-semibold transition-colors ${answers[eq.key] === false ? "bg-destructive text-destructive-foreground" : "border border-gold/40 text-gold hover:bg-gold/10"}`}
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            ))}
-            {showResult && (
-              <div className={`mt-6 p-5 rounded-lg border ${allYes ? "bg-gold/10 border-gold/30" : "bg-destructive/10 border-destructive/30"} flex items-start gap-3`}>
-                {allYes ? <CircleCheck className="text-gold flex-shrink-0 mt-0.5" size={20} /> : <CircleX className="text-destructive flex-shrink-0 mt-0.5" size={20} />}
-                <div>
-                  <p className="font-body text-sm font-semibold">
-                    {allYes ? "You're likely eligible for the MRA Grant!" : "You may not qualify, but let's discuss your options."}
-                  </p>
-                  <a href="#contact" className="font-body text-sm text-gold hover:underline mt-1 inline-block">
-                    {allYes ? "Speak to us to start your application →" : "Contact us — there may be alternative pathways →"}
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
         {/* Stats bar */}
         <div className="mt-12 bg-gold/10 border border-gold/30 rounded-xl p-8 md:p-12">
           <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -127,6 +72,16 @@ const MRAGrantSection = () => {
               <div className="font-body text-sm text-primary-foreground/60 mt-2">Application support by SVBB</div>
             </div>
           </div>
+        </div>
+
+        {/* CTA to survey */}
+        <div className="text-center mt-10">
+          <a
+            href="#survey"
+            className="inline-flex items-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-base shadow-gold hover:opacity-90 transition-opacity"
+          >
+            Check If You Qualify →
+          </a>
         </div>
       </div>
     </section>

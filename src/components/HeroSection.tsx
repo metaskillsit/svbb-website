@@ -1,5 +1,6 @@
 import { ArrowRight, Award } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import esgBadge from "@/assets/enterprise-sg-badge.png";
 
 const HeroSection = () => {
   return (
@@ -32,13 +33,19 @@ const HeroSection = () => {
             Your Strategic Gateway to <span className="text-gradient-gold">Vietnam's</span> Market
           </h1>
 
-          <p
-            className="font-body text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-8 max-w-2xl animate-fade-in-up"
+          <div
+            className="flex items-center gap-6 mb-8 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Enter Vietnam with confidence through Singapore Vietnam Business Bridge (SVBB) — your trusted partner for
-            market access, local partnerships, and on-ground execution.
-          </p>
+            <p className="font-body text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-2xl">
+              Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam recognizes.
+            </p>
+            <img
+              src={esgBadge}
+              alt="Supported by Enterprise Singapore – Market Readiness Assistance (MRA) Grant"
+              className="hidden sm:block w-48 md:w-56 lg:w-64 flex-shrink-0 bg-white rounded-lg p-3"
+            />
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
             <a
