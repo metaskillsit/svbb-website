@@ -36,9 +36,8 @@ const HeroSection = () => {
             className="font-body text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-8 max-w-2xl animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Singapore Vietnam Business Bridge (SVBB) is the go-to consulting partner for Singapore businesses expanding
-            into Vietnam — Enter Vietnam with confidence through SVBB — your trusted partner for market access, local
-            partnerships, and on-ground execution.
+            Enter Vietnam with confidence through Singapore Vietnam Business Bridge (SVBB) — your trusted partner for
+            market access, local partnerships, and on-ground execution.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
