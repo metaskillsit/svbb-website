@@ -1,139 +1,63 @@
 
 
-# SVBB Website Rebuild — Comprehensive Improvement Plan
+# Full Page Redesign — Compact, Reorder & Consolidate
 
-## Summary
+## What Changes
 
-Transform the current single-page site into a conversion-focused website that packages SVBB's MRA Grant offering, Vietnam-side partnerships, and business trip showcase into a clear user journey: **See the package → Watch video → Speak to consultant**.
+### 1. Compact the Hero (HeroSection.tsx)
+- Change `min-h-screen` to `min-h-[75vh]` so the next section peeks into view
+- Add an animated scroll-down indicator (chevron arrow) at the bottom with "See us in action" text
+- Reduce vertical padding slightly
 
----
-
-## Current Issues
-
-- Site reads like a brochure — no clear call-to-action funnel
-- No partner/ecosystem section (VietCham, The Void, T&T Group, SHB)
-- No video integration or media showcase
-- MRA Grant section lacks a "one-click package" view
-- No distinction between Hanoi vs HCMC entry paths
-- Services section is generic — doesn't map to the actual offering deck
-
----
-
-## Proposed Site Structure (top to bottom)
-
+### 2. Reorder Sections (Index.tsx)
+New order:
 ```text
-┌─────────────────────────────────────────┐
-│  NAVBAR (sticky)                        │
-│  Home | Packages | MRA Grant | Partners │
-│  Gallery | Team | Contact               │
-├─────────────────────────────────────────┤
-│  HERO — "One Click to Vietnam"          │
-│  Headline + Video CTA + "Speak to       │
-│  Consultant" button                     │
-├─────────────────────────────────────────┤
-│  PACKAGES SECTION (NEW)                 │
-│  Visual cards: Hanoi Package vs HCMC    │
-│  Package — each shows: what's included, │
-│  MRA funding %, photos, "Learn More"    │
-├─────────────────────────────────────────┤
-│  MRA GRANT (improved)                   │
-│  Simplified 4-step flow + "Am I         │
-│  Eligible?" interactive checklist       │
-├─────────────────────────────────────────┤
-│  PARTNERS ECOSYSTEM (NEW)              │
-│  Logo row: VietCham, The Void, T&T      │
-│  Group, SHB + brief role descriptions   │
-├─────────────────────────────────────────┤
-│  VIETNAM MARKET (kept, refined)         │
-├─────────────────────────────────────────┤
-│  GALLERY → "TRIPS & EVENTS" (revamped)  │
-│  Photo grid + embedded video player     │
-│  Each trip = card with photos + video   │
-├─────────────────────────────────────────┤
-│  TEAM (kept)                            │
-├─────────────────────────────────────────┤
-│  CONTACT → "Speak to a Consultant"      │
-│  Simplified form + WhatsApp/calendar    │
-│  booking link                           │
-├─────────────────────────────────────────┤
-│  FOOTER                                 │
-└─────────────────────────────────────────┘
+Navbar
+Hero              — compact, 75vh
+Gallery/Videos    — "See Us In Action" — moved from #8 to #2
+Lead Survey       — moved from #4 to #3
+Partners          — moved from #6 to #4
+About + Services  — NEW consolidated section (#5)
+Packages + MRA    — NEW consolidated section (#6)
+Why Vietnam       — #7
+Team              — #8
+Contact           — #9
+Footer
 ```
 
----
+### 3. Consolidate About + Services → AboutServicesSection.tsx (new file)
+- Left column: About text (trimmed), office addresses, stats row
+- Right column / below on mobile: 6 service cards in a 2×3 grid
+- Remove the standalone CTA image block from ServicesSection (move CTA into contact)
+- Delete old `AboutSection.tsx` and `ServicesSection.tsx` (or stop importing them)
 
-## Detailed Changes
+### 4. Consolidate Packages + MRA Grant → PackagesMRASection.tsx (new file)
+- Use Radix `Tabs` component (already installed) with two tabs: "Entry Packages" | "MRA Grant"
+- Tab 1 contains the current Packages content (Hanoi & HCMC cards)
+- Tab 2 contains the current MRA Grant content (4 steps + stats bar)
+- Shared CTA at the bottom: "Check If You Qualify →" linking to survey
+- Delete old standalone `PackagesSection.tsx` and `MRAGrantSection.tsx` imports
 
-### 1. Hero Section — Sharpen the Funnel
+### 5. Scroll Cue in Hero
+- Animated bouncing chevron (`ChevronDown` from lucide) at bottom-center of hero
+- Small label: "See us in action ↓"
+- Uses CSS `animate-bounce` from Tailwind
 
-- Replace generic headline with **"Your MRA-Funded Gateway to Vietnam — One Click to Get Started"**
-- Add a prominent **"Watch Our Video"** button that opens a video modal (YouTube/Vimeo embed placeholder — you can supply the URL later)
-- Keep "Speak to Consultant" as the primary gold CTA linking to #contact
-- Retain trust badges (11+ years, 3000+ clients, bilateral trade)
+## Files Modified
+| File | Action |
+|------|--------|
+| `src/components/HeroSection.tsx` | Reduce height to 75vh, add scroll cue |
+| `src/pages/Index.tsx` | Reorder imports and section order |
+| `src/components/AboutServicesSection.tsx` | **New** — merged About + Services |
+| `src/components/PackagesMRASection.tsx` | **New** — tabbed Packages + MRA |
+| `src/components/AboutSection.tsx` | No longer imported (can keep file) |
+| `src/components/ServicesSection.tsx` | No longer imported |
+| `src/components/PackagesSection.tsx` | No longer imported |
+| `src/components/MRAGrantSection.tsx` | No longer imported |
 
-### 2. New: Packages Section (`PackagesSection.tsx`)
-
-Two large visual cards side by side:
-
-**Hanoi Package** and **Ho Chi Minh City Package** — each showing:
-- Key industries covered (manufacturing, tech, F&B, etc.)
-- What's included: market research, business matching, entity setup, site visits
-- MRA Grant coverage callout ("Up to 70% funded")
-- A real photo placeholder for each city
-- "View Full Deck" button (links to a future PDF or triggers contact)
-- "Watch Trip Video" button
-
-Also includes a note: *"Not sure which city? Book a free consultation and we'll recommend."*
-
-### 3. MRA Grant Section — Add Interactivity
-
-- Keep the existing 4-step process cards
-- Add a simple **"Check Your Eligibility"** interactive checklist (3 yes/no questions: SG-registered? 30% local shareholding? <S$100M revenue?) with a result message
-- Keep the 70% / S$100K / 100% stats bar
-
-### 4. New: Partners Ecosystem Section (`PartnersSection.tsx`)
-
-A clean logo strip + description cards for each Vietnam-side partner:
-
-| Partner | Role |
-|---------|------|
-| **VietCham** (vietcham.org.sg) | Singapore-Vietnam Chamber of Commerce — networking, events, policy advocacy |
-| **The Void** (thevoid.vn) | Co-creation space in Vietnam — startup matching, co-working, Board-as-a-Service for SG companies entering Vietnam |
-| **T&T Group** (ttgroup.com.vn) | Major Vietnamese conglomerate — real estate, energy, agriculture, finance — potential JV/investment partner |
-| **SHB Bank** (shb.com.vn) | Saigon-Hanoi Commercial Bank — banking, trade finance, corporate accounts for SG businesses in Vietnam |
-
-Each card: logo placeholder, 2-line description, "Learn More" external link. Section subtitle: *"Our Vietnam ecosystem ensures you land with the right connections from Day 1."*
-
-### 5. Gallery → Trips & Events (Revamped)
-
-- Rename section to **"Trips & Events"**
-- Add a **video embed area** at the top (YouTube placeholder — you supply the link later)
-- Keep the photo grid below but make each item clickable to open a lightbox modal
-- Add a "View All Photos" expansion or carousel
-
-### 6. Contact → "Speak to a Consultant"
-
-- Rename heading to **"Speak to a Consultant"**
-- Add a **WhatsApp quick-link button** (pre-filled message to your number)
-- Add **"Book a Call"** button placeholder (for future Calendly integration)
-- Simplify form: Name, Email, Company, "I'm interested in…" dropdown (Hanoi Package / HCMC Package / MRA Grant / General Inquiry)
-
-### 7. Navbar Update
-
-Update nav links to match new sections:
-`Home | Packages | MRA Grant | Partners | Why Vietnam | Trips & Events | Team | Contact`
-
-### 8. About Section — Minor Refinement
-
-- Move "About SVBB" content into a shorter block
-- Replace "37% Success Rate" stat (unclear meaning) with something concrete like "50+ Trips Led"
-
----
-
-## Technical Approach
-
-- **New files**: `PackagesSection.tsx`, `PartnersSection.tsx`, video modal component
-- **Modified files**: `HeroSection.tsx`, `MRAGrantSection.tsx`, `GallerySection.tsx`, `ContactSection.tsx`, `Navbar.tsx`, `Footer.tsx`, `AboutSection.tsx`, `Index.tsx`
-- **No new dependencies** — video embed uses native iframe, lightbox uses dialog component already in the project
-- All sections remain on the single-page layout with anchor navigation
+## Technical Details
+- Tabs use existing `@radix-ui/react-tabs` and `src/components/ui/tabs.tsx`
+- All existing assets (images, icons) are reused — no new dependencies
+- Scroll cue uses `animate-bounce` + anchor link to `#trips`
+- Mobile-first: consolidated sections stack vertically on small screens
 
