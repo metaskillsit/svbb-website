@@ -33,7 +33,7 @@ const MRAGrantSection = () => {
     <section id="mra-grant" className="py-24 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <img src={esgBadge} alt="Supported by Enterprise Singapore MRA Grant" className="mx-auto w-48 bg-white rounded-md p-2 mb-6" />
+          
           <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">Government-Backed Funding</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3">
             MRA Grant — <span className="text-gradient-gold">Up to 70% Funded</span>
