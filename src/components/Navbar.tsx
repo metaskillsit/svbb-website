@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import svbbLogo from "@/assets/svbb-logo.png";
 
 const navLinks = [
@@ -13,15 +14,21 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const serviceLinks = [
+  { label: "Setup Company in Vietnam", to: "/services/setup-company-in-vietnam" },
+  { label: "Corporate Immigration", to: "/services/corporate-immigration" },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/20">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <a href="#home" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src={svbbLogo} alt="SVBB Logo" className="h-12 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
@@ -34,6 +41,31 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
+              Services <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full right-0 mt-2 w-64 bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
+                {serviceLinks.map((s) => (
+                  <Link
+                    key={s.to}
+                    to={s.to}
+                    className="block px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-gold/5 transition-colors text-sm font-body border-b border-gold/10 last:border-0"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a
             href="#contact"
             className="bg-gradient-gold text-secondary-foreground px-4 py-1.5 lg:px-5 lg:py-2 rounded-md text-xs lg:text-sm font-semibold font-body shadow-gold hover:opacity-90 transition-opacity whitespace-nowrap"
@@ -64,6 +96,19 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <div className="py-2 border-b border-gold/10">
+            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">Services</span>
+            {serviceLinks.map((s) => (
+              <Link
+                key={s.to}
+                to={s.to}
+                onClick={() => setOpen(false)}
+                className="block py-2 pl-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body"
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
