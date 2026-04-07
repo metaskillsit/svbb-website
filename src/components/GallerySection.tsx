@@ -369,7 +369,7 @@ const GallerySection = () => {
             <Play size={22} className="text-gold" />
             Videos
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {videoEmbeds.map((v) => (
               <VideoCard key={v.id} videoId={v.id} title={v.title} />
             ))}
