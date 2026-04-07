@@ -1,7 +1,7 @@
 import { ExternalLink, Landmark, Cpu, CreditCard, ArrowRight } from "lucide-react";
 import vietchamLogo from "@/assets/vietcham-logo.png";
 
-const otherPartners = [
+const vietnamPartners = [
   {
     name: "The Void",
     icon: Cpu,
@@ -29,47 +29,36 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="py-24 bg-cream">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Our Ecosystem</span>
+
+        {/* Singapore Partner — VietCham (Top) */}
+        <div className="text-center mb-10">
+          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Our Singapore Partner</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            Vietnam-Side <span className="text-gradient-gold">Partners</span>
+            Singapore Vietnam <span className="text-gradient-gold">Chambers of Commerce</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Our Vietnam ecosystem ensures you land with the right connections from Day 1.
+            Our anchor partnership with VietCham Singapore gives you direct access to cross-border business networks and government-level introductions.
           </p>
         </div>
 
-        {/* Featured Partner — VietCham */}
         <a
           href="https://vietcham.org.sg/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative block bg-card rounded-2xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 mb-8 overflow-hidden"
+          className="group relative block bg-card rounded-2xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 mb-16 overflow-hidden"
         >
           <div className="flex flex-col md:flex-row items-center gap-8 p-8 md:p-10">
-            {/* Logo */}
             <div className="shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-2xl bg-white flex items-center justify-center p-4 shadow-sm border border-border/50">
-              <img
-                src={vietchamLogo}
-                alt="VietCham Singapore Logo"
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
+              <img src={vietchamLogo} alt="VietCham Singapore Logo" className="w-full h-full object-contain" loading="lazy" />
             </div>
-
-            {/* Content */}
             <div className="flex-1 text-center md:text-left">
               <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20">
                 <span className="font-body text-[10px] font-semibold text-gold-dark uppercase tracking-widest">Strategic Chamber Partner</span>
               </div>
-              <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">
-                VietCham Singapore
-              </h3>
-              <p className="font-body text-gold-dark text-sm font-semibold uppercase tracking-wide mb-3">
-                Singapore–Vietnam Chamber of Commerce
-              </p>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2">VietCham Singapore</h3>
+              <p className="font-body text-gold-dark text-sm font-semibold uppercase tracking-wide mb-3">Singapore–Vietnam Chamber of Commerce</p>
               <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
-                Our partnership with VietCham Singapore provides direct access to high-level networking events, policy advocacy, 
+                Our partnership with VietCham Singapore provides direct access to high-level networking events, policy advocacy,
                 and government-level introductions — connecting Singapore businesses with trusted Vietnamese counterparts across industries.
               </p>
               <div className="mt-5 inline-flex items-center gap-2 text-gold text-sm font-body font-semibold group-hover:gap-3 transition-all">
@@ -79,9 +68,19 @@ const PartnersSection = () => {
           </div>
         </a>
 
-        {/* Other Partners */}
+        {/* Vietnam-Side Partners */}
+        <div className="text-center mb-10">
+          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Vietnam-Side Partners</span>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-3">
+            Our Vietnam <span className="text-gradient-gold">Ecosystem</span>
+          </h2>
+          <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto">
+            Land in Vietnam with the right connections from Day 1.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-6">
-          {otherPartners.map((p) => (
+          {vietnamPartners.map((p) => (
             <a
               key={p.name}
               href={p.url}
