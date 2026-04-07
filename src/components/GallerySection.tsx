@@ -27,6 +27,14 @@ import gallery4270 from "@/assets/gallery/QPTS4270.webp";
 import gallery4280 from "@/assets/gallery/QPTS4280.webp";
 import gallery4312 from "@/assets/gallery/QPTS4312.webp";
 import gallery4319 from "@/assets/gallery/QPTS4319.webp";
+import gallery4323 from "@/assets/gallery/QPTS4323.webp";
+import gallery4342 from "@/assets/gallery/QPTS4342.webp";
+import gallery4354 from "@/assets/gallery/QPTS4354.webp";
+import gallery4358 from "@/assets/gallery/QPTS4358.webp";
+import gallery4366 from "@/assets/gallery/QPTS4366.webp";
+import gallery4374 from "@/assets/gallery/QPTS4374.webp";
+import gallery4394 from "@/assets/gallery/QPTS4394.webp";
+import gallery4402 from "@/assets/gallery/QPTS4402.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -56,6 +64,14 @@ const galleryItems = [
   { img: gallery4280, title: "Packaging Machinery Demo", desc: "Demonstration of packaging machinery during factory visit." },
   { img: gallery4312, title: "Chavi Garden, Long An", desc: "Group photo at Chavi Garden in Long An province." },
   { img: gallery4319, title: "Local Product Showroom", desc: "Business networking at a local product showroom." },
+  { img: gallery4323, title: "Garden Train Ride", desc: "Delegation enjoying a train ride tour at Chavi Garden." },
+  { img: gallery4342, title: "Orchard Farm Visit", desc: "Delegation touring the orchard grounds in Long An." },
+  { img: gallery4354, title: "Group Lunch at Chavi", desc: "Delegation sharing a group lunch at Chavi Garden." },
+  { img: gallery4358, title: "Chavi Garden Briefing", desc: "Presentation and briefing session at Chavi Garden." },
+  { img: gallery4366, title: "Chavi Garden Seminar", desc: "Audience at a seminar session held at Chavi Garden." },
+  { img: gallery4374, title: "Guest Speaker", desc: "Guest speaker presenting at the Chavi Garden event." },
+  { img: gallery4394, title: "Panel Discussion", desc: "Panel discussion with delegation members at Chavi Garden." },
+  { img: gallery4402, title: "Gift Exchange", desc: "Gift exchange between SVBB and Chavi Garden host." },
 ];
 
 const GallerySection = () => {
