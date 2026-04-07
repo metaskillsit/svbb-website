@@ -19,6 +19,14 @@ import gallery3945 from "@/assets/gallery/QPTS3945.webp";
 import gallery3949 from "@/assets/gallery/QPTS3949.webp";
 import gallery3953 from "@/assets/gallery/QPTS3953.webp";
 import gallery3956 from "@/assets/gallery/QPTS3956.webp";
+import gallery3964 from "@/assets/gallery/QPTS3964.webp";
+import gallery4215 from "@/assets/gallery/QPTS4215.webp";
+import gallery4250 from "@/assets/gallery/QPTS4250.webp";
+import gallery4251 from "@/assets/gallery/QPTS4251.webp";
+import gallery4270 from "@/assets/gallery/QPTS4270.webp";
+import gallery4280 from "@/assets/gallery/QPTS4280.webp";
+import gallery4312 from "@/assets/gallery/QPTS4312.webp";
+import gallery4319 from "@/assets/gallery/QPTS4319.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -40,6 +48,14 @@ const galleryItems = [
   { img: gallery3949, title: "Blenda Studios Recognition", desc: "Certificate presentation to Blenda Studios representative." },
   { img: gallery3953, title: "Certificate Award Ceremony", desc: "Recipient receiving a certificate at the SVBB awards ceremony." },
   { img: gallery3956, title: "Cultural Recognition Award", desc: "Certificate presentation to recipient in traditional ao dai attire." },
+  { img: gallery3964, title: "Delegation Group Photo", desc: "Business delegation group photo in conference room." },
+  { img: gallery4215, title: "Product Showcase Workshop", desc: "Hands-on product showcase and workshop session." },
+  { img: gallery4250, title: "Factory Floor Tour", desc: "Factory floor tour with delegation in cleanroom gear." },
+  { img: gallery4251, title: "Machinery Inspection", desc: "Factory tour inspecting production machinery." },
+  { img: gallery4270, title: "Production Line Walkthrough", desc: "Walking through the production line during factory visit." },
+  { img: gallery4280, title: "Packaging Machinery Demo", desc: "Demonstration of packaging machinery during factory visit." },
+  { img: gallery4312, title: "Chavi Garden, Long An", desc: "Group photo at Chavi Garden in Long An province." },
+  { img: gallery4319, title: "Local Product Showroom", desc: "Business networking at a local product showroom." },
 ];
 
 const GallerySection = () => {
