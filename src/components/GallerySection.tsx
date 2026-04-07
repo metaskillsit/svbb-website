@@ -202,6 +202,30 @@ const ScrollRow = ({
   onSelect: (item: GalleryItem) => void;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll continuously
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || items.length <= 3) return;
+
+    let animationId: number;
+    const speed = 0.5; // px per frame
+
+    const step = () => {
+      if (!isPaused && el) {
+        el.scrollLeft += speed;
+        // Loop back when reaching the end
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+          el.scrollLeft = 0;
+        }
+      }
+      animationId = requestAnimationFrame(step);
+    };
+
+    animationId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused, items.length]);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -210,7 +234,13 @@ const ScrollRow = ({
   };
 
   return (
-    <div className="relative group/row">
+    <div
+      className="relative group/row"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setTimeout(() => setIsPaused(false), 3000)}
+    >
       <button
         onClick={() => scroll("left")}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-navy-dark/80 border border-gold/30 text-primary-foreground flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity hover:bg-navy-dark"
