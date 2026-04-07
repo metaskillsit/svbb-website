@@ -35,6 +35,14 @@ import gallery4366 from "@/assets/gallery/QPTS4366.webp";
 import gallery4374 from "@/assets/gallery/QPTS4374.webp";
 import gallery4394 from "@/assets/gallery/QPTS4394.webp";
 import gallery4402 from "@/assets/gallery/QPTS4402.webp";
+import gallery4434 from "@/assets/gallery/QPTS4434.webp";
+import gallery4442 from "@/assets/gallery/QPTS4442.webp";
+import gallery4453 from "@/assets/gallery/QPTS4453.webp";
+import gallery4454 from "@/assets/gallery/QPTS4454.webp";
+import gallery4465 from "@/assets/gallery/QPTS4465.webp";
+import gallery5799 from "@/assets/gallery/QPTS5799.webp";
+import gallery5807 from "@/assets/gallery/QPTS5807.webp";
+import gallery5822 from "@/assets/gallery/QPTS5822.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -72,6 +80,14 @@ const galleryItems = [
   { img: gallery4374, title: "Guest Speaker", desc: "Guest speaker presenting at the Chavi Garden event." },
   { img: gallery4394, title: "Panel Discussion", desc: "Panel discussion with delegation members at Chavi Garden." },
   { img: gallery4402, title: "Gift Exchange", desc: "Gift exchange between SVBB and Chavi Garden host." },
+  { img: gallery4434, title: "Chavi Garden Product Store", desc: "Delegation browsing local products at the Chavi Garden store." },
+  { img: gallery4442, title: "Chavi Garden Reception", desc: "Delegates at the Chavi Garden reception counter." },
+  { img: gallery4453, title: "Outdoor Networking", desc: "Delegates networking outdoors at a garden resort venue." },
+  { img: gallery4454, title: "Resort Courtyard Gathering", desc: "Group gathering at the resort courtyard during the trip." },
+  { img: gallery4465, title: "Processing Facility Tour", desc: "Delegation touring a food processing facility." },
+  { img: gallery5799, title: "The Hub Group Photo", desc: "Delegation group photo at The Hub co-working space in HCMC." },
+  { img: gallery5807, title: "The Hub Office Tour", desc: "Guided tour of The Hub office and co-working facilities." },
+  { img: gallery5822, title: "Tech Office Visit", desc: "Delegation visiting a tech company's open-plan office." },
 ];
 
 const GallerySection = () => {
