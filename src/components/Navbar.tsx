@@ -7,6 +7,7 @@ const serviceLinks = [
   { label: "Setup Company in Vietnam", to: "/services/setup-company-in-vietnam" },
   { label: "Overseas Market Promotion", to: "/services/overseas-market-promotion" },
   { label: "Business Development", to: "/services/business-development" },
+  { label: "Events Management", to: "/services/events-management" },
 ];
 
 const aboutLinks = [

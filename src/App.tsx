@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import SetupCompany from "./pages/SetupCompany.tsx";
 import OverseasMarketPromotion from "./pages/OverseasMarketPromotion.tsx";
 import BusinessDevelopment from "./pages/BusinessDevelopment.tsx";
+import EventsManagement from "./pages/EventsManagement.tsx";
 import PackagesMRA from "./pages/PackagesMRA.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/services/setup-company-in-vietnam" element={<SetupCompany />} />
           <Route path="/services/overseas-market-promotion" element={<OverseasMarketPromotion />} />
           <Route path="/services/business-development" element={<BusinessDevelopment />} />
+          <Route path="/services/events-management" element={<EventsManagement />} />
           <Route path="/packages" element={<PackagesMRA />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
