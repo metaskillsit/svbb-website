@@ -103,7 +103,7 @@ const HeroSection = () => {
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15 ml-1">
                 <Shield size={12} className="text-gold/70 shrink-0" />
                 <span className="text-[10px] sm:text-[11px] font-body font-medium text-primary-foreground/65 tracking-wide">
-                  🇸🇬 MRA Supportable · <span className="italic text-primary-foreground/45">Subject to ESG approval</span>
+                  🇸🇬 MRA Supportable · <span className="italic text-primary-foreground/45"></span>
                 </span>
               </div>
             </div>
