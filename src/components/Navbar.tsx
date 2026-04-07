@@ -7,8 +7,8 @@ const navLinks = [
   { label: "Home", href: "home" },
   { label: "Packages", href: "packages" },
   { label: "MRA Grant", href: "mra-grant" },
-  { label: "Partners", href: "partners" },
   { label: "Why Vietnam", href: "vietnam-market" },
+  { label: "Partners", href: "partners" },
   { label: "Trips & Events", href: "trips" },
   { label: "Team", href: "team" },
   { label: "Contact", href: "contact" },
@@ -38,17 +38,15 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={getNavHref(link.href)}
-              className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap"
-            >
-              {link.label}
-            </a>
-          ))}
+          {/* Home link */}
+          <a
+            href={getNavHref("home")}
+            className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap"
+          >
+            Home
+          </a>
 
-          {/* Services dropdown */}
+          {/* Services dropdown - placed second */}
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
@@ -58,7 +56,7 @@ const Navbar = () => {
               Services <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
-              <div className="absolute top-full right-0 pt-1 w-64">
+              <div className="absolute top-full left-0 pt-1 w-64">
                 <div className="bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
                   {serviceLinks.map((s) => (
                     <Link
@@ -74,6 +72,17 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
+          {/* Remaining nav links (skip Home) */}
+          {navLinks.filter(l => l.label !== "Home").map((link) => (
+            <a
+              key={link.href}
+              href={getNavHref(link.href)}
+              className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap"
+            >
+              {link.label}
+            </a>
+          ))}
 
           <a
             href={getNavHref("contact")}
