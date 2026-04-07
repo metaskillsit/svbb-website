@@ -55,6 +55,7 @@ const SetupCompany = () => {
                   <ul className="space-y-1">
                     <li className="font-body text-muted-foreground text-sm">• 100% foreign-owned enterprise establishment</li>
                     <li className="font-body text-muted-foreground text-sm">• Company seal production</li>
+                    <li className="font-body text-muted-foreground/40 text-sm line-through">• Customized company charter drafting</li>
                   </ul>
                   <p className="font-body text-gold-dark text-xs font-medium mt-2">Processing time: 20–22 business days (from submission)</p>
                 </div>
@@ -73,6 +74,7 @@ const SetupCompany = () => {
                   <h3 className="font-heading text-sm font-bold text-foreground mb-1">05. Post-Establishment Advisory & Ongoing Compliance</h3>
                   <ul className="space-y-1">
                     <li className="font-body text-muted-foreground text-sm">• Ongoing compliance consulting and reporting guidance</li>
+                    <li className="font-body text-muted-foreground/40 text-sm line-through">• Legal consulting, contract review, labor & commercial law</li>
                   </ul>
                 </div>
               </div>
@@ -165,6 +167,7 @@ const SetupCompany = () => {
                     <li className="font-body text-muted-foreground text-sm">• Bookkeeping and software updates</li>
                     <li className="font-body text-muted-foreground text-sm">• Document archiving</li>
                     <li className="font-body text-muted-foreground text-sm">• Tax policy updates and consultation</li>
+                    <li className="font-body text-muted-foreground/40 text-sm line-through">• Tax dispute resolution support</li>
                   </ul>
                   <p className="mt-2 font-body text-xs text-muted-foreground italic">Additional services customized to your specific needs</p>
                 </div>
