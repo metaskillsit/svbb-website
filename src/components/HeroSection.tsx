@@ -68,7 +68,8 @@ const HeroSection = () => {
             className="font-body text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam recognizes.
+            Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam
+            recognizes.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
@@ -76,14 +77,14 @@ const HeroSection = () => {
               href="#services"
               className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-7 py-3.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 transition-opacity"
             >
-              Explore Our Services
+              Unknown where to start?
               <ArrowRight size={16} />
             </a>
             <a
               href="#mra-grant"
               className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
             >
-              Learn About MRA Grant
+              Join us for a trip
             </a>
           </div>
 
