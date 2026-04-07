@@ -2,6 +2,13 @@ import { ArrowLeft, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RotatingImage from "@/components/RotatingImage";
+import setupHero1 from "@/assets/setup-hero-1.jpg";
+import setupHero2 from "@/assets/setup-hero-2.jpg";
+import setupHero3 from "@/assets/setup-hero-3.jpg";
+import setupHero4 from "@/assets/setup-hero-4.jpg";
+
+const setupHeroImages = [setupHero1, setupHero2, setupHero3, setupHero4];
 
 const SetupCompany = () => {
   return (
@@ -9,17 +16,24 @@ const SetupCompany = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-16 bg-navy">
+      <section className="pt-28 pb-16 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <Link to="/" className="inline-flex items-center gap-2 text-gold/80 hover:text-gold font-body text-sm mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back to Home
-          </Link>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
-            Setup & Operate Your <span className="text-gradient-gold">Company in Vietnam</span>
-          </h1>
-          <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
-            End-to-end business formation, legal setup, tax compliance, and accounting — so you can focus on growing your business in Vietnam.
-          </p>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <Link to="/" className="inline-flex items-center gap-2 text-gold/80 hover:text-gold font-body text-sm mb-8 transition-colors">
+                <ArrowLeft size={16} /> Back to Home
+              </Link>
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+                Setup & Operate Your <span className="text-gradient-gold">Company in Vietnam</span>
+              </h1>
+              <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
+                End-to-end business formation, legal setup, tax compliance, and accounting — so you can focus on growing your business in Vietnam.
+              </p>
+            </div>
+            <div className="hidden md:block rounded-2xl overflow-hidden shadow-2xl h-[340px]">
+              <RotatingImage images={setupHeroImages} alt="Company Setup Professional" className="w-full h-full object-cover" width={960} height={640} />
+            </div>
+          </div>
         </div>
       </section>
 
