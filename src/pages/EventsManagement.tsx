@@ -131,32 +131,30 @@ const EventsManagement = () => {
       <Navbar />
 
       {/* ── 1. Hero ── */}
-      <section id="ev-hero" className="pt-28 pb-20 md:pb-28 bg-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(160_40%_20%/0.15)_0%,_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--gold)/0.08)_0%,_transparent_50%)]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="inline-block font-body text-xs font-semibold tracking-widest uppercase text-gold mb-4">Events Management</span>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-                End-to-End Vietnam <span className="text-gradient-gold">Events Management</span> and Setup
-              </h1>
-              <p className="font-body text-primary-foreground/70 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
-                From conferences and trade missions to launches and networking events, SVBB helps Singapore organisations plan and deliver professional events in Vietnam with confidence.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                <button onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 transition-opacity">
-                  Plan an Event <ArrowRight size={16} />
-                </button>
-                <button onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center justify-center gap-2 border border-gold/40 text-gold px-8 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors">
-                  Discuss Your Brief
-                </button>
-              </div>
-              <p className="font-body text-primary-foreground/40 text-sm">One Singapore-facing partner. Local Vietnam execution.</p>
+      <section id="ev-hero" className="relative min-h-[55vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <RotatingImage images={eventsHeroImages} alt="Events Management" className="w-full h-full object-cover" width={960} height={640} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 pt-28 pb-20">
+          <div className="max-w-3xl">
+            <span className="inline-block font-body text-xs font-semibold tracking-widest uppercase text-gold mb-4">Events Management</span>
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+              End-to-End Vietnam <span className="text-gradient-gold">Events Management</span> and Setup
+            </h1>
+            <p className="font-body text-primary-foreground/70 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
+              From conferences and trade missions to launches and networking events, SVBB helps Singapore organisations plan and deliver professional events in Vietnam with confidence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <button onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-3.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 transition-opacity">
+                Plan an Event <ArrowRight size={16} />
+              </button>
+              <button onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })} className="inline-flex items-center justify-center gap-2 border border-gold/40 text-gold px-8 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors">
+                Discuss Your Brief
+              </button>
             </div>
-            <div className="hidden md:block rounded-2xl overflow-hidden shadow-2xl h-[380px]">
-              <RotatingImage images={eventsHeroImages} alt="Events Management Professional" className="w-full h-full object-cover" width={960} height={640} />
-            </div>
+            <p className="font-body text-primary-foreground/40 text-sm">One Singapore-facing partner. Local Vietnam execution.</p>
           </div>
         </div>
       </section>
