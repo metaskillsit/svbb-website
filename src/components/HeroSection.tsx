@@ -68,8 +68,8 @@ const HeroSection = () => {
             className="font-body text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Enter Vietnam with confidence through SVBB — Leverage Singapore's MRA framework with a partner that Vietnam
-            recognizes.
+            Expand into Vietnam with confidence — backed by trusted networks in Ho Chi Minh City and Hanoi, and access
+            to 11,000+ companies to accelerate partnerships, sales, and seamless business setup.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
