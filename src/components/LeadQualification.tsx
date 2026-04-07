@@ -252,7 +252,7 @@ const LeadQualification = () => {
                   {result.primaryCta}
                 </a>
                 <a
-                  href="#contact"
+                  href={result.secondaryCta === "Fill Up Detailed Assessment" ? "#detailed-assessment" : "#contact"}
                   className="inline-flex items-center justify-center gap-2 border border-gold/30 text-gold px-6 py-3 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
                 >
                   <result.secondaryIcon size={16} />
