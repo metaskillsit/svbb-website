@@ -191,6 +191,8 @@ const allItems = categories.flatMap((c) => c.items);
 const videoEmbeds = [
   { id: "W0uwHiPFH8I", title: "SVBB Business Trip Highlights" },
   { id: "gZDVX95cNaQ", title: "Vietnam Market Opportunities" },
+  { id: "KiN47XWso24", title: "Singapore-Vietnam Business Insights" },
+  { id: "RJ1uKbNm3q0", title: "SVBB Partnership Highlights" },
 ];
 
 const ScrollRow = ({
