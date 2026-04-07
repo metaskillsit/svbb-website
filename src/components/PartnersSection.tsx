@@ -1,23 +1,26 @@
-import { ExternalLink, Landmark, Cpu, CreditCard } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import partnerTheVoid from "@/assets/partner-thevoid.png";
+import partnerTNT from "@/assets/partner-tnt.png";
+import partnerSHB from "@/assets/partner-shb.png";
 
 const vietnamPartners = [
   {
     name: "The Void",
-    icon: Cpu,
+    logo: partnerTheVoid,
     url: "https://thevoid.vn/",
     role: "Co-Creation Space & Startup Matching",
     desc: "Board-as-a-Service for SG companies entering Vietnam. Co-working, startup matching, and innovation partnerships.",
   },
   {
-    name: "T&T Group",
-    icon: Landmark,
+    name: "TNT Group",
+    logo: partnerTNT,
     url: "https://www.ttgroup.com.vn/",
     role: "Vietnamese Conglomerate",
     desc: "Major player in real estate, energy, agriculture, and finance — potential JV and investment partner for SG businesses.",
   },
   {
     name: "SHB Bank",
-    icon: CreditCard,
+    logo: partnerSHB,
     url: "https://shb.com.vn/",
     role: "Saigon-Hanoi Commercial Bank",
     desc: "Trade finance, corporate banking, and account setup for Singapore businesses operating in Vietnam.",
@@ -28,7 +31,6 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="py-24 bg-cream">
       <div className="container mx-auto px-4">
-        {/* Vietnam-Side Partners */}
         <div className="text-center mb-10">
           <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Vietnam Partners</span>
           <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-3">
@@ -48,8 +50,8 @@ const PartnersSection = () => {
               rel="noopener noreferrer"
               className="group bg-card rounded-xl p-8 border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 flex flex-col"
             >
-              <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
-                <p.icon className="text-gold" size={24} />
+              <div className="w-full h-16 flex items-center justify-start mb-5">
+                <img src={p.logo} alt={p.name} className="max-h-14 max-w-[140px] object-contain" />
               </div>
               <h3 className="font-heading text-lg font-bold text-foreground mb-1">{p.name}</h3>
               <p className="font-body text-gold-dark text-xs font-semibold uppercase tracking-wide mb-3">{p.role}</p>
