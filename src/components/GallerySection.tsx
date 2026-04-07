@@ -321,9 +321,6 @@ const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
               <Play size={28} className="text-navy-dark ml-1" />
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-navy-dark/80 to-transparent">
-            <p className="font-body text-sm text-primary-foreground font-medium">{title}</p>
-          </div>
         </button>
       ) : (
         <iframe
