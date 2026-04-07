@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import RotatingImage from "@/components/RotatingImage";
-import promoHero1 from "@/assets/promo-hero-1.jpg";
-import promoHero2 from "@/assets/promo-hero-2.jpg";
-import promoHero3 from "@/assets/promo-hero-3.jpg";
-import promoHero4 from "@/assets/promo-hero-4.jpg";
-
-const promoHeroImages = [promoHero1, promoHero2, promoHero3, promoHero4];
+import heroPromo from "@/assets/hero-promo.jpg";
 
 const OverseasMarketPromotion = () => {
   return (
@@ -19,8 +13,8 @@ const OverseasMarketPromotion = () => {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={promoHeroImages} alt="Market Promotion" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroPromo} alt="Market Promotion" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-16">

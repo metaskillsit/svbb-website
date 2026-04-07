@@ -38,13 +38,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import svbbLogo from "@/assets/svbb-logo.png";
-import RotatingImage from "@/components/RotatingImage";
-import eventsHero1 from "@/assets/events-hero-1.jpg";
-import eventsHero2 from "@/assets/events-hero-2.jpg";
-import eventsHero3 from "@/assets/events-hero-3.jpg";
-import eventsHero4 from "@/assets/events-hero-4.jpg";
-
-const eventsHeroImages = [eventsHero1, eventsHero2, eventsHero3, eventsHero4];
+import heroEvents from "@/assets/hero-events.jpg";
 
 /* ───── data ───── */
 
@@ -133,8 +127,8 @@ const EventsManagement = () => {
       {/* ── 1. Hero ── */}
       <section id="ev-hero" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={eventsHeroImages} alt="Events Management" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroEvents} alt="Events Management" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-20">
