@@ -67,6 +67,11 @@ import gallery6114 from "@/assets/gallery/QPTS6114.webp";
 import gallery6115 from "@/assets/gallery/QPTS6115.webp";
 import gallery6121 from "@/assets/gallery/QPTS6121.webp";
 import gallery6122 from "@/assets/gallery/QPTS6122.webp";
+import gallery6123 from "@/assets/gallery/QPTS6123.webp";
+import gallery6124 from "@/assets/gallery/QPTS6124.webp";
+import gallery6150 from "@/assets/gallery/QPTS6150.webp";
+import gallery6176 from "@/assets/gallery/QPTS6176.webp";
+import galleryRON from "@/assets/gallery/RON05321.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -136,6 +141,11 @@ const galleryItems = [
   { img: gallery6115, title: "Hector Product Close-up", desc: "Close-up of Hector cordyceps supplement bottles." },
   { img: gallery6121, title: "Product Showcase Table", desc: "Full product display table with Vietnamese F&B brands." },
   { img: gallery6122, title: "Hector Brochure & Samples", desc: "Hector product brochure with sample bottles." },
+  { img: gallery6123, title: "Tony Buổi Sáng Charity", desc: "Tony Buổi Sáng charity brochures and Vietnamese products." },
+  { img: gallery6124, title: "Sokfarm Gift Bags", desc: "Sokfarm coconut nectar gift bags from Trà Vinh." },
+  { img: gallery6150, title: "Saigon Dinner Venue", desc: "Delegation dinner at a traditional Saigon-style restaurant." },
+  { img: gallery6176, title: "New Ventures Dinner", desc: "Networking dinner with 'New Ventures in Vietnam' presentation." },
+  { img: galleryRON, title: "Mon Amie Group Photo", desc: "Full delegation group photo at Mon Amie tailor shop in HCMC." },
 ];
 
 const GallerySection = () => {
