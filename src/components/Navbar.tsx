@@ -33,6 +33,24 @@ const Navbar = () => {
             Home
           </Link>
 
+          {/* About dropdown */}
+          <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
+            <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
+              About <ChevronDown size={14} className={`transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+            </button>
+            {aboutOpen && (
+              <div className="absolute top-full left-0 pt-1 w-52">
+                <div className="bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
+                  {aboutLinks.map((s) => (
+                    <Link key={s.to} to={s.to} onClick={() => setAboutOpen(false)} className="block px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-gold/5 transition-colors text-sm font-body border-b border-gold/10 last:border-0">
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Services dropdown */}
           <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
             <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
@@ -54,24 +72,6 @@ const Navbar = () => {
           <Link to="/packages" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
             Packages & MRA
           </Link>
-
-          {/* About dropdown */}
-          <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
-            <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
-              About <ChevronDown size={14} className={`transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
-            </button>
-            {aboutOpen && (
-              <div className="absolute top-full left-0 pt-1 w-52">
-                <div className="bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
-                  {aboutLinks.map((s) => (
-                    <Link key={s.to} to={s.to} onClick={() => setAboutOpen(false)} className="block px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-gold/5 transition-colors text-sm font-body border-b border-gold/10 last:border-0">
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
 
           <Link to="/contact" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
             Contact
