@@ -1,4 +1,3 @@
-import teamPhilong from "https://svbb.sg/wp-content/uploads/2024/03/philong-768x1024.jpg";
 import teamJinghao from "@/assets/team-jinghao.jpeg";
 import teamChris from "@/assets/team-chris.jpeg";
 import teamAndrew from "@/assets/team-andrew.jpeg";
@@ -8,21 +7,25 @@ const team = [
     name: "Phan Phi Long",
     title: "Vice President, Singapore-Vietnam Chambers of Commerce",
     img: "https://svbb.sg/wp-content/uploads/2024/03/philong-768x1024.jpg",
+    objectPosition: "center 15%",
   },
   {
     name: "Dr Ke Jinghao",
     title: "Director, SVBB; CEO, Metaskills Institute",
     img: teamJinghao,
+    objectPosition: "center 10%",
   },
   {
     name: "Christopher Tan",
     title: "Chief Business Development Officer, SVBB",
     img: teamChris,
+    objectPosition: "center 10%",
   },
   {
     name: "Andrew Toh",
     title: "Head Operations, SVBB",
     img: teamAndrew,
+    objectPosition: "center 10%",
   },
 ];
 
@@ -43,11 +46,12 @@ const TeamSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member) => (
             <div key={member.name} className="bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 group">
-              <div className="h-72 overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: member.objectPosition }}
                   loading="lazy"
                 />
               </div>
