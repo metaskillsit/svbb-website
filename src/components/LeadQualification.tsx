@@ -107,7 +107,7 @@ const routeResults: Record<Route, {
   },
 };
 
-const LeadQualification = () => {
+const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void }) => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answer>({});
   const [submitted, setSubmitted] = useState(false);
@@ -251,13 +251,23 @@ const LeadQualification = () => {
                   <result.primaryIcon size={16} />
                   {result.primaryCta}
                 </a>
-                <a
-                  href={result.secondaryCta === "Fill Up Detailed Assessment" ? "#detailed-assessment" : "#contact"}
-                  className="inline-flex items-center justify-center gap-2 border border-gold/30 text-gold px-6 py-3 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
-                >
-                  <result.secondaryIcon size={16} />
-                  {result.secondaryCta}
-                </a>
+                {result.secondaryCta === "Fill Up Detailed Assessment" ? (
+                  <button
+                    onClick={() => onShowAssessment?.()}
+                    className="inline-flex items-center justify-center gap-2 border border-gold/30 text-gold px-6 py-3 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
+                  >
+                    <result.secondaryIcon size={16} />
+                    {result.secondaryCta}
+                  </button>
+                ) : (
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center justify-center gap-2 border border-gold/30 text-gold px-6 py-3 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
+                  >
+                    <result.secondaryIcon size={16} />
+                    {result.secondaryCta}
+                  </a>
+                )}
               </div>
               <div className="mt-8 pt-5 border-t border-gold/10 flex items-center justify-between">
                 <button
