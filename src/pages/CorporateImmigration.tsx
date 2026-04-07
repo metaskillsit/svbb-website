@@ -40,12 +40,6 @@ const CorporateImmigration = () => {
           <Link to="/" className="inline-flex items-center gap-2 text-gold/80 hover:text-gold font-body text-sm mb-8 transition-colors">
             <ArrowLeft size={16} /> Back to Home
           </Link>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
-            Corporate <span className="text-gradient-gold">Immigration Service</span>
-          </h1>
-          <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
-            Navigate Singapore's Employment Pass application process with expert guidance — from COMPASS assessment to card issuance.
-          </p>
         </div>
       </section>
 
