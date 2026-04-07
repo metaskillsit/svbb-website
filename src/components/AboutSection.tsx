@@ -26,7 +26,7 @@ const AboutSection = () => {
               {[
                 { value: "37%", label: "Success Rate" },
                 { value: "11+", label: "Years Combined" },
-                { value: "3K+", label: "Clients Served" },
+                { value: "400+", label: "Clients Served" },
               ].map((s) => (
                 <div key={s.label} className="text-center bg-card rounded-lg p-4 border border-border">
                   <div className="font-heading text-2xl font-bold text-navy">{s.value}</div>

@@ -38,9 +38,9 @@ const AboutServicesSection = () => {
 
             <div className="grid grid-cols-3 gap-3 mt-6">
               {[
-                { value: "50+", label: "Trips Led" },
+                { value: "10+", label: "Trips Led" },
                 { value: "11+", label: "Years Combined" },
-                { value: "3K+", label: "Clients Served" },
+                { value: "400+", label: "Clients Served" },
               ].map((s) => (
                 <div key={s.label} className="text-center bg-card rounded-lg p-3 border border-border">
                   <div className="font-heading text-lg font-bold text-navy">{s.value}</div>
