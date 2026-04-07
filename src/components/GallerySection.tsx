@@ -189,9 +189,8 @@ const categories: { name: string; items: GalleryItem[] }[] = [
 const allItems = categories.flatMap((c) => c.items);
 
 const videoEmbeds = [
-  { id: "hXLQ_x2jHlw", title: "SVBB Business Trip Highlights" },
-  { id: "KiN47XWso24", title: "Vietnam Market Opportunities" },
-  { id: "xgb1oDP2Yj4", title: "Delegation Networking Event" },
+  { id: "W0uwHiPFH8I", title: "SVBB Business Trip Highlights" },
+  { id: "gZDVX95cNaQ", title: "Vietnam Market Opportunities" },
 ];
 
 const ScrollRow = ({
