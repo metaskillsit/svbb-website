@@ -32,6 +32,14 @@ const galleryItems = [
   { img: gallery3816, title: "UOB Speaker Session", desc: "Industry speaker session hosted in partnership with UOB." },
   { img: gallery3831, title: "Seminar Audience", desc: "Attendees at an SVBB-organised business seminar on Vietnam market entry." },
   { img: gallery3836, title: "Sunwah Group Photo", desc: "Group photo at Sunwah Innovation Centre in Ho Chi Minh City." },
+  { img: gallery3839, title: "SMU Delegation at Sunwah", desc: "SMU Academy delegation group photo at Sunwah Innovation Centre." },
+  { img: gallery3848, title: "Certificate Presentation at Sunwah", desc: "Certificate presentation ceremony at Sunwah Innovation Centre." },
+  { img: gallery3852, title: "Certificate of Recognition", desc: "Recipient receiving certificate of recognition for bilateral contributions." },
+  { img: gallery3854, title: "Sunwah Seminar Audience", desc: "Attendees at a business seminar held at Sunwah Innovation Centre." },
+  { img: gallery3945, title: "Best Spots Around Town", desc: "Certificate presentation at the Best Spots Around Town event." },
+  { img: gallery3949, title: "Blenda Studios Recognition", desc: "Certificate presentation to Blenda Studios representative." },
+  { img: gallery3953, title: "Certificate Award Ceremony", desc: "Recipient receiving a certificate at the SVBB awards ceremony." },
+  { img: gallery3956, title: "Cultural Recognition Award", desc: "Certificate presentation to recipient in traditional ao dai attire." },
 ];
 
 const GallerySection = () => {
