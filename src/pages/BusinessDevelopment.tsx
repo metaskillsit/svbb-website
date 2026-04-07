@@ -29,13 +29,7 @@ import {
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import svbbLogo from "@/assets/svbb-logo.png";
-import RotatingImage from "@/components/RotatingImage";
-import bdHero1 from "@/assets/bd-hero-1.jpg";
-import bdHero2 from "@/assets/bd-hero-2.jpg";
-import bdHero3 from "@/assets/bd-hero-3.jpg";
-import bdHero4 from "@/assets/bd-hero-4.jpg";
-
-const bdHeroImages = [bdHero1, bdHero2, bdHero3, bdHero4];
+import heroBd from "@/assets/hero-bd.jpg";
 
 /* ───── data ───── */
 
@@ -166,8 +160,8 @@ const BusinessDevelopment = () => {
       {/* ── Hero ── */}
       <section id="bd-hero" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={bdHeroImages} alt="Business Development" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroBd} alt="Business Development" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-20">

@@ -2,13 +2,7 @@ import { ArrowLeft, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import RotatingImage from "@/components/RotatingImage";
-import setupHero1 from "@/assets/setup-hero-1.jpg";
-import setupHero2 from "@/assets/setup-hero-2.jpg";
-import setupHero3 from "@/assets/setup-hero-3.jpg";
-import setupHero4 from "@/assets/setup-hero-4.jpg";
-
-const setupHeroImages = [setupHero1, setupHero2, setupHero3, setupHero4];
+import heroSetup from "@/assets/hero-setup.jpg";
 
 const SetupCompany = () => {
   return (
@@ -18,8 +12,8 @@ const SetupCompany = () => {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={setupHeroImages} alt="Company Setup" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroSetup} alt="Company Setup" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-16">

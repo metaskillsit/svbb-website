@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
-import RotatingImage from "@/components/RotatingImage";
-import contactHero1 from "@/assets/contact-hero-1.jpg";
-import contactHero2 from "@/assets/contact-hero-2.jpg";
-import contactHero3 from "@/assets/contact-hero-3.jpg";
-import contactHero4 from "@/assets/contact-hero-4.jpg";
-
-const contactHeroImages = [contactHero1, contactHero2, contactHero3, contactHero4];
+import heroContact from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   return (
@@ -17,8 +11,8 @@ const Contact = () => {
       <Navbar />
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={contactHeroImages} alt="Contact" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroContact} alt="Contact" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-16">

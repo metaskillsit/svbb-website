@@ -5,13 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LeadQualification from "@/components/LeadQualification";
 import DetailedAssessment from "@/components/DetailedAssessment";
-import RotatingImage from "@/components/RotatingImage";
-import mraHero1 from "@/assets/mra-hero-1.jpg";
-import mraHero2 from "@/assets/mra-hero-2.jpg";
-import mraHero3 from "@/assets/mra-hero-3.jpg";
-import mraHero4 from "@/assets/mra-hero-4.jpg";
-
-const mraHeroImages = [mraHero1, mraHero2, mraHero3, mraHero4];
+import heroMra from "@/assets/hero-mra.jpg";
 
 const PackagesMRA = () => {
   const [showAssessment, setShowAssessment] = useState(false);
@@ -29,8 +23,8 @@ const PackagesMRA = () => {
       <Navbar />
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
-          <RotatingImage images={mraHeroImages} alt="MRA Readiness" className="w-full h-full object-cover" width={960} height={640} />
-          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+          <img src={heroMra} alt="MRA Readiness" className="w-full h-full object-cover object-top" width={1920} height={1080} />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-16">
