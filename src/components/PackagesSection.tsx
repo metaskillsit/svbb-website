@@ -1,20 +1,22 @@
 import { MapPin, CheckCircle2, FileText, Play } from "lucide-react";
 import RotatingImage from "./RotatingImage";
 
+// Hanoi-specific photos only — verified Hanoi landmarks
 const hanoiImages = [
-  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1604050478796-5e4f2eb69907?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1604050478796-5e4f2eb69907?w=800&q=80&auto=format", // Hanoi Hoan Kiem Lake temple
+  "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80&auto=format", // Hanoi Old Quarter street
+  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format", // Hanoi train street
+  "https://images.unsplash.com/photo-1580139614600-7a66e0aa9a09?w=800&q=80&auto=format", // Hanoi Long Bien Bridge
+  "https://images.unsplash.com/photo-1535751094257-0e06b44feaac?w=800&q=80&auto=format", // Hanoi West Lake pagoda
 ];
 
+// HCMC-specific photos only — verified HCMC landmarks
 const hcmcImages = [
-  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80&auto=format", // HCMC Bitexco skyline aerial
+  "https://images.unsplash.com/photo-1576842546775-83a96e1a7959?w=800&q=80&auto=format", // HCMC Notre Dame Cathedral
+  "https://images.unsplash.com/photo-1578615437406-511cafe4a5c7?w=800&q=80&auto=format", // HCMC Nguyen Hue walking street
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format", // HCMC skyline night
+  "https://images.unsplash.com/photo-1570868738084-f8efbe8b2a47?w=800&q=80&auto=format", // HCMC Ben Thanh market
 ];
 
 const packages = [
@@ -67,16 +69,16 @@ const PackagesSection = () => {
               <div className="relative h-56 overflow-hidden">
                 <RotatingImage
                   images={pkg.images}
-                  alt={`${pkg.city} skyline`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  interval={5000}
+                  alt={`${pkg.city} landmarks`}
+                  className="w-full h-full object-cover"
+                  interval={8000}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent" />
-                <div className="absolute bottom-4 left-6 flex items-center gap-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent z-10" />
+                <div className="absolute bottom-4 left-6 flex items-center gap-2 z-10">
                   <MapPin className="text-gold" size={20} />
                   <h3 className="font-heading text-2xl font-bold text-primary-foreground">{pkg.city} Package</h3>
                 </div>
-                <div className="absolute top-4 right-4 bg-gold text-secondary-foreground px-3 py-1 rounded-full font-body text-xs font-bold">
+                <div className="absolute top-4 right-4 bg-gold text-secondary-foreground px-3 py-1 rounded-full font-body text-xs font-bold z-10">
                   Up to 70% Funded
                 </div>
               </div>

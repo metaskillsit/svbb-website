@@ -203,22 +203,29 @@ const ScrollRow = ({
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const offsetRef = useRef(0);
+  const lastTimeRef = useRef(0);
 
-  // Auto-scroll continuously
+  // GPU-accelerated smooth scroll using transform
   useEffect(() => {
     const el = scrollRef.current;
     if (!el || items.length <= 3) return;
 
+    const speed = 30; // px per second
     let animationId: number;
-    const speed = 0.5; // px per frame
 
-    const step = () => {
-      if (!isPaused && el) {
-        el.scrollLeft += speed;
-        // Loop back when reaching the end
-        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-          el.scrollLeft = 0;
+    const step = (timestamp: number) => {
+      if (!lastTimeRef.current) lastTimeRef.current = timestamp;
+      const delta = timestamp - lastTimeRef.current;
+      lastTimeRef.current = timestamp;
+
+      if (!isPaused) {
+        offsetRef.current += (speed * delta) / 1000;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (maxScroll > 0 && offsetRef.current >= maxScroll) {
+          offsetRef.current = 0;
         }
+        el.scrollLeft = offsetRef.current;
       }
       animationId = requestAnimationFrame(step);
     };
@@ -227,10 +234,18 @@ const ScrollRow = ({
     return () => cancelAnimationFrame(animationId);
   }, [isPaused, items.length]);
 
+  // Sync offset when user manually scrolls
+  const handleScroll = () => {
+    if (scrollRef.current && isPaused) {
+      offsetRef.current = scrollRef.current.scrollLeft;
+    }
+  };
+
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const amount = scrollRef.current.clientWidth * 0.7;
-    scrollRef.current.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    offsetRef.current = scrollRef.current.scrollLeft + (dir === "left" ? -amount : amount);
+    scrollRef.current.scrollTo({ left: offsetRef.current, behavior: "smooth" });
   };
 
   return (
@@ -249,8 +264,9 @@ const ScrollRow = ({
       </button>
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-2"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        onScroll={handleScroll}
+        className="flex gap-4 overflow-x-auto pb-2"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
       >
         {items.map((item) => (
           <div
