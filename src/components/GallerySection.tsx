@@ -56,6 +56,14 @@ const galleryItems = [
   { img: gallery4280, title: "Packaging Machinery Demo", desc: "Demonstration of packaging machinery during factory visit." },
   { img: gallery4312, title: "Chavi Garden, Long An", desc: "Group photo at Chavi Garden in Long An province." },
   { img: gallery4319, title: "Local Product Showroom", desc: "Business networking at a local product showroom." },
+  { img: gallery4323, title: "Garden Train Ride", desc: "Delegation enjoying a train ride tour at Chavi Garden." },
+  { img: gallery4342, title: "Orchard Farm Visit", desc: "Delegation touring the orchard grounds in Long An." },
+  { img: gallery4354, title: "Group Lunch at Chavi", desc: "Delegation sharing a group lunch at Chavi Garden." },
+  { img: gallery4358, title: "Chavi Garden Briefing", desc: "Presentation and briefing session at Chavi Garden." },
+  { img: gallery4366, title: "Chavi Garden Seminar", desc: "Audience at a seminar session held at Chavi Garden." },
+  { img: gallery4374, title: "Guest Speaker", desc: "Guest speaker presenting at the Chavi Garden event." },
+  { img: gallery4394, title: "Panel Discussion", desc: "Panel discussion with delegation members at Chavi Garden." },
+  { img: gallery4402, title: "Gift Exchange", desc: "Gift exchange between SVBB and Chavi Garden host." },
 ];
 
 const GallerySection = () => {
