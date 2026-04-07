@@ -51,6 +51,14 @@ import gallery5970 from "@/assets/gallery/QPTS5970.webp";
 import gallery5996 from "@/assets/gallery/QPTS5996.webp";
 import gallery6002 from "@/assets/gallery/QPTS6002.webp";
 import gallery6025 from "@/assets/gallery/QPTS6025.webp";
+import gallery6042 from "@/assets/gallery/QPTS6042.webp";
+import gallery6047 from "@/assets/gallery/QPTS6047.webp";
+import gallery6052 from "@/assets/gallery/QPTS6052.webp";
+import gallery6057 from "@/assets/gallery/QPTS6057.webp";
+import gallery6072 from "@/assets/gallery/QPTS6072.webp";
+import gallery6077 from "@/assets/gallery/QPTS6077.webp";
+import gallery6078 from "@/assets/gallery/QPTS6078.webp";
+import gallery6082 from "@/assets/gallery/QPTS6082.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -104,6 +112,14 @@ const galleryItems = [
   { img: gallery5996, title: "Kofi Kai Video Screening", desc: "Video screening of coffee production at Kofi Kai." },
   { img: gallery6002, title: "Kofi Kai Speaker", desc: "Speaker presenting at Kofi Kai café venue." },
   { img: gallery6025, title: "Coffee Industry Talk", desc: "Guest speaker discussing Vietnam's coffee industry." },
+  { img: gallery6042, title: "Kofi Kai Hosts", desc: "Kofi Kai hosts presenting to the delegation." },
+  { img: gallery6047, title: "Vietnamese Coffee", desc: "Fresh cà phê tươi — local Vietnamese coffee." },
+  { img: gallery6052, title: "Kofi Kai Certificate", desc: "Certificate of Appreciation presented to Kofi Kai." },
+  { img: gallery6057, title: "Coffee Roaster Tour", desc: "Delegation viewing the Kofi Kai coffee roasting machinery." },
+  { img: gallery6072, title: "Roaster Discussion", desc: "Delegates discussing with Kofi Kai at the pilot roasters." },
+  { img: gallery6077, title: "Coffee Product Display", desc: "Browsing Kofi Kai's coffee product offerings." },
+  { img: gallery6078, title: "Coffee Equipment Showcase", desc: "Delegates examining coffee brewing equipment at Kofi Kai." },
+  { img: gallery6082, title: "Kofi Kai Café Interior", desc: "Full view of Kofi Kai café with the delegation." },
 ];
 
 const GallerySection = () => {
