@@ -1,39 +1,50 @@
 import { ArrowRight, Award, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
+// All unique HCMC & Vietnam cityscape photos — no duplicates with other sections
 const heroImages = [
-  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1528127269322-539801943592?w=1920&q=80&auto=format",
-  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=1920&q=80&auto=format",
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80&auto=format", // HCMC skyline aerial
+  "https://images.unsplash.com/photo-1528127269322-539801943592?w=1920&q=80&auto=format", // Vietnam terraced rice fields
+  "https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=1920&q=80&auto=format", // Vietnam boats on river
+  "https://images.unsplash.com/photo-1498637841888-108c6b723fcb?w=1920&q=80&auto=format", // Vietnam lanterns Hoi An
+  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1920&q=80&auto=format", // Hanoi traffic aerial
 ];
 
 const HeroSection = () => {
   const [currentImg, setCurrentImg] = useState(0);
+  const [nextImg, setNextImg] = useState(1);
+  const [transitioning, setTransitioning] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
+      setTransitioning(true);
+      setTimeout(() => {
+        setCurrentImg((prev) => (prev + 1) % heroImages.length);
+        setNextImg((prev) => (prev + 1) % heroImages.length);
+        setTransitioning(false);
+      }, 1500);
+    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section id="home" className="relative min-h-[75vh] flex items-center overflow-hidden">
-      {/* Background - rotating images */}
+      {/* Background - crossfade between two layers */}
       <div className="absolute inset-0">
-        {heroImages.map((src, i) => (
-          <img
-            key={src}
-            src={src}
-            alt={`Vietnam cityscape ${i + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImg ? "opacity-100" : "opacity-0"}`}
-            width={1920}
-            height={900}
-            loading={i === 0 ? "eager" : "lazy"}
-          />
-        ))}
+        <img
+          src={heroImages[currentImg]}
+          alt="Vietnam cityscape"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${transitioning ? "opacity-0" : "opacity-100"}`}
+          width={1920}
+          height={900}
+        />
+        <img
+          src={heroImages[nextImg]}
+          alt="Vietnam cityscape"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${transitioning ? "opacity-100" : "opacity-0"}`}
+          width={1920}
+          height={900}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy/80 to-navy-dark/60" />
       </div>
 

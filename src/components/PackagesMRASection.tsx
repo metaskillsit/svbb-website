@@ -2,34 +2,46 @@ import { MapPin, CheckCircle2, FileText, Play, FileCheck, DollarSign, Rocket } f
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useState, useEffect } from "react";
 
+// Hanoi-specific photos — same verified Hanoi set as PackagesSection
 const hanoiImages = [
-  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format",
   "https://images.unsplash.com/photo-1604050478796-5e4f2eb69907?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80&auto=format",
   "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80&auto=format",
   "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1580139614600-7a66e0aa9a09?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1535751094257-0e06b44feaac?w=800&q=80&auto=format",
 ];
 
+// HCMC-specific photos
 const hcmcImages = [
-  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
   "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1576842546775-83a96e1a7959?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1578615437406-511cafe4a5c7?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1570868738084-f8efbe8b2a47?w=800&q=80&auto=format",
 ];
 
 const RotatingBg = ({ images, children, className }: { images: string[]; children: React.ReactNode; className?: string }) => {
   const [idx, setIdx] = useState(0);
+  const [nextIdx, setNextIdx] = useState(1);
+  const [transitioning, setTransitioning] = useState(false);
+
   useEffect(() => {
-    const timer = setInterval(() => setIdx((p) => (p + 1) % images.length), 5000);
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setTransitioning(true);
+      setTimeout(() => {
+        setIdx((p) => (p + 1) % images.length);
+        setNextIdx((p) => (p + 1) % images.length);
+        setTransitioning(false);
+      }, 1200);
+    }, 8000);
     return () => clearInterval(timer);
   }, [images.length]);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      {images.map((src, i) => (
-        <img key={src} src={src} alt="" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`} loading="lazy" />
-      ))}
+      <img src={images[idx]} alt="" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out ${transitioning ? "opacity-0" : "opacity-100"}`} loading="lazy" />
+      <img src={images[nextIdx]} alt="" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out ${transitioning ? "opacity-100" : "opacity-0"}`} loading="lazy" />
       {children}
     </div>
   );
@@ -95,12 +107,12 @@ const PackagesMRASection = () => {
               {packages.map((pkg) => (
                 <div key={pkg.city} className="group bg-navy-light/30 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all">
                   <RotatingBg images={pkg.images} className="h-48">
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent" />
-                    <div className="absolute bottom-3 left-5 flex items-center gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent z-10" />
+                    <div className="absolute bottom-3 left-5 flex items-center gap-2 z-10">
                       <MapPin className="text-gold" size={18} />
                       <h3 className="font-heading text-xl font-bold text-primary-foreground">{pkg.city}</h3>
                     </div>
-                    <div className="absolute top-3 right-3 bg-gold text-secondary-foreground px-2.5 py-0.5 rounded-full font-body text-xs font-bold">Up to 70% Funded</div>
+                    <div className="absolute top-3 right-3 bg-gold text-secondary-foreground px-2.5 py-0.5 rounded-full font-body text-xs font-bold z-10">Up to 70% Funded</div>
                   </RotatingBg>
                   <div className="p-6">
                     <div className="flex flex-wrap gap-1.5 mb-4">

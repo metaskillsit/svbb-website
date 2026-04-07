@@ -1,12 +1,13 @@
 import { Briefcase, Globe, MapPin, Users, TrendingUp, Handshake } from "lucide-react";
 import RotatingImage from "./RotatingImage";
 
+// Business meeting / consulting photos — unique to this section
 const consultingImages = [
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format",
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format", // team meeting whiteboard
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format", // office team discussion
+  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format", // conference table meeting
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format", // business handshake
+  "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80&auto=format", // diverse team collaboration
 ];
 
 const services = [
@@ -72,16 +73,16 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA image section */}
-        <div className="mt-16 rounded-2xl overflow-hidden relative">
+        <div className="mt-16 rounded-2xl overflow-hidden relative h-64 md:h-80">
           <RotatingImage
             images={consultingImages}
-            alt="SVBB consulting session in Vietnam"
-            className="w-full h-64 md:h-80 object-cover"
-            interval={5000}
+            alt="SVBB consulting session"
+            className="w-full h-full object-cover"
+            interval={9000}
             width={800}
             height={600}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 to-navy/40 flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 to-navy/40 flex items-center z-10">
             <div className="px-8 md:px-16 max-w-xl">
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
                 Ready to Enter Vietnam?
