@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import businessTripImg from "@/assets/business-trip.jpg";
 import galleryMinister from "@/assets/gallery-minister.png";
