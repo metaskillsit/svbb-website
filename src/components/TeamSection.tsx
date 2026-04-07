@@ -1,24 +1,28 @@
+import teamPhilong from "https://svbb.sg/wp-content/uploads/2024/03/philong-768x1024.jpg";
+import teamJinghao from "@/assets/team-jinghao.jpeg";
+import teamChris from "@/assets/team-chris.jpeg";
+import teamAndrew from "@/assets/team-andrew.jpeg";
+
 const team = [
   {
     name: "Phan Phi Long",
     title: "Vice President, Singapore-Vietnam Chambers of Commerce",
-    expertise: "Vietnam Business Consulting | Cryptocurrency | Machine Learning | Leadership",
-    bio: "A seasoned IT professional with over 20 years of experience. Holds ITIL Expert, PMP, and CEH certifications. Vice President of the Singapore-Vietnam Chambers of Commerce, bridging businesses between both nations.",
     img: "https://svbb.sg/wp-content/uploads/2024/03/philong-768x1024.jpg",
   },
   {
     name: "Dr Ke Jinghao",
-    title: "Director, SVBB; CEO, JCube Institute; SMU Programme Director",
-    expertise: "ASEAN Business Leadership | Data Science | AI | Power BI",
-    bio: "Ph.D. in Business (Finance) from Singapore Management University. Leads multiple AI and business analytics initiatives across Southeast Asia. SMU Programme Director for 'New Ventures In Vietnam'.",
-    img: "https://svbb.sg/wp-content/uploads/2023/05/Jinghao-Profilepic2-1024x1024.jpg",
+    title: "Director, SVBB; CEO, Metaskills Institute",
+    img: teamJinghao,
   },
   {
-    name: "Dr Jack Hong",
-    title: "CEO, Integrum Global",
-    expertise: "Data Science | AI | Machine Learning | Business Intelligence",
-    bio: "Co-founder of Research Room, an A.I. consulting firm. AI Technology Consultant at Certis Group, Data Science Advisor at Vertex Holdings. Adjunct faculty at SMU since 2015.",
-    img: "https://svbb.sg/wp-content/uploads/2022/01/founder-300-sq-300x300.jpg",
+    name: "Christopher Tan",
+    title: "Chief Business Development Officer, SVBB",
+    img: teamChris,
+  },
+  {
+    name: "Andrew Toh",
+    title: "Head Operations, SVBB",
+    img: teamAndrew,
   },
 ];
 
@@ -36,7 +40,7 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member) => (
             <div key={member.name} className="bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 group">
               <div className="h-72 overflow-hidden">
@@ -50,12 +54,6 @@ const TeamSection = () => {
               <div className="p-6">
                 <h3 className="font-heading text-xl font-bold text-foreground">{member.name}</h3>
                 <p className="font-body text-gold-dark text-sm font-medium mt-1">{member.title}</p>
-                <p className="font-body text-muted-foreground text-sm mt-3 leading-relaxed">{member.bio}</p>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <p className="font-body text-xs text-muted-foreground">
-                    <span className="font-semibold text-foreground">Expertise:</span> {member.expertise}
-                  </p>
-                </div>
               </div>
             </div>
           ))}
