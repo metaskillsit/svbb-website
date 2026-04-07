@@ -5,7 +5,7 @@ import heroSapa from "@/assets/hero-sapa-rice.jpg";
 import heroHoianRiver from "@/assets/hero-hoian-river.jpg";
 import heroHoianLanterns from "@/assets/hero-hoian-lanterns.jpg";
 import heroHanoi from "@/assets/hero-hanoi-traffic.jpg";
-import vietchamLogo from "@/assets/vietcham-logo.png";
+
 
 const heroImages = [heroHcmc, heroSapa, heroHoianRiver, heroHoianLanterns, heroHanoi];
 
