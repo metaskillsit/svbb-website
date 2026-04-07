@@ -17,6 +17,7 @@ const navLinks = [
 const serviceLinks = [
   { label: "Setup Company in Vietnam", to: "/services/setup-company-in-vietnam" },
   { label: "Corporate Immigration", to: "/services/corporate-immigration" },
+  { label: "Overseas Market Promotion", to: "/services/overseas-market-promotion" },
 ];
 
 const Navbar = () => {

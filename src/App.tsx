@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import SetupCompany from "./pages/SetupCompany.tsx";
 import CorporateImmigration from "./pages/CorporateImmigration.tsx";
+import OverseasMarketPromotion from "./pages/OverseasMarketPromotion.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services/setup-company-in-vietnam" element={<SetupCompany />} />
           <Route path="/services/corporate-immigration" element={<CorporateImmigration />} />
+          <Route path="/services/overseas-market-promotion" element={<OverseasMarketPromotion />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
