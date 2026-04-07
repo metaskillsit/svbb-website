@@ -93,25 +93,20 @@ const HeroSection = () => {
               Unknown where to start?
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
-            <a
-              href="#mra-grant"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
-            >
-              Join us for a Business Vietnam Learning Trip
-            </a>
-          </div>
-
-          {/* MRA Badge — refined certification style */}
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.48s" }}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15">
-              <Shield size={13} className="text-gold/70 shrink-0" />
-              <span className="text-[11px] sm:text-xs font-body font-medium text-primary-foreground/75 tracking-wide">
-                🇸🇬 MRA Supportable
-              </span>
+            <div className="flex flex-col items-start gap-2">
+              <a
+                href="#mra-grant"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
+              >
+                Join us for a Business Vietnam Learning Trip
+              </a>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15 ml-1">
+                <Shield size={12} className="text-gold/70 shrink-0" />
+                <span className="text-[10px] sm:text-[11px] font-body font-medium text-primary-foreground/65 tracking-wide">
+                  🇸🇬 MRA Supportable · <span className="italic text-primary-foreground/45">Subject to ESG approval</span>
+                </span>
+              </div>
             </div>
-            <span className="sm:hidden block text-[10px] font-body text-primary-foreground/40 italic mt-1 ml-1">
-              Subject to approval by Enterprise Singapore
-            </span>
           </div>
 
           {/* Stats */}
