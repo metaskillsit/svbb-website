@@ -32,7 +32,12 @@ const PackagesMRA = () => {
             <ArrowLeft size={16} /> Back to Home
           </Link>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
-            MRA <span className="text-gradient-gold">Readiness Check</span>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+            Vietnam Expansion <span className="text-gradient-gold">Quick Assessment</span>
+          </h1>
+          <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
+            Find out in under 60 seconds whether your company may qualify for MRA-supported Vietnam expansion.
+          </p>
           </h1>
           <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
             Find out in under 60 seconds whether your company may qualify for MRA-supported Vietnam expansion.

@@ -147,16 +147,6 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
     <section id="assessment" className="py-20 md:py-28 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-1.5 mb-4">
-            <Clock className="text-gold" size={14} />
-            <span className="text-gold font-body text-xs font-semibold tracking-wide">Takes under 60 seconds</span>
-          </div>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">
-            Vietnam Expansion <span className="text-gradient-gold">Quick Assessment</span>
-          </h2>
-          <p className="font-body text-primary-foreground/60 mt-4 max-w-xl mx-auto text-base md:text-lg">
-            Find out in under 60 seconds whether your company may qualify for MRA-supported Vietnam expansion support.
-          </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
