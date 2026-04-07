@@ -59,9 +59,7 @@ const HeroSection = () => {
       <div className="container relative z-10 mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20">
         <div className="max-w-3xl">
           {/* Tagline pill */}
-          <div
-            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm animate-fade-in-up"
-          >
+          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm animate-fade-in-up">
             <Award className="text-gold shrink-0" size={16} />
             <span className="text-gold font-body text-xs sm:text-sm font-semibold tracking-wider uppercase">
               Singapore–Vietnam Market Entry Specialists
@@ -72,8 +70,7 @@ const HeroSection = () => {
             className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
-            Your Strategic Gateway to{" "}
-            <span className="text-gradient-gold">Vietnam's</span> Market
+            Your Strategic Gateway to <span className="text-gradient-gold">Vietnam's</span> Market
           </h1>
 
           <p
@@ -100,7 +97,7 @@ const HeroSection = () => {
               href="#mra-grant"
               className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
             >
-              Join us for a HCM/Hanoi trip
+              Join us for a Business Vietnam Learning Trip
             </a>
           </div>
 
@@ -109,10 +106,7 @@ const HeroSection = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15">
               <Shield size={13} className="text-gold/70 shrink-0" />
               <span className="text-[11px] sm:text-xs font-body font-medium text-primary-foreground/75 tracking-wide">
-                🇸🇬 MRA Supportable Programme
-              </span>
-              <span className="hidden sm:inline text-[10px] font-body text-primary-foreground/40 italic">
-                · Subject to approval by Enterprise Singapore
+                🇸🇬 MRA Supportable
               </span>
             </div>
             <span className="sm:hidden block text-[10px] font-body text-primary-foreground/40 italic mt-1 ml-1">
