@@ -1,11 +1,26 @@
 import { MapPin, CheckCircle2, FileText, Play } from "lucide-react";
-import hanoiImg from "@/assets/hanoi-city.jpg";
-import hcmcImg from "@/assets/hcmc-city.jpg";
+import RotatingImage from "./RotatingImage";
+
+const hanoiImages = [
+  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1604050478796-5e4f2eb69907?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format",
+];
+
+const hcmcImages = [
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format",
+];
 
 const packages = [
   {
     city: "Hanoi",
-    img: hanoiImg,
+    images: hanoiImages,
     industries: ["Manufacturing", "Technology", "F&B", "Education"],
     highlights: [
       "Market research & feasibility study",
@@ -17,7 +32,7 @@ const packages = [
   },
   {
     city: "Ho Chi Minh City",
-    img: hcmcImg,
+    images: hcmcImages,
     industries: ["Retail", "Property", "Logistics", "Hospitality"],
     highlights: [
       "Consumer market entry strategy",
@@ -50,11 +65,11 @@ const PackagesSection = () => {
               className="group bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden">
-                <img
-                  src={pkg.img}
+                <RotatingImage
+                  images={pkg.images}
                   alt={`${pkg.city} skyline`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  interval={5000}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent" />
                 <div className="absolute bottom-4 left-6 flex items-center gap-2">
