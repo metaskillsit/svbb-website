@@ -10,7 +10,7 @@ const SetupCompany = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-[55vh] flex items-end overflow-hidden">
+      <section className="relative <section className="relative min-h-[85vh] flex items-end overflow-hidden"> flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroSetup} alt="Company Setup" className="w-full h-full object-cover object-top" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/90 via-navy/80 to-navy-dark/50" />
