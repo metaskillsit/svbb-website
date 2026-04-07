@@ -89,7 +89,7 @@ const HeroSection = () => {
               href="#services"
               className="group inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-sm shadow-gold hover:shadow-[0_12px_40px_-8px_hsl(var(--gold)/0.45)] hover:scale-[1.02] transition-all duration-200"
             >
-              Unknown where to start?
+              How to start?
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
             <a
