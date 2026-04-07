@@ -84,7 +84,7 @@ const HeroSection = () => {
               href="#mra-grant"
               className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
             >
-              Join us for a trip
+              Join us for a HCM/Hanoi trip
             </a>
           </div>
 
