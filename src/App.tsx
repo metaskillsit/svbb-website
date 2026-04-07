@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import SetupCompany from "./pages/SetupCompany.tsx";
 import CorporateImmigration from "./pages/CorporateImmigration.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services/setup-company-in-vietnam" element={<SetupCompany />} />
