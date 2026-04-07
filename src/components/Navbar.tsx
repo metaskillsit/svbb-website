@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import svbbLogo from "@/assets/svbb-logo.png";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Packages", href: "#packages" },
-  { label: "MRA Grant", href: "#mra-grant" },
-  { label: "Partners", href: "#partners" },
-  { label: "Why Vietnam", href: "#vietnam-market" },
-  { label: "Trips & Events", href: "#trips" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "home" },
+  { label: "Packages", href: "packages" },
+  { label: "MRA Grant", href: "mra-grant" },
+  { label: "Partners", href: "partners" },
+  { label: "Why Vietnam", href: "vietnam-market" },
+  { label: "Trips & Events", href: "trips" },
+  { label: "Team", href: "team" },
+  { label: "Contact", href: "contact" },
 ];
 
 const serviceLinks = [
@@ -22,6 +22,12 @@ const serviceLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  const getNavHref = (section: string) => {
+    return isHome ? `#${section}` : `/#${section}`;
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/20">
@@ -35,7 +41,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={getNavHref(link.href)}
               className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap"
             >
               {link.label}
@@ -48,26 +54,29 @@ const Navbar = () => {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
+            <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
               Services <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
-              <div className="absolute top-full right-0 mt-2 w-64 bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
-                {serviceLinks.map((s) => (
-                  <Link
-                    key={s.to}
-                    to={s.to}
-                    className="block px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-gold/5 transition-colors text-sm font-body border-b border-gold/10 last:border-0"
-                  >
-                    {s.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full right-0 pt-1 w-64">
+                <div className="bg-navy border border-gold/20 rounded-lg shadow-xl overflow-hidden">
+                  {serviceLinks.map((s) => (
+                    <Link
+                      key={s.to}
+                      to={s.to}
+                      onClick={() => setServicesOpen(false)}
+                      className="block px-4 py-3 text-primary-foreground/80 hover:text-gold hover:bg-gold/5 transition-colors text-sm font-body border-b border-gold/10 last:border-0"
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
 
           <a
-            href="#contact"
+            href={getNavHref("contact")}
             className="bg-gradient-gold text-secondary-foreground px-4 py-1.5 lg:px-5 lg:py-2 rounded-md text-xs lg:text-sm font-semibold font-body shadow-gold hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Get Started
@@ -89,7 +98,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={getNavHref(link.href)}
               onClick={() => setOpen(false)}
               className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10 last:border-0"
             >
@@ -110,7 +119,7 @@ const Navbar = () => {
             ))}
           </div>
           <a
-            href="#contact"
+            href={getNavHref("contact")}
             onClick={() => setOpen(false)}
             className="mt-4 block text-center bg-gradient-gold text-secondary-foreground px-5 py-3 rounded-md text-sm font-semibold font-body"
           >
