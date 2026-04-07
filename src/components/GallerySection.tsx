@@ -59,6 +59,14 @@ import gallery6072 from "@/assets/gallery/QPTS6072.webp";
 import gallery6077 from "@/assets/gallery/QPTS6077.webp";
 import gallery6078 from "@/assets/gallery/QPTS6078.webp";
 import gallery6082 from "@/assets/gallery/QPTS6082.webp";
+import gallery6094 from "@/assets/gallery/QPTS6094.webp";
+import gallery6109 from "@/assets/gallery/QPTS6109.webp";
+import gallery6112 from "@/assets/gallery/QPTS6112.webp";
+import gallery6113 from "@/assets/gallery/QPTS6113.webp";
+import gallery6114 from "@/assets/gallery/QPTS6114.webp";
+import gallery6115 from "@/assets/gallery/QPTS6115.webp";
+import gallery6121 from "@/assets/gallery/QPTS6121.webp";
+import gallery6122 from "@/assets/gallery/QPTS6122.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -120,6 +128,14 @@ const galleryItems = [
   { img: gallery6077, title: "Coffee Product Display", desc: "Browsing Kofi Kai's coffee product offerings." },
   { img: gallery6078, title: "Coffee Equipment Showcase", desc: "Delegates examining coffee brewing equipment at Kofi Kai." },
   { img: gallery6082, title: "Kofi Kai Café Interior", desc: "Full view of Kofi Kai café with the delegation." },
+  { img: gallery6094, title: "Kofi Kai Group Photo", desc: "Delegates with Kofi Kai owner at the café." },
+  { img: gallery6109, title: "Vietnamese Product Display", desc: "Showcase of Vietnamese products — vermicelli, coffee, and health drinks." },
+  { img: gallery6112, title: "Bánh Hỏi Rau Củ", desc: "Vegetable fine rice vermicelli — specialty of Bình Định." },
+  { img: gallery6113, title: "Hector Cordyceps Drinks", desc: "Hector brand đông trùng hạ thảo health supplements." },
+  { img: gallery6114, title: "Vietnamese Coffee Brands", desc: "C & Sea salt coffee and Durica durian coffee products." },
+  { img: gallery6115, title: "Hector Product Close-up", desc: "Close-up of Hector cordyceps supplement bottles." },
+  { img: gallery6121, title: "Product Showcase Table", desc: "Full product display table with Vietnamese F&B brands." },
+  { img: gallery6122, title: "Hector Brochure & Samples", desc: "Hector product brochure with sample bottles." },
 ];
 
 const GallerySection = () => {
