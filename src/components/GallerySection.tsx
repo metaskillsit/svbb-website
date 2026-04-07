@@ -128,6 +128,14 @@ const galleryItems = [
   { img: gallery6077, title: "Coffee Product Display", desc: "Browsing Kofi Kai's coffee product offerings." },
   { img: gallery6078, title: "Coffee Equipment Showcase", desc: "Delegates examining coffee brewing equipment at Kofi Kai." },
   { img: gallery6082, title: "Kofi Kai Café Interior", desc: "Full view of Kofi Kai café with the delegation." },
+  { img: gallery6094, title: "Kofi Kai Group Photo", desc: "Delegates with Kofi Kai owner at the café." },
+  { img: gallery6109, title: "Vietnamese Product Display", desc: "Showcase of Vietnamese products — vermicelli, coffee, and health drinks." },
+  { img: gallery6112, title: "Bánh Hỏi Rau Củ", desc: "Vegetable fine rice vermicelli — specialty of Bình Định." },
+  { img: gallery6113, title: "Hector Cordyceps Drinks", desc: "Hector brand đông trùng hạ thảo health supplements." },
+  { img: gallery6114, title: "Vietnamese Coffee Brands", desc: "C & Sea salt coffee and Durica durian coffee products." },
+  { img: gallery6115, title: "Hector Product Close-up", desc: "Close-up of Hector cordyceps supplement bottles." },
+  { img: gallery6121, title: "Product Showcase Table", desc: "Full product display table with Vietnamese F&B brands." },
+  { img: gallery6122, title: "Hector Brochure & Samples", desc: "Hector product brochure with sample bottles." },
 ];
 
 const GallerySection = () => {
