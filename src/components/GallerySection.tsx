@@ -27,6 +27,14 @@ import gallery4270 from "@/assets/gallery/QPTS4270.webp";
 import gallery4280 from "@/assets/gallery/QPTS4280.webp";
 import gallery4312 from "@/assets/gallery/QPTS4312.webp";
 import gallery4319 from "@/assets/gallery/QPTS4319.webp";
+import gallery4323 from "@/assets/gallery/QPTS4323.webp";
+import gallery4342 from "@/assets/gallery/QPTS4342.webp";
+import gallery4354 from "@/assets/gallery/QPTS4354.webp";
+import gallery4358 from "@/assets/gallery/QPTS4358.webp";
+import gallery4366 from "@/assets/gallery/QPTS4366.webp";
+import gallery4374 from "@/assets/gallery/QPTS4374.webp";
+import gallery4394 from "@/assets/gallery/QPTS4394.webp";
+import gallery4402 from "@/assets/gallery/QPTS4402.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
