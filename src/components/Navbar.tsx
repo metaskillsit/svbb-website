@@ -70,7 +70,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/packages" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            Packages & MRA
+            MRA Readiness
           </Link>
 
           <Link to="/contact" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
@@ -105,7 +105,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/packages" onClick={() => setOpen(false)} className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10">
-            Packages & MRA
+            MRA Readiness
           </Link>
 
           <div className="py-2 border-b border-gold/10">
