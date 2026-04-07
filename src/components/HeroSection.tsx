@@ -98,7 +98,7 @@ const HeroSection = () => {
             >
               Join us for a Business Vietnam Learning Trip
               <span className="absolute -top-2.5 -right-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-navy-dark border border-gold/30 text-[9px] font-body font-medium text-gold/80 tracking-wide whitespace-nowrap">
-                🇸🇬 MRA Supportable
+                SG MRA Supportable
               </span>
             </a>
           </div>
