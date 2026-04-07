@@ -80,12 +80,18 @@ const HeroSection = () => {
               Unknown where to start?
               <ArrowRight size={16} />
             </a>
-            <a
-              href="#mra-grant"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
-            >
-              Join us for a HCM/Hanoi trip
-            </a>
+            <div className="flex flex-col items-start gap-2">
+              <a
+                href="#mra-grant"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
+              >
+                Join us for a HCM/Hanoi trip
+              </a>
+              <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-gold/20 rounded-md px-3 py-1.5">
+                <span className="text-xs font-body text-primary-foreground/90">🇸🇬 MRA Supportable Programme</span>
+              </div>
+              <span className="text-[10px] font-body text-primary-foreground/45 italic -mt-1 ml-0.5">Subject to approval by Enterprise Singapore</span>
+            </div>
           </div>
 
           {/* Trust badges */}
