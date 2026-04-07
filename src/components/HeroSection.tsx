@@ -1,4 +1,4 @@
-import { ArrowRight, Award, ChevronDown } from "lucide-react";
+import { ArrowRight, Award, ChevronDown, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // All unique HCMC & Vietnam cityscape photos — no duplicates with other sections
@@ -8,6 +8,12 @@ const heroImages = [
   "https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=1920&q=80&auto=format", // Vietnam boats on river
   "https://images.unsplash.com/photo-1498637841888-108c6b723fcb?w=1920&q=80&auto=format", // Vietnam lanterns Hoi An
   "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1920&q=80&auto=format", // Hanoi traffic aerial
+];
+
+const stats = [
+  { value: "11+", label: "Years Experience" },
+  { value: "3,000+", label: "Clients Served" },
+  { value: "S$39.95B", label: "Bilateral Trade" },
 ];
 
 const HeroSection = () => {
@@ -28,7 +34,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-[75vh] flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-[85vh] flex items-center overflow-hidden">
       {/* Background - crossfade between two layers */}
       <div className="absolute inset-0">
         <img
@@ -45,68 +51,84 @@ const HeroSection = () => {
           width={1920}
           height={900}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy/80 to-navy-dark/60" />
+        {/* Richer gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-dark/95 via-navy/85 to-navy-dark/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 pt-20 pb-12">
+      <div className="container relative z-10 mx-auto px-4 pt-24 pb-16 md:pt-28 md:pb-20">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-5 animate-fade-in-up">
-            <Award className="text-gold" size={20} />
-            <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">
+          {/* Tagline pill */}
+          <div
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm animate-fade-in-up"
+          >
+            <Award className="text-gold shrink-0" size={16} />
+            <span className="text-gold font-body text-xs sm:text-sm font-semibold tracking-wider uppercase">
               Singapore–Vietnam Market Entry Specialists
             </span>
           </div>
 
           <h1
-            className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground leading-tight mb-5 animate-fade-in-up"
+            className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-in-up"
             style={{ animationDelay: "0.15s" }}
           >
-            Your Strategic Gateway to <span className="text-gradient-gold">Vietnam's</span> Market
+            Your Strategic Gateway to{" "}
+            <span className="text-gradient-gold">Vietnam's</span> Market
           </h1>
 
           <p
-            className="font-body text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl mb-6 animate-fade-in-up"
+            className="font-body text-base md:text-lg lg:text-xl text-primary-foreground/70 leading-relaxed max-w-2xl mb-8 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
             Expand into Vietnam with confidence — backed by trusted networks in Ho Chi Minh City and Hanoi, and access
             to 11,000+ companies to accelerate partnerships, sales, and seamless business setup.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          {/* CTA buttons */}
+          <div
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-7 py-3.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 transition-opacity"
+              className="group inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-sm shadow-gold hover:shadow-[0_12px_40px_-8px_hsl(var(--gold)/0.45)] hover:scale-[1.02] transition-all duration-200"
             >
               Unknown where to start?
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
-            <div className="flex flex-col items-start gap-2">
-              <a
-                href="#mra-grant"
-                className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-7 py-3.5 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 transition-colors"
-              >
-                Join us for a HCM/Hanoi trip
-              </a>
-              <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-gold/20 rounded-md px-3 py-1.5">
-                <span className="text-xs font-body text-primary-foreground/90">🇸🇬 MRA Supportable Programme</span>
-              </div>
-              <span className="text-[10px] font-body text-primary-foreground/45 italic -mt-1 ml-0.5">Subject to approval by Enterprise Singapore</span>
-            </div>
+            <a
+              href="#mra-grant"
+              className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
+            >
+              Join us for a HCM/Hanoi trip
+            </a>
           </div>
 
-          {/* Trust badges */}
+          {/* MRA Badge — refined certification style */}
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.48s" }}>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15">
+              <Shield size={13} className="text-gold/70 shrink-0" />
+              <span className="text-[11px] sm:text-xs font-body font-medium text-primary-foreground/75 tracking-wide">
+                🇸🇬 MRA Supportable Programme
+              </span>
+              <span className="hidden sm:inline text-[10px] font-body text-primary-foreground/40 italic">
+                · Subject to approval by Enterprise Singapore
+              </span>
+            </div>
+            <span className="sm:hidden block text-[10px] font-body text-primary-foreground/40 italic mt-1 ml-1">
+              Subject to approval by Enterprise Singapore
+            </span>
+          </div>
+
+          {/* Stats */}
           <div
-            className="flex flex-wrap items-center gap-6 mt-8 pt-6 border-t border-gold/20 animate-fade-in-up"
+            className="flex flex-wrap items-center gap-8 mt-10 pt-8 border-t border-primary-foreground/10 animate-fade-in-up"
             style={{ animationDelay: "0.55s" }}
           >
-            {[
-              { value: "11+", label: "Years Experience" },
-              { value: "3,000+", label: "Clients Served" },
-              { value: "S$39.95B", label: "Bilateral Trade" },
-            ].map((stat) => (
+            {stats.map((stat, i) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <div className="font-heading text-xl md:text-2xl font-bold text-gold">{stat.value}</div>
-                <div className="font-body text-xs text-primary-foreground/60 uppercase tracking-wider mt-0.5">
+                <div className="font-heading text-2xl md:text-3xl font-bold text-gold">{stat.value}</div>
+                <div className="font-body text-[11px] text-primary-foreground/50 uppercase tracking-widest mt-1">
                   {stat.label}
                 </div>
               </div>
@@ -118,11 +140,11 @@ const HeroSection = () => {
       {/* Scroll cue */}
       <a
         href="#trips"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-primary-foreground/60 hover:text-gold transition-colors animate-fade-in-up"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-primary-foreground/50 hover:text-gold transition-colors animate-fade-in-up"
         style={{ animationDelay: "0.7s" }}
       >
-        <span className="font-body text-xs tracking-wider uppercase">See us in action</span>
-        <ChevronDown size={20} className="animate-bounce" />
+        <span className="font-body text-[11px] tracking-widest uppercase">See us in action</span>
+        <ChevronDown size={18} className="animate-bounce" />
       </a>
     </section>
   );
