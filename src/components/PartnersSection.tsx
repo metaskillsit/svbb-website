@@ -70,7 +70,7 @@ const PartnersSection = () => {
 
         {/* Vietnam-Side Partners */}
         <div className="text-center mb-10">
-          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Vietnam-Side Partners</span>
+          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Vietnam Partners</span>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-3">
             Our Vietnam <span className="text-gradient-gold">Ecosystem</span>
           </h2>
