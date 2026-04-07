@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import svbbLogo from "@/assets/svbb-logo.png";
 
 const serviceLinks = [
-  { label: "Market Setup in Vietnam", to: "/services/setup-company-in-vietnam" },
   { label: "Market Promotion in Vietnam", to: "/services/overseas-market-promotion" },
   { label: "Business Development in Vietnam", to: "/services/business-development" },
+  { label: "Market Setup in Vietnam", to: "/services/setup-company-in-vietnam" },
   { label: "Events Management in Vietnam", to: "/services/events-management" },
 ];
 
