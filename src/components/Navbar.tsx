@@ -96,6 +96,19 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <div className="py-2 border-b border-gold/10">
+            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">Services</span>
+            {serviceLinks.map((s) => (
+              <Link
+                key={s.to}
+                to={s.to}
+                onClick={() => setOpen(false)}
+                className="block py-2 pl-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body"
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
