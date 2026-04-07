@@ -146,8 +146,6 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
   return (
     <section id="assessment" className="py-20 md:py-28 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-        </div>
 
         <div className="max-w-2xl mx-auto">
           {/* Progress */}
