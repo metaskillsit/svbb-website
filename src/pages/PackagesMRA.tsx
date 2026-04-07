@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -7,6 +8,16 @@ import LeadQualification from "@/components/LeadQualification";
 import DetailedAssessment from "@/components/DetailedAssessment";
 
 const PackagesMRA = () => {
+  const [showAssessment, setShowAssessment] = useState(false);
+  const assessmentRef = useRef<HTMLDivElement>(null);
+
+  const handleShowAssessment = () => {
+    setShowAssessment(true);
+    setTimeout(() => {
+      assessmentRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -24,8 +35,12 @@ const PackagesMRA = () => {
         </div>
       </section>
       <PackagesMRASection />
-      <LeadQualification />
-      <DetailedAssessment />
+      <LeadQualification onShowAssessment={handleShowAssessment} />
+      {showAssessment && (
+        <div ref={assessmentRef}>
+          <DetailedAssessment />
+        </div>
+      )}
       <Footer />
     </div>
   );
