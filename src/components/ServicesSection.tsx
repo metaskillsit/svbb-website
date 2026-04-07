@@ -1,5 +1,13 @@
 import { Briefcase, Globe, MapPin, Users, TrendingUp, Handshake } from "lucide-react";
-import consultingImg from "@/assets/consulting.jpg";
+import RotatingImage from "./RotatingImage";
+
+const consultingImages = [
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format",
+];
 
 const services = [
   {
@@ -49,7 +57,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
+          {services.map((s) => (
             <div
               key={s.title}
               className="group bg-card rounded-xl p-8 border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300"
@@ -65,11 +73,11 @@ const ServicesSection = () => {
 
         {/* CTA image section */}
         <div className="mt-16 rounded-2xl overflow-hidden relative">
-          <img
-            src={consultingImg}
-            alt="SVBB consulting session"
+          <RotatingImage
+            images={consultingImages}
+            alt="SVBB consulting session in Vietnam"
             className="w-full h-64 md:h-80 object-cover"
-            loading="lazy"
+            interval={5000}
             width={800}
             height={600}
           />

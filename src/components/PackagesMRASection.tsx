@@ -1,12 +1,44 @@
 import { MapPin, CheckCircle2, FileText, Play, FileCheck, DollarSign, Rocket } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import hanoiImg from "@/assets/hanoi-city.jpg";
-import hcmcImg from "@/assets/hcmc-city.jpg";
+import { useState, useEffect } from "react";
+
+const hanoiImages = [
+  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1604050478796-5e4f2eb69907?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format",
+];
+
+const hcmcImages = [
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format",
+];
+
+const RotatingBg = ({ images, children, className }: { images: string[]; children: React.ReactNode; className?: string }) => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => setIdx((p) => (p + 1) % images.length), 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      {images.map((src, i) => (
+        <img key={src} src={src} alt="" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === idx ? "opacity-100" : "opacity-0"}`} loading="lazy" />
+      ))}
+      {children}
+    </div>
+  );
+};
 
 const packages = [
   {
     city: "Hanoi",
-    img: hanoiImg,
+    images: hanoiImages,
     industries: ["Manufacturing", "Technology", "F&B", "Education"],
     highlights: [
       "Market research & feasibility study",
@@ -18,7 +50,7 @@ const packages = [
   },
   {
     city: "Ho Chi Minh City",
-    img: hcmcImg,
+    images: hcmcImages,
     industries: ["Retail", "Property", "Logistics", "Hospitality"],
     highlights: [
       "Consumer market entry strategy",
@@ -58,20 +90,18 @@ const PackagesMRASection = () => {
             </TabsTrigger>
           </TabsList>
 
-          {/* Packages Tab */}
           <TabsContent value="packages">
             <div className="grid md:grid-cols-2 gap-6">
               {packages.map((pkg) => (
                 <div key={pkg.city} className="group bg-navy-light/30 rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all">
-                  <div className="relative h-48 overflow-hidden">
-                    <img src={pkg.img} alt={`${pkg.city} skyline`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <RotatingBg images={pkg.images} className="h-48">
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent" />
                     <div className="absolute bottom-3 left-5 flex items-center gap-2">
                       <MapPin className="text-gold" size={18} />
                       <h3 className="font-heading text-xl font-bold text-primary-foreground">{pkg.city}</h3>
                     </div>
                     <div className="absolute top-3 right-3 bg-gold text-secondary-foreground px-2.5 py-0.5 rounded-full font-body text-xs font-bold">Up to 70% Funded</div>
-                  </div>
+                  </RotatingBg>
                   <div className="p-6">
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {pkg.industries.map((ind) => (
@@ -103,7 +133,6 @@ const PackagesMRASection = () => {
             </p>
           </TabsContent>
 
-          {/* MRA Grant Tab */}
           <TabsContent value="mra">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {steps.map((s) => (
@@ -135,7 +164,6 @@ const PackagesMRASection = () => {
           </TabsContent>
         </Tabs>
 
-        {/* Shared CTA */}
         <div className="text-center mt-8">
           <a
             href="#survey"

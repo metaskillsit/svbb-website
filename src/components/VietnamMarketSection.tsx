@@ -1,4 +1,12 @@
-import vietnamMarketImg from "@/assets/vietnam-market.jpg";
+import RotatingImage from "./RotatingImage";
+
+const vietnamImages = [
+  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format",
+  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format",
+];
 
 const stats = [
   { value: "US$476.39B", label: "GDP (2024)", source: "World Bank" },
@@ -56,11 +64,11 @@ const VietnamMarketSection = () => {
         {/* Opportunities */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="rounded-2xl overflow-hidden">
-            <img
-              src={vietnamMarketImg}
-              alt="Vietnam Ho Chi Minh City skyline"
+            <RotatingImage
+              images={vietnamImages}
+              alt="Vietnam Ho Chi Minh City"
               className="w-full h-full object-cover min-h-[300px]"
-              loading="lazy"
+              interval={4500}
               width={800}
               height={600}
             />
