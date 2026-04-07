@@ -6,6 +6,7 @@ import svbbLogo from "@/assets/svbb-logo.png";
 const serviceLinks = [
   { label: "Setup Company in Vietnam", to: "/services/setup-company-in-vietnam" },
   { label: "Overseas Market Promotion", to: "/services/overseas-market-promotion" },
+  { label: "Business Development", to: "/services/business-development" },
 ];
 
 const aboutLinks = [
