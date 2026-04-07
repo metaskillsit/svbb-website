@@ -43,6 +43,14 @@ import gallery4465 from "@/assets/gallery/QPTS4465.webp";
 import gallery5799 from "@/assets/gallery/QPTS5799.webp";
 import gallery5807 from "@/assets/gallery/QPTS5807.webp";
 import gallery5822 from "@/assets/gallery/QPTS5822.webp";
+import gallery5848 from "@/assets/gallery/QPTS5848.webp";
+import gallery5855 from "@/assets/gallery/QPTS5855.webp";
+import gallery5921 from "@/assets/gallery/QPTS5921.webp";
+import gallery5940 from "@/assets/gallery/QPTS5940.webp";
+import gallery5970 from "@/assets/gallery/QPTS5970.webp";
+import gallery5996 from "@/assets/gallery/QPTS5996.webp";
+import gallery6002 from "@/assets/gallery/QPTS6002.webp";
+import gallery6025 from "@/assets/gallery/QPTS6025.webp";
 
 const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
@@ -88,6 +96,14 @@ const galleryItems = [
   { img: gallery5799, title: "The Hub Group Photo", desc: "Delegation group photo at The Hub co-working space in HCMC." },
   { img: gallery5807, title: "The Hub Office Tour", desc: "Guided tour of The Hub office and co-working facilities." },
   { img: gallery5822, title: "Tech Office Visit", desc: "Delegation visiting a tech company's open-plan office." },
+  { img: gallery5848, title: "SoBanHang Presentation", desc: "Product demo presentation at SoBanHang office." },
+  { img: gallery5855, title: "SoBanHang Certificate", desc: "Certificate of Appreciation presented to SoBanHang." },
+  { img: gallery5921, title: "Wareflex Logistics Briefing", desc: "Wareflex presenting their logistics platform to the delegation." },
+  { img: gallery5940, title: "Wareflex Certificate", desc: "Certificate of Appreciation presented to Wareflex representative." },
+  { img: gallery5970, title: "Kofi Kai Café Session", desc: "Delegation attending a presentation at Kofi Kai café." },
+  { img: gallery5996, title: "Kofi Kai Video Screening", desc: "Video screening of coffee production at Kofi Kai." },
+  { img: gallery6002, title: "Kofi Kai Speaker", desc: "Speaker presenting at Kofi Kai café venue." },
+  { img: gallery6025, title: "Coffee Industry Talk", desc: "Guest speaker discussing Vietnam's coffee industry." },
 ];
 
 const GallerySection = () => {
