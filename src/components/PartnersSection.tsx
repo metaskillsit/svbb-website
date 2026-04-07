@@ -29,18 +29,18 @@ const PartnersSection = () => {
   return (
     <section id="partners" className="py-24 bg-cream">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Our Ecosystem</span>
+        {/* Singapore Partner — VietCham */}
+        <div className="text-center mb-10">
+          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Our Singapore Partner</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            Vietnam-Side <span className="text-gradient-gold">Partners</span>
+            Singapore Vietnam <span className="text-gradient-gold">Chambers of Commerce</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Our Vietnam ecosystem ensures you land with the right connections from Day 1.
+            Our anchor partnership with VietCham Singapore gives you direct access to cross-border business networks and government-level introductions.
           </p>
         </div>
 
-        {/* Featured Partner — VietCham */}
-        <a
+        <
           href="https://vietcham.org.sg/"
           target="_blank"
           rel="noopener noreferrer"
