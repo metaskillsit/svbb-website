@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import VietChamBanner from "@/components/VietChamBanner";
 import GallerySection from "@/components/GallerySection";
 import LeadSurvey from "@/components/LeadSurvey";
 import LeadQualification from "@/components/LeadQualification";
@@ -17,6 +18,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <VietChamBanner />
       <GallerySection />
       <LeadQualification />
       
