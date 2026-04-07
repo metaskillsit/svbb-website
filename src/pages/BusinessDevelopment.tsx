@@ -81,8 +81,10 @@ const packages = [
     price: "S$34,800",
     best: "Companies wanting active in-market execution",
     items: [
+      "Market research & feasibility review",
       "6 months fractional BD support",
       "30 qualified outreach targets",
+      "Shortlist of 10",
       "Up to 10 meetings",
       "Monthly pipeline reports",
       "Partner follow-up support",
@@ -107,9 +109,9 @@ const packages = [
 ];
 
 const comparisonRows: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Market research", values: [true, true, false, true] },
+  { label: "Market research", values: [true, true, true, true] },
   { label: "Partner longlist", values: ["20", "30", "30", "40"] },
-  { label: "Shortlist", values: ["8", "10", "—", "12"] },
+  { label: "Shortlist", values: ["8", "10", "10", "12"] },
   { label: "Outreach support", values: [false, "20 targets", "30 targets", "40 targets"] },
   { label: "Meetings", values: ["3", "6", "10", "12–15"] },
   { label: "Monthly reporting", values: [false, false, true, true] },
@@ -355,39 +357,6 @@ const BusinessDevelopment = () => {
                 </div>
                 <h3 className="font-heading text-xl font-bold text-foreground mb-2">{o.title}</h3>
                 <p className="font-body text-muted-foreground text-sm leading-relaxed">{o.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Testimonials placeholder ── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Testimonials</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
-              What Our <span className="text-gradient-gold">Clients Say</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-card rounded-2xl border border-border p-6">
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map((s) => <Star key={s} size={14} className="text-gold fill-gold" />)}
-                </div>
-                <p className="font-body text-muted-foreground text-sm italic leading-relaxed mb-4">
-                  "Client testimonial placeholder — add real feedback from SMEs who have used SVBB's Vietnam market entry services."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                    <Users size={16} className="text-muted-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-body text-sm font-semibold text-foreground">Client Name</p>
-                    <p className="font-body text-xs text-muted-foreground">Company, Singapore</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
