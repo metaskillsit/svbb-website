@@ -77,7 +77,7 @@ const galleryItems = [
   { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
   { img: "https://svbb.sg/wp-content/uploads/2024/06/PL-NewspaperWithPresidentTop100Vntalentstorebuildcountry-300x192.jpg", title: "Top 100 Talent Invitation by the President", desc: "President's invitation of Top 100 Talent to help build Vietnam — featuring SVBB's recognition." },
   { img: galleryAwards, title: "Receipt of Awards", desc: "SVBB leadership receiving awards for contributions to Singapore-Vietnam bilateral relations." },
-  { img: gallery3674, title: "SMU Academy Partnership", desc: "Handshake and partnership signing at SMU Academy." },
+  { img: gallery3674, title: "Academy Partnership", desc: "Handshake and partnership signing at a business academy event." },
   { img: gallery3586, title: "Business Presentation", desc: "SVBB presenting market entry strategies to Singapore enterprises." },
   { img: gallery3630, title: "Factory Visit", desc: "On-site factory and workshop inspection during a Vietnam business trip." },
   { img: gallery3705, title: "Networking Dinner", desc: "Group networking dinner connecting Singapore and Vietnamese business leaders." },
