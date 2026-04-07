@@ -17,8 +17,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <GallerySection />
       <LeadQualification />
+      <GallerySection />
       <LeadSurvey />
       <DetailedAssessment />
       <PartnersSection />
