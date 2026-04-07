@@ -134,10 +134,6 @@ const SetupCompany = () => {
               <p className="mt-8 pt-6 border-t border-border font-body text-xs text-muted-foreground italic">Additional services customized to your specific needs</p>
             </div>
           </div>
-
-          <p className="text-center mt-6 font-body text-xs text-muted-foreground">
-            (*) <a href="https://vietcham.org.sg/wp-content/uploads/2025/10/giay-chung-nhan-dang-ky-dau-tu.pdf" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">Click here for IRC sample</a>
-          </p>
         </div>
       </section>
 
