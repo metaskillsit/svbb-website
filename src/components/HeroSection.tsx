@@ -12,8 +12,7 @@ const heroImages = [
 
 const stats = [
   { value: "11+", label: "Years Experience" },
-  { value: "11,000+", label: "Companies Supported" },
-  { value: "S$39.95B", label: "Bilateral Trade" },
+  { value: "11,000+", label: "Accessible Companies" },
 ];
 
 const HeroSection = () => {
