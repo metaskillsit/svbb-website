@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import svbbLogo from "@/assets/svbb-logo.png";
 
 const navLinks = [
@@ -11,6 +12,11 @@ const navLinks = [
   { label: "Trips & Events", href: "#trips" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
+];
+
+const serviceLinks = [
+  { label: "Setup Company in Vietnam", to: "/services/setup-company-in-vietnam" },
+  { label: "Corporate Immigration", to: "/services/corporate-immigration" },
 ];
 
 const Navbar = () => {
