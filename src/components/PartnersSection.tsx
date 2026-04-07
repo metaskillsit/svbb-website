@@ -40,6 +40,7 @@ const PartnersSection = () => {
           </p>
         </div>
 
+        {/* Vietnam-Side Partners heading */}
         <
           href="https://vietcham.org.sg/"
           target="_blank"
