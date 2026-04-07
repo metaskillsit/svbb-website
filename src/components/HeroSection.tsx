@@ -1,14 +1,12 @@
 import { ArrowRight, Award, ChevronDown, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
+import heroHcmc from "@/assets/hero-hcmc-skyline.jpg";
+import heroSapa from "@/assets/hero-sapa-rice.jpg";
+import heroHoianRiver from "@/assets/hero-hoian-river.jpg";
+import heroHoianLanterns from "@/assets/hero-hoian-lanterns.jpg";
+import heroHanoi from "@/assets/hero-hanoi-traffic.jpg";
 
-// All unique HCMC & Vietnam cityscape photos — no duplicates with other sections
-const heroImages = [
-  "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=1920&q=80&auto=format", // HCMC skyline aerial
-  "https://images.unsplash.com/photo-1528127269322-539801943592?w=1920&q=80&auto=format", // Vietnam terraced rice fields
-  "https://images.unsplash.com/photo-1540611025311-01df3cef54b5?w=1920&q=80&auto=format", // Vietnam boats on river
-  "https://images.unsplash.com/photo-1498637841888-108c6b723fcb?w=1920&q=80&auto=format", // Vietnam lanterns Hoi An
-  "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=1920&q=80&auto=format", // Hanoi traffic aerial
-];
+const heroImages = [heroHcmc, heroSapa, heroHoianRiver, heroHoianLanterns, heroHanoi];
 
 const stats = [
   { value: "11+", label: "Years Experience" },

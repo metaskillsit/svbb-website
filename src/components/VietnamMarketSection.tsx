@@ -1,13 +1,11 @@
 import RotatingImage from "./RotatingImage";
+import vietnamStreet from "@/assets/vietnam-street-hcmc.jpg";
+import vietnamMarket from "@/assets/vietnam-floating-market.jpg";
+import vietnamBitexco from "@/assets/vietnam-bitexco-skyline.jpg";
+import vietnamAodai from "@/assets/vietnam-aodai-rice.jpg";
+import vietnamNight from "@/assets/vietnam-night-market.jpg";
 
-// Vietnam street life & market photos — unique to this section
-const vietnamImages = [
-  "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=800&q=80&auto=format", // HCMC street with motorbikes
-  "https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80&auto=format", // Vietnam floating market
-  "https://images.unsplash.com/photo-1562602833-0f4ab2fc46e5?w=800&q=80&auto=format", // HCMC Bitexco tower
-  "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=800&q=80&auto=format", // Vietnamese woman conical hat
-  "https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80&auto=format", // Vietnam night street
-];
+const vietnamImages = [vietnamStreet, vietnamMarket, vietnamBitexco, vietnamAodai, vietnamNight];
 
 const stats = [
   { value: "US$476.39B", label: "GDP (2024)", source: "World Bank" },
