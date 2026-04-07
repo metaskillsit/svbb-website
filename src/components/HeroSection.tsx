@@ -12,7 +12,7 @@ const heroImages = [
 
 const stats = [
   { value: "11+", label: "Years Experience" },
-  { value: "3,000+", label: "Clients Served" },
+  { value: "11,000+", label: "Companies Supported" },
   { value: "S$39.95B", label: "Bilateral Trade" },
 ];
 
