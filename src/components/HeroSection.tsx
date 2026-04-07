@@ -92,20 +92,15 @@ const HeroSection = () => {
               Unknown where to start?
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
-            <div className="flex flex-col items-start gap-2">
-              <a
-                href="#mra-grant"
-                className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
-              >
-                Join us for a Business Vietnam Learning Trip
-              </a>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-foreground/[0.06] backdrop-blur-md border border-gold/15 ml-1">
-                <Shield size={12} className="text-gold/70 shrink-0" />
-                <span className="text-[10px] sm:text-[11px] font-body font-medium text-primary-foreground/65 tracking-wide">
-                  🇸🇬 MRA Supportable · <span className="italic text-primary-foreground/45"></span>
-                </span>
-              </div>
-            </div>
+            <a
+              href="#mra-grant"
+              className="relative inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200"
+            >
+              Join us for a Business Vietnam Learning Trip
+              <span className="absolute -top-2.5 -right-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-navy-dark border border-gold/30 text-[9px] font-body font-medium text-gold/80 tracking-wide whitespace-nowrap">
+                🇸🇬 MRA Supportable
+              </span>
+            </a>
           </div>
 
           {/* Stats */}
