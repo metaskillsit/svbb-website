@@ -2,7 +2,6 @@ import { ExternalLink } from "lucide-react";
 import partnerTheVoid from "@/assets/partner-thevoid.png";
 import partnerTNT from "@/assets/partner-tnt.png";
 import partnerSHB from "@/assets/partner-shb.png";
-import partnerHanoisme from "@/assets/partner-hanoisme.jpeg";
 
 const vietnamPartners = [
   {
