@@ -2,6 +2,7 @@ import { ExternalLink } from "lucide-react";
 import partnerTheVoid from "@/assets/partner-thevoid.png";
 import partnerTNT from "@/assets/partner-tnt.png";
 import partnerSHB from "@/assets/partner-shb.png";
+import partnerHanoisme from "@/assets/partner-hanoisme.jpeg";
 
 const vietnamPartners = [
   {
@@ -24,6 +25,13 @@ const vietnamPartners = [
     url: "https://shb.com.vn/",
     role: "Saigon-Hanoi Commercial Bank",
     desc: "Trade finance, corporate banking, and account setup for Singapore businesses operating in Vietnam.",
+  },
+  {
+    name: "Hanoisme",
+    logo: partnerHanoisme,
+    url: "https://hanoisme.vn/",
+    role: "Key Strategic Partner",
+    desc: "Hanoi Association of Small and Medium Enterprises — connecting Singapore businesses with Hanoi's SME ecosystem since 1995.",
   },
 ];
 
