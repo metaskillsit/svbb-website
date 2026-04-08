@@ -25,13 +25,6 @@ const vietnamPartners = [
     role: "Saigon-Hanoi Commercial Bank",
     desc: "Trade finance, corporate banking, and account setup for Singapore businesses operating in Vietnam.",
   },
-  {
-    name: "Hanoisme",
-    logo: partnerHanoisme,
-    url: "https://hanoisme.vn/",
-    role: "Key Strategic Partner",
-    desc: "Hanoi Association of Small and Medium Enterprises — connecting Singapore businesses with Hanoi's SME ecosystem since 1995.",
-  },
 ];
 
 const PartnersSection = () => {
