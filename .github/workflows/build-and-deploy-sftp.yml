@@ -1,0 +1,39 @@
+name: Deploy to A2
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+concurrency:
+  group: deploy-svbb
+  cancel-in-progress: true
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # 2. Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+      # 4. Build project
+      - name: Build project
+        run: npm run build
+      # 5. Deploy to A2 via SFTP (SSH-based, more reliable on A2 Hosting)
+      - name: Deploy to A2 via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          local_path: ./dist/*
+          remote_path: /home/${{ secrets.FTP_USERNAME }}/public_html/
+          sftp_only: true
