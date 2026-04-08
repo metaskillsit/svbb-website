@@ -40,9 +40,9 @@ const VietnamBusinessesSection = () => {
           {businesses.map((b) => {
             const content = (
               <div className="bg-card rounded-xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 p-6 flex flex-col items-center text-center group h-full">
-                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-4 overflow-hidden">
+                <div className="w-48 h-48 rounded-full bg-white flex items-center justify-center mb-4 overflow-hidden">
                   {b.logo ? (
-                    <img src={b.logo} alt={b.name} className="max-h-16 max-w-[72px] object-contain" />
+                    <img src={b.logo} alt={b.name} className="max-h-40 max-w-[200px] object-contain" />
                   ) : (
                     <span className="text-primary font-heading text-lg font-bold">
                       {b.initials}
