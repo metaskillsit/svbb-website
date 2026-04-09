@@ -46,7 +46,7 @@ jobs:
           secure: true
 
           local-dir: dist/
-          server-dir: /svbb.sg/public_html/
+          server-dir: /public_html/
 
           dangerous-clean-slate: false
 
