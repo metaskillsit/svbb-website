@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import teamPhilong from "@/assets/team-philong.png";
 import teamJinghao from "@/assets/team-jinghao.jpeg";
 import teamChris from "@/assets/team-chris.jpeg";
 import teamAndrew from "@/assets/team-andrew.jpeg";
@@ -10,7 +11,7 @@ const TeamSection = () => {
     {
       name: t("team.philongName"),
       title: t("team.philongTitle"),
-      img: "https://svbb.sg/wp-content/uploads/2024/03/philong-768x1024.jpg",
+      img: teamPhilong,
       objectPosition: "center 15%",
     },
     {
