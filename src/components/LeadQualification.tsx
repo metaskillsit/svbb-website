@@ -136,14 +136,14 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
                   className="flex items-center gap-1.5 font-body text-sm text-primary-foreground/40 hover:text-gold disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
                 >
                   <ArrowLeft size={15} />
-                  Back
+                  {t("leadQualification.back")}
                 </button>
                 <button
                   onClick={next}
                   disabled={!currentAnswer}
                   className="flex items-center gap-2 bg-gradient-gold text-secondary-foreground px-6 py-2.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
                 >
-                  {step === totalSteps - 1 ? "See Results" : "Next"}
+                  {step === totalSteps - 1 ? t("leadQualification.seeResults") : t("leadQualification.next")}
                   <ArrowRight size={15} />
                 </button>
               </div>
