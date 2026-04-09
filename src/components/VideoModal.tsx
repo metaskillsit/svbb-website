@@ -1,12 +1,14 @@
 import { X, Play } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface VideoModalProps {
   videoUrl?: string;
   thumbnailText?: string;
 }
 
-const VideoModal = ({ videoUrl, thumbnailText = "Watch Our Video" }: VideoModalProps) => {
+const VideoModal = ({ videoUrl, thumbnailText }: VideoModalProps) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,7 +18,7 @@ const VideoModal = ({ videoUrl, thumbnailText = "Watch Our Video" }: VideoModalP
         className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 text-gold px-8 py-4 rounded-lg font-body font-semibold text-base hover:bg-gold/10 transition-colors"
       >
         <Play size={18} />
-        {thumbnailText}
+        {thumbnailText || t("videoModal.watchVideo")}
       </button>
 
       {isOpen && (
@@ -39,8 +41,8 @@ const VideoModal = ({ videoUrl, thumbnailText = "Watch Our Video" }: VideoModalP
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center text-primary-foreground/60">
                 <Play size={64} className="text-gold mb-4" />
-                <p className="font-body text-lg">Video coming soon</p>
-                <p className="font-body text-sm mt-2">Contact us for trip footage and event recordings</p>
+                <p className="font-body text-lg">{t("videoModal.comingSoon")}</p>
+                <p className="font-body text-sm mt-2">{t("videoModal.comingSoonDesc")}</p>
               </div>
             )}
           </div>
