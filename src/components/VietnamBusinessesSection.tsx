@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import logoWareflex from "@/assets/logo-wareflex.svg";
 import logoHector from "@/assets/logo-hector.png";
 import logoSokfarm from "@/assets/logo-sokfarm.svg";
@@ -23,16 +24,18 @@ const businesses = [
 ];
 
 const VietnamBusinessesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-3">
-            Vietnam Businesses that{" "}
-            <span className="text-gradient-gold">We Work With</span>
+            {t("businesses.title1")}{" "}
+            <span className="text-gradient-gold">{t("businesses.titleHighlight")}</span>
           </h2>
           <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Trusted by leading Vietnamese companies across diverse industries.
+            {t("businesses.desc")}
           </p>
         </div>
 
@@ -44,35 +47,22 @@ const VietnamBusinessesSection = () => {
                   {b.logo ? (
                     <img src={b.logo} alt={b.name} className="max-h-[70%] max-w-[70%] object-contain" />
                   ) : (
-                    <span className="text-primary font-heading text-sm sm:text-lg font-bold">
-                      {b.initials}
-                    </span>
+                    <span className="text-primary font-heading text-sm sm:text-lg font-bold">{b.initials}</span>
                   )}
                 </div>
-                <h3 className="font-heading text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 sm:mb-2 line-clamp-2">
-                  {b.name}
-                </h3>
+                <h3 className="font-heading text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 sm:mb-2 line-clamp-2">{b.name}</h3>
                 {b.url ? (
                   <span className="flex items-center gap-1 text-gold text-[10px] sm:text-xs font-body font-semibold group-hover:gap-2 transition-all">
-                    Visit Website <ExternalLink size={10} className="sm:w-3 sm:h-3" />
+                    {t("businesses.visitWebsite")} <ExternalLink size={10} className="sm:w-3 sm:h-3" />
                   </span>
                 ) : (
-                  <span className="text-muted-foreground text-[10px] sm:text-xs font-body italic">
-                    Coming soon
-                  </span>
+                  <span className="text-muted-foreground text-[10px] sm:text-xs font-body italic">{t("businesses.comingSoon")}</span>
                 )}
               </div>
             );
 
             return b.url ? (
-              <a
-                key={b.name}
-                href={b.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {content}
-              </a>
+              <a key={b.name} href={b.url} target="_blank" rel="noopener noreferrer">{content}</a>
             ) : (
               <div key={b.name}>{content}</div>
             );
