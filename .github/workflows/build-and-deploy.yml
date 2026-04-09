@@ -1,22 +1,83 @@
-- name: Deploy to A2 via FTPS
-  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-  with:
-    server: ${{ secrets.FTP_SERVER }}
-    username: ${{ secrets.FTP_USERNAME }}
-    password: ${{ secrets.FTP_PASSWORD }}
+name: Deploy to A2 (Stable)
 
-    protocol: ftps
-    port: 21
-    secure: true
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
-    local-dir: dist/
-    server-dir: /public_html/
+concurrency:
+  group: deploy-svbb
+  cancel-in-progress: true
 
-    dangerous-clean-slate: false
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-    timeout: 1200000
-    retries: 5
-    passive: true
-    concurrency: 1
+    steps:
+      # 1. Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    log-level: verbose
+      # 2. Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Build project
+      - name: Build project
+        run: npm run build
+
+      # 5. Clean unnecessary files (reduce FTP load)
+      - name: Optimize build
+        run: |
+          echo "Cleaning unnecessary files..."
+          find dist -name "*.map" -type f -delete || true
+
+      # 6. Verify build output
+      - name: Verify build output
+        run: |
+          echo "Listing dist folder:"
+          ls -la dist
+
+      # 7. Deploy via FTPS (STABLE VERSION)
+      - name: Deploy to A2 via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          protocol: ftps
+          port: 21
+          secure: true
+
+          local-dir: dist/
+          server-dir: /public_html/
+
+          # ⚠️ USE TRUE ONLY FIRST TIME (then set back to false)
+          dangerous-clean-slate: false
+
+          # 🔥 STABILITY FIXES
+          timeout: 1200000          # 20 minutes
+          retry: 5
+          log-level: verbose
+
+          # 🚨 KEY FIXES FOR YOUR ERROR
+          passive: true
+          concurrency: 1
+
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+
+      # 8. Post deploy message
+      - name: Done
+        run: echo "🚀 Deployment completed successfully!"
