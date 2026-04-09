@@ -58,7 +58,7 @@ const OverseasMarketPromotion = () => {
     tag: string,
     title1: string,
     titleHighlight: string,
-    pkgs: typeof digitalPkgs,
+    pkgs: { nameKey: string; priceKey: string; bestKey?: string; items: number; prefix: string; highlight?: boolean; subKey?: string }[],
     showBest = true,
     bgClass = "bg-cream"
   ) => (
