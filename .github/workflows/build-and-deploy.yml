@@ -1,60 +1,22 @@
-name: Deploy to A2
+- name: Deploy to A2 via FTPS
+  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+  with:
+    server: ${{ secrets.FTP_SERVER }}
+    username: ${{ secrets.FTP_USERNAME }}
+    password: ${{ secrets.FTP_PASSWORD }}
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    protocol: ftps
+    port: 21
+    secure: true
 
-concurrency:
-  group: deploy-svbb
-  cancel-in-progress: true
+    local-dir: dist/
+    server-dir: /public_html/
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+    dangerous-clean-slate: false
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    timeout: 1200000
+    retries: 5
+    passive: true
+    concurrency: 1
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Cleanup build
-        run: |
-          find dist -name "*.map" -type f -delete
-
-      - name: Deploy to A2 via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-
-          protocol: ftps
-          port: 21
-          secure: true
-
-          local-dir: dist/
-          server-dir: /public_html/
-
-          dangerous-clean-slate: false
-
-          timeout: 600000
-          retry: 3
-          log-level: verbose
-
-          exclude: |
-            **/.git*
-            **/.github*
-            **/node_modules/**
+    log-level: verbose
