@@ -1,46 +1,49 @@
+import { useTranslation } from "react-i18next";
 import { Briefcase, Globe, MapPin, Users, TrendingUp, Handshake } from "lucide-react";
 import svbbLogo from "@/assets/svbb-logo.png";
 
-const services = [
-  { icon: Globe, title: "Market Entry Strategy", desc: "Tailored market entry plans, feasibility studies, and go-to-market roadmaps." },
-  { icon: Briefcase, title: "MRA Grant Application", desc: "End-to-end support for Enterprise SG's MRA Grant — up to 70% funding." },
-  { icon: Handshake, title: "Networking & Partnerships", desc: "Extensive network of Vietnamese industry leaders and local business partners." },
-  { icon: TrendingUp, title: "Investment Sourcing", desc: "Identify and evaluate investment opportunities in Vietnam." },
-  { icon: MapPin, title: "Business Learning Trips", desc: "Custom-curated trips with site visits, workshops, and networking events." },
-  { icon: Users, title: "Cross-Border M&A", desc: "Advisory for mergers, acquisitions, and JVs between SG and VN enterprises." },
-];
+const icons = [Globe, Briefcase, Handshake, TrendingUp, MapPin, Users];
 
 const AboutServicesSection = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    { icon: icons[0], title: t("aboutServices.svc1Title"), desc: t("aboutServices.svc1Desc") },
+    { icon: icons[1], title: t("aboutServices.svc2Title"), desc: t("aboutServices.svc2Desc") },
+    { icon: icons[2], title: t("aboutServices.svc3Title"), desc: t("aboutServices.svc3Desc") },
+    { icon: icons[3], title: t("aboutServices.svc4Title"), desc: t("aboutServices.svc4Desc") },
+    { icon: icons[4], title: t("aboutServices.svc5Title"), desc: t("aboutServices.svc5Desc") },
+    { icon: icons[5], title: t("aboutServices.svc6Title"), desc: t("aboutServices.svc6Desc") },
+  ];
+
   return (
     <section id="services" className="py-20 bg-cream">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
-          {/* About column */}
           <div className="lg:col-span-2">
-            <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">About SVBB</span>
+            <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">{t("aboutServices.aboutTag")}</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 leading-tight">
-              Bridging Singapore & <span className="text-gradient-gold">Vietnam</span>
+              {t("aboutServices.aboutTitle1")} <span className="text-gradient-gold">{t("aboutServices.aboutTitleHighlight")}</span>
             </h2>
             <p className="font-body text-muted-foreground mt-4 text-base leading-relaxed">
-              SVBB is a premier consulting firm dedicated to fostering strong commercial ties between Singapore and Vietnam.
-              We provide tailored services that help businesses navigate international expansion into Vietnam.
+              {t("aboutServices.aboutDesc")}
             </p>
 
             <div className="mt-6 bg-card rounded-xl p-6 border border-border">
               <img src={svbbLogo} alt="SVBB Logo" className="w-32 h-auto mb-4 mx-auto" loading="lazy" />
               <p className="font-body text-xs text-muted-foreground text-center">
-                <strong className="text-foreground">SG:</strong> 114 Lavender St #07-74 CT Hub 2, S338729
+                <strong className="text-foreground">{t("aboutServices.sgOffice")}</strong> {t("aboutServices.sgAddress")}
               </p>
               <p className="font-body text-xs text-muted-foreground text-center mt-1">
-                <strong className="text-foreground">VN:</strong> 66 Tran Trong Cung St, District 7, HCMC
+                <strong className="text-foreground">{t("aboutServices.vnOffice")}</strong> {t("aboutServices.vnAddress")}
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-3 mt-6">
               {[
-                { value: "10+", label: "Trips Led" },
-                { value: "11+", label: "Years Combined" },
-                { value: "400+", label: "Clients Served" },
+                { value: t("aboutServices.stat1Value"), label: t("aboutServices.stat1Label") },
+                { value: t("aboutServices.stat2Value"), label: t("aboutServices.stat2Label") },
+                { value: t("aboutServices.stat3Value"), label: t("aboutServices.stat3Label") },
               ].map((s) => (
                 <div key={s.label} className="text-center bg-card rounded-lg p-3 border border-border">
                   <div className="font-heading text-lg font-bold text-navy">{s.value}</div>
@@ -50,11 +53,10 @@ const AboutServicesSection = () => {
             </div>
           </div>
 
-          {/* Services column */}
           <div className="lg:col-span-3">
-            <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">What We Do</span>
+            <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">{t("aboutServices.servicesTag")}</span>
             <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-3 mb-6">
-              Comprehensive <span className="text-gradient-gold">Business Solutions</span>
+              {t("aboutServices.servicesTitle1")} <span className="text-gradient-gold">{t("aboutServices.servicesTitleHighlight")}</span>
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {services.map((s) => (
