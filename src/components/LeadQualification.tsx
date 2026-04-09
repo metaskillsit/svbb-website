@@ -87,7 +87,7 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
           {!submitted && (
             <div className="mb-6">
               <div className="flex justify-between text-xs font-body text-primary-foreground/40 mb-2">
-                <span>Question {step + 1} of {totalSteps}</span>
+                <span>{t("leadQualification.questionOf", { current: step + 1, total: totalSteps })}</span>
                 <span>{Math.round(progress)}%</span>
               </div>
               <div className="h-1 bg-navy-light/50 rounded-full overflow-hidden">
