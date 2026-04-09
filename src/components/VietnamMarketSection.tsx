@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import RotatingImage from "./RotatingImage";
 import vietnamStreet from "@/assets/vietnam-street-hcmc.jpg";
 import vietnamMarket from "@/assets/vietnam-floating-market.jpg";
@@ -7,49 +8,38 @@ import vietnamNight from "@/assets/vietnam-night-market.jpg";
 
 const vietnamImages = [vietnamStreet, vietnamMarket, vietnamBitexco, vietnamAodai, vietnamNight];
 
-const stats = [
-  { value: "US$476.39B", label: "GDP (2024)", source: "World Bank" },
-  { value: "7.1%", label: "GDP Growth (2024)", source: "World Bank" },
-  { value: "101M", label: "Population", source: "World Bank" },
-  { value: "US$4,717", label: "GDP Per Capita", source: "World Bank" },
-  { value: "10th", label: "SG Trading Partner", source: "Enterprise SG" },
-  { value: "S$39.95B", label: "Bilateral Trade", source: "Enterprise SG" },
-];
-
-const opportunities = [
-  {
-    title: "Manufacturing Hub",
-    desc: "Competitive labour costs, robust FTAs, and growing high-tech sector. Apple, Samsung, and Foxconn are already expanding operations.",
-  },
-  {
-    title: "Consumer Market",
-    desc: "101M population with fastest-growing middle class in SEA. Consumer spending boom fuelled by rising disposable income.",
-  },
-  {
-    title: "Technology & Innovation",
-    desc: "4 unicorns, 3,800+ startups, and abundant cost-competitive IT talent. 70% of the population under 35.",
-  },
-  {
-    title: "Infrastructure",
-    desc: "US$605B infrastructure investment needed by 2040. Opportunities in renewable energy, smart cities, and water treatment.",
-  },
-];
-
 const VietnamMarketSection = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: t("vietnamMarket.gdpValue"), label: t("vietnamMarket.gdpLabel"), source: t("vietnamMarket.gdpSource") },
+    { value: t("vietnamMarket.growthValue"), label: t("vietnamMarket.growthLabel"), source: t("vietnamMarket.growthSource") },
+    { value: t("vietnamMarket.popValue"), label: t("vietnamMarket.popLabel"), source: t("vietnamMarket.popSource") },
+    { value: t("vietnamMarket.percapValue"), label: t("vietnamMarket.percapLabel"), source: t("vietnamMarket.percapSource") },
+    { value: t("vietnamMarket.tradeValue"), label: t("vietnamMarket.tradeLabel"), source: t("vietnamMarket.tradeSource") },
+    { value: t("vietnamMarket.bilateralValue"), label: t("vietnamMarket.bilateralLabel"), source: t("vietnamMarket.bilateralSource") },
+  ];
+
+  const opportunities = [
+    { title: t("vietnamMarket.mfgTitle"), desc: t("vietnamMarket.mfgDesc") },
+    { title: t("vietnamMarket.consumerTitle"), desc: t("vietnamMarket.consumerDesc") },
+    { title: t("vietnamMarket.techTitle"), desc: t("vietnamMarket.techDesc") },
+    { title: t("vietnamMarket.infraTitle"), desc: t("vietnamMarket.infraDesc") },
+  ];
+
   return (
     <section id="vietnam-market" className="py-24 bg-cream">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">Why Vietnam</span>
+          <span className="text-gold-dark font-body text-sm font-semibold tracking-widest uppercase">{t("vietnamMarket.sectionTag")}</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3">
-            Southeast Asia's <span className="text-gradient-gold">Fastest Growing</span> Economy
+            {t("vietnamMarket.title1")} <span className="text-gradient-gold">{t("vietnamMarket.titleHighlight")}</span> {t("vietnamMarket.title2")}
           </h2>
           <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
-            Vietnam offers prime business opportunities with a large consumer market, vibrant manufacturing landscape, and a young abundant workforce.
+            {t("vietnamMarket.desc")}
           </p>
         </div>
 
-        {/* Stats grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
           {stats.map((s) => (
             <div key={s.label} className="bg-card rounded-xl p-5 text-center border border-border">
@@ -60,7 +50,6 @@ const VietnamMarketSection = () => {
           ))}
         </div>
 
-        {/* Opportunities */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="rounded-2xl overflow-hidden h-[400px] md:h-auto">
             <RotatingImage
@@ -73,7 +62,7 @@ const VietnamMarketSection = () => {
             />
           </div>
           <div className="flex flex-col gap-6">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Key Opportunities</h3>
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">{t("vietnamMarket.keyOpportunities")}</h3>
             {opportunities.map((opp) => (
               <div key={opp.title} className="bg-card rounded-lg p-5 border border-border">
                 <h4 className="font-heading text-lg font-bold text-navy mb-2">{opp.title}</h4>

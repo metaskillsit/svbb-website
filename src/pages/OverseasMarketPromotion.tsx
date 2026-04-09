@@ -1,11 +1,14 @@
 import { ArrowLeft, Star, Megaphone, Newspaper, Users, Palette, CheckCircle, Globe, Handshake, BarChart3, Languages } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import heroPromo from "@/assets/hero-promo.jpg";
 
 const OverseasMarketPromotion = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -19,13 +22,13 @@ const OverseasMarketPromotion = () => {
         </div>
         <div className="container relative z-10 mx-auto px-4 pt-28 pb-16">
           <Link to="/" className="inline-flex items-center gap-2 text-gold/80 hover:text-gold font-body text-sm mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back to Home
+            <ArrowLeft size={16} /> {t("overseasPromo.backToHome")}
           </Link>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
-            Overseas Market <span className="text-gradient-gold">Promotion</span>
+            {t("overseasPromo.heroTitle1")} <span className="text-gradient-gold">{t("overseasPromo.heroTitleHighlight")}</span>
           </h1>
           <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">
-            Practical go-to-market support for Singapore companies entering Vietnam.
+            {t("overseasPromo.heroDesc")}
           </p>
         </div>
       </section>

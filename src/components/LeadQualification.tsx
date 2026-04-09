@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, ArrowLeft, CheckCircle2, Clock, Building2, Target, Rocket, HelpCircle, Phone, FileText } from "lucide-react";
 
 interface Answer {
@@ -10,51 +11,7 @@ interface Answer {
   q6?: string;
 }
 
-const questions = [
-  {
-    id: "q1",
-    question: "Is your company registered in Singapore?",
-    options: ["Yes", "No"],
-  },
-  {
-    id: "q2",
-    question: "What is your main goal for Vietnam?",
-    options: [
-      "Market expansion (sales/customers)",
-      "Cost optimisation / outsourcing",
-      "Manufacturing / supply chain",
-      "Exploring opportunities",
-    ],
-  },
-  {
-    id: "q3",
-    question: "How ready are you to expand into Vietnam?",
-    options: [
-      "I have a clear plan and want to execute",
-      "I have some ideas but need guidance",
-      "I'm just exploring and not sure yet",
-    ],
-  },
-  {
-    id: "q4",
-    question: "When are you planning to expand?",
-    options: ["Within 3 months", "3–6 months", "6–12 months", "No fixed timeline"],
-  },
-  {
-    id: "q5",
-    question: "Have you heard of the MRA Grant?",
-    options: ["Yes", "No"],
-  },
-  {
-    id: "q6",
-    question: "How would you like to proceed?",
-    options: [
-      "I want help with MRA grant + expansion strategy",
-      "I want to learn more about Vietnam first",
-      "Not sure yet",
-    ],
-  },
-];
+/* questions and routeResults moved inside component for i18n access */
 
 type Route = "A" | "B" | "C";
 
@@ -67,50 +24,28 @@ function getRoute(answers: Answer): Route {
   return "B";
 }
 
-const routeResults: Record<Route, {
-  icon: React.ElementType;
-  title: string;
-  message: string;
-  note?: string;
-  primaryCta: string;
-  secondaryCta: string;
-  primaryIcon: React.ElementType;
-  secondaryIcon: React.ElementType;
-}> = {
-  A: {
-    icon: Rocket,
-    title: "You may be suitable for MRA-supported consulting",
-    message: "Based on your responses, your company may be suitable for Vietnam expansion consulting and MRA grant support. Our team can assess your needs and recommend the next steps.",
-    primaryCta: "Book a Free MRA Strategy Consultation",
-    secondaryCta: "Fill Up Detailed Assessment",
-    primaryIcon: Phone,
-    secondaryIcon: FileText,
-  },
-  B: {
-    icon: Target,
-    title: "Start with the Business Vietnam Learning Programme",
-    message: "Based on your responses, we recommend starting with our Business Vietnam Learning Programme to better understand the Vietnam market, entry strategies, and business environment before moving into execution.",
-    note: "This programme may also be eligible for MRA support, helping your company offset up to 50% of the cost.",
-    primaryCta: "Explore Business Vietnam Programme",
-    secondaryCta: "Request a Callback",
-    primaryIcon: Target,
-    secondaryIcon: Phone,
-  },
-  C: {
-    icon: Building2,
-    title: "Let's assess your expansion needs separately",
-    message: "The MRA grant is generally intended for Singapore companies. If your company is not registered in Singapore, our team can still explore alternative ways to support your Vietnam market entry.",
-    primaryCta: "Contact SVBB",
-    secondaryCta: "Schedule Intro Call",
-    primaryIcon: FileText,
-    secondaryIcon: Phone,
-  },
-};
+/* routeResults moved inside component for i18n access */
 
 const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void }) => {
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answer>({});
   const [submitted, setSubmitted] = useState(false);
+
+  const questions = [
+    { id: "q1", question: t("leadQualification.q1"), options: [t("leadQualification.q1o1"), t("leadQualification.q1o2")] },
+    { id: "q2", question: t("leadQualification.q2"), options: [t("leadQualification.q2o1"), t("leadQualification.q2o2"), t("leadQualification.q2o3"), t("leadQualification.q2o4")] },
+    { id: "q3", question: t("leadQualification.q3"), options: [t("leadQualification.q3o1"), t("leadQualification.q3o2"), t("leadQualification.q3o3")] },
+    { id: "q4", question: t("leadQualification.q4"), options: [t("leadQualification.q4o1"), t("leadQualification.q4o2"), t("leadQualification.q4o3"), t("leadQualification.q4o4")] },
+    { id: "q5", question: t("leadQualification.q5"), options: [t("leadQualification.q5o1"), t("leadQualification.q5o2")] },
+    { id: "q6", question: t("leadQualification.q6"), options: [t("leadQualification.q6o1"), t("leadQualification.q6o2"), t("leadQualification.q6o3")] },
+  ];
+
+  const routeResults: Record<Route, { icon: React.ElementType; title: string; message: string; note?: string; primaryCta: string; secondaryCta: string; primaryIcon: React.ElementType; secondaryIcon: React.ElementType }> = {
+    A: { icon: Rocket, title: t("leadQualification.routeATitle"), message: t("leadQualification.routeAMsg"), primaryCta: t("leadQualification.routeACta1"), secondaryCta: t("leadQualification.routeACta2"), primaryIcon: Phone, secondaryIcon: FileText },
+    B: { icon: Target, title: t("leadQualification.routeBTitle"), message: t("leadQualification.routeBMsg"), note: t("leadQualification.routeBNote"), primaryCta: t("leadQualification.routeBCta1"), secondaryCta: t("leadQualification.routeBCta2"), primaryIcon: Target, secondaryIcon: Phone },
+    C: { icon: Building2, title: t("leadQualification.routeCTitle"), message: t("leadQualification.routeCMsg"), primaryCta: t("leadQualification.routeCCta1"), secondaryCta: t("leadQualification.routeCCta2"), primaryIcon: FileText, secondaryIcon: Phone },
+  };
 
   const totalSteps = questions.length;
   const progress = ((step + 1) / totalSteps) * 100;
@@ -152,7 +87,7 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
           {!submitted && (
             <div className="mb-6">
               <div className="flex justify-between text-xs font-body text-primary-foreground/40 mb-2">
-                <span>Question {step + 1} of {totalSteps}</span>
+                <span>{t("leadQualification.questionOf", { current: step + 1, total: totalSteps })}</span>
                 <span>{Math.round(progress)}%</span>
               </div>
               <div className="h-1 bg-navy-light/50 rounded-full overflow-hidden">
@@ -201,14 +136,14 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
                   className="flex items-center gap-1.5 font-body text-sm text-primary-foreground/40 hover:text-gold disabled:opacity-20 disabled:cursor-not-allowed transition-colors"
                 >
                   <ArrowLeft size={15} />
-                  Back
+                  {t("leadQualification.back")}
                 </button>
                 <button
                   onClick={next}
                   disabled={!currentAnswer}
                   className="flex items-center gap-2 bg-gradient-gold text-secondary-foreground px-6 py-2.5 rounded-lg font-body font-semibold text-sm shadow-gold hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity"
                 >
-                  {step === totalSteps - 1 ? "See Results" : "Next"}
+                  {step === totalSteps - 1 ? t("leadQualification.seeResults") : t("leadQualification.next")}
                   <ArrowRight size={15} />
                 </button>
               </div>
@@ -263,13 +198,13 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
                   className="flex items-center gap-1.5 font-body text-sm text-primary-foreground/40 hover:text-gold transition-colors"
                 >
                   <ArrowLeft size={15} />
-                  Back
+                  {t("leadQualification.back")}
                 </button>
                 <button
                   onClick={restart}
                   className="font-body text-xs text-primary-foreground/30 hover:text-gold transition-colors"
                 >
-                  Retake Assessment
+                  {t("leadQualification.retakeAssessment")}
                 </button>
               </div>
             </div>

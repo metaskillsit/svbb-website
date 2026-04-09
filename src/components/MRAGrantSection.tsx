@@ -1,45 +1,28 @@
+import { useTranslation } from "react-i18next";
 import { CheckCircle2, DollarSign, FileCheck, Rocket } from "lucide-react";
 
-
-const steps = [
-  {
-    icon: FileCheck,
-    step: "01",
-    title: "Eligibility Check",
-    desc: "We assess your business eligibility for the MRA Grant — Singapore-registered SMEs with at least 30% local shareholding qualify.",
-  },
-  {
-    icon: DollarSign,
-    step: "02",
-    title: "Grant Application",
-    desc: "SVBB handles the full application process with Enterprise SG — covering up to 70% of qualifying costs, capped at S$100,000 per new market.",
-  },
-  {
-    icon: Rocket,
-    step: "03",
-    title: "Market Entry Execution",
-    desc: "From market research, business matching to setting up your Vietnam entity — we execute your market entry plan end-to-end.",
-  },
-  {
-    icon: CheckCircle2,
-    step: "04",
-    title: "Ongoing Support",
-    desc: "Post-entry advisory, compliance support, and continued networking to ensure your Vietnam operations thrive.",
-  },
-];
+const stepIcons = [FileCheck, DollarSign, Rocket, CheckCircle2];
 
 const MRAGrantSection = () => {
+  const { t } = useTranslation();
+
+  const steps = [
+    { icon: stepIcons[0], step: "01", title: t("mra.step1Title"), desc: t("mra.step1Desc") },
+    { icon: stepIcons[1], step: "02", title: t("mra.step2Title"), desc: t("mra.step2Desc") },
+    { icon: stepIcons[2], step: "03", title: t("mra.step3Title"), desc: t("mra.step3Desc") },
+    { icon: stepIcons[3], step: "04", title: t("mra.step4Title"), desc: t("mra.step4Desc") },
+  ];
+
   return (
     <section id="mra-grant" className="py-24 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          
-          <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">Government-Backed Funding</span>
+          <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">{t("mra.sectionTag")}</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3">
-            MRA Grant — <span className="text-gradient-gold">Up to 70% Funded</span>
+            {t("mra.title1")} <span className="text-gradient-gold">{t("mra.titleHighlight")}</span>
           </h2>
           <p className="font-body text-primary-foreground/70 mt-4 max-w-2xl mx-auto text-lg">
-            The Market Readiness Assistance (MRA) Grant by Enterprise Singapore helps SMEs defray costs of overseas market expansion. SVBB is your trusted vendor to maximise this grant for Vietnam.
+            {t("mra.desc")}
           </p>
         </div>
 
@@ -56,31 +39,29 @@ const MRAGrantSection = () => {
           ))}
         </div>
 
-        {/* Stats bar */}
         <div className="mt-12 bg-gold/10 border border-gold/30 rounded-xl p-8 md:p-12">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">70%</div>
-              <div className="font-body text-sm text-primary-foreground/60 mt-2">Of qualifying costs covered</div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">{t("mra.stat1")}</div>
+              <div className="font-body text-sm text-primary-foreground/60 mt-2">{t("mra.stat1Label")}</div>
             </div>
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">S$100K</div>
-              <div className="font-body text-sm text-primary-foreground/60 mt-2">Max grant per new market</div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">{t("mra.stat2")}</div>
+              <div className="font-body text-sm text-primary-foreground/60 mt-2">{t("mra.stat2Label")}</div>
             </div>
             <div>
-              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">100%</div>
-              <div className="font-body text-sm text-primary-foreground/60 mt-2">Application support by SVBB</div>
+              <div className="font-heading text-3xl md:text-4xl font-bold text-gold">{t("mra.stat3")}</div>
+              <div className="font-body text-sm text-primary-foreground/60 mt-2">{t("mra.stat3Label")}</div>
             </div>
           </div>
         </div>
 
-        {/* CTA to survey */}
         <div className="text-center mt-10">
           <a
             href="#survey"
             className="inline-flex items-center gap-2 bg-gradient-gold text-secondary-foreground px-8 py-4 rounded-lg font-body font-semibold text-base shadow-gold hover:opacity-90 transition-opacity"
           >
-            Check If You Qualify →
+            {t("mra.ctaButton")}
           </a>
         </div>
       </div>
