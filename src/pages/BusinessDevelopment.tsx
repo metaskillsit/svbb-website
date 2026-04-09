@@ -82,7 +82,7 @@ const services = [
 const packages = [
   {
     name: "Vietnam Entry Lite",
-    price: "S$14,800",
+    price: "S$12,800 – S$18,800",
     best: "First-time SMEs testing Vietnam",
     items: [
       "Business Vietnam Trip worth of $8000",
@@ -96,7 +96,7 @@ const packages = [
   },
   {
     name: "Vietnam Channel Builder",
-    price: "S$24,800",
+    price: "S$20,800 – S$29,800",
     best: "SMEs seeking distributors, resellers, or local partners",
     badge: "Most Popular",
     items: [
@@ -113,7 +113,7 @@ const packages = [
   },
   {
     name: "Vietnam BD Accelerator",
-    price: "S$34,800",
+    price: "S$30,800 – S$44,800",
     best: "Companies wanting active in-market execution",
     items: [
       "Business Vietnam Trip worth of $8000",
@@ -129,7 +129,7 @@ const packages = [
   },
   {
     name: "Vietnam Market Launch Pro",
-    price: "S$46,800",
+    price: "S$42,800 – S$62,800",
     best: "Near full-scope Vietnam BD project",
     items: [
       "Business Vietnam Trip worth of $8000",
