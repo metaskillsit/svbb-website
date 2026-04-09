@@ -53,10 +53,11 @@ const packages = [
     price: "S$14,800",
     best: "First-time SMEs testing Vietnam",
     items: [
+      "Business Vietnam Trip worth of $9000"
       "Vietnam feasibility study",
       "Target segment review",
-      "Partner/distributor longlist of 20",
-      "Shortlist of 8",
+      "Partner/distributor longlist of 10",
+      "Shortlist of 6",
       "Up to 3 business introduction meetings",
       "Final market entry recommendation deck",
     ],
@@ -67,11 +68,12 @@ const packages = [
     best: "SMEs seeking distributors, resellers, or local partners",
     badge: "Most Popular",
     items: [
+      "Business Vietnam Trip worth of $9000"
       "Everything in Entry Lite",
       "Channel strategy",
-      "Longlist of 30",
-      "Shortlist of 10",
-      "Outreach to 20 targets",
+      "Longlist of 15",
+      "Shortlist of 8",
+      "Outreach to 10 targets",
       "Up to 6 meetings",
       "Partner scorecard",
       "Negotiation brief",
@@ -82,10 +84,11 @@ const packages = [
     price: "S$34,800",
     best: "Companies wanting active in-market execution",
     items: [
+      "Business Vietnam Trip worth of $9000"
       "Market research & feasibility review",
       "6 months fractional BD support",
-      "30 qualified outreach targets",
-      "Shortlist of 10",
+      "20 qualified outreach targets",
+      "Shortlist of 12",
       "Up to 10 meetings",
       "Monthly pipeline reports",
       "Partner follow-up support",
@@ -97,10 +100,11 @@ const packages = [
     price: "S$46,800",
     best: "Near full-scope Vietnam BD project",
     items: [
+      "Business Vietnam Trip worth of $9000"
       "Feasibility study",
       "Channel strategy",
-      "Longlist of 40",
-      "Shortlist of 12",
+      "Longlist of 25",
+      "Shortlist of 18",
       "12–15 meetings",
       "6 months BD support",
       "Top-3 partner assessment",
