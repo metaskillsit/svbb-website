@@ -41,22 +41,22 @@ const PartnersSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {vietnamPartners.map((p) => (
             <a
               key={p.name}
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-card rounded-xl p-8 border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 flex flex-col"
+              className="group bg-card rounded-xl p-5 sm:p-8 border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 flex flex-col"
             >
-              <div className="w-full h-16 flex items-center justify-start mb-5">
-                <img src={p.logo} alt={p.name} className="max-h-14 max-w-[140px] object-contain" />
+              <div className="w-full h-12 sm:h-16 flex items-center justify-start mb-4 sm:mb-5">
+                <img src={p.logo} alt={p.name} className="max-h-10 sm:max-h-14 max-w-[120px] sm:max-w-[140px] object-contain" />
               </div>
-              <h3 className="font-heading text-lg font-bold text-foreground mb-1">{p.name}</h3>
-              <p className="font-body text-gold-dark text-xs font-semibold uppercase tracking-wide mb-3">{p.role}</p>
-              <p className="font-body text-muted-foreground text-sm leading-relaxed flex-1">{p.desc}</p>
-              <div className="mt-5 flex items-center gap-1 text-gold text-sm font-body font-semibold group-hover:gap-2 transition-all">
+              <h3 className="font-heading text-base sm:text-lg font-bold text-foreground mb-1">{p.name}</h3>
+              <p className="font-body text-gold-dark text-[10px] sm:text-xs font-semibold uppercase tracking-wide mb-2 sm:mb-3">{p.role}</p>
+              <p className="font-body text-muted-foreground text-xs sm:text-sm leading-relaxed flex-1">{p.desc}</p>
+              <div className="mt-4 sm:mt-5 flex items-center gap-1 text-gold text-xs sm:text-sm font-body font-semibold group-hover:gap-2 transition-all">
                 Learn More <ExternalLink size={14} />
               </div>
             </a>

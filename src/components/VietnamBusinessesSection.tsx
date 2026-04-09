@@ -36,29 +36,29 @@ const VietnamBusinessesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
           {businesses.map((b) => {
             const content = (
-              <div className="bg-card rounded-xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 p-6 flex flex-col items-center text-center group h-full">
-                <div className="w-48 h-48 rounded-full bg-white flex items-center justify-center mb-4 overflow-hidden">
+              <div className="bg-card rounded-xl border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 p-3 sm:p-5 flex flex-col items-center text-center group h-full">
+                <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full bg-white flex items-center justify-center mb-3 overflow-hidden shrink-0">
                   {b.logo ? (
-                    <img src={b.logo} alt={b.name} className="max-h-40 max-w-[200px] object-contain" />
+                    <img src={b.logo} alt={b.name} className="max-h-[70%] max-w-[70%] object-contain" />
                   ) : (
-                    <span className="text-primary font-heading text-lg font-bold">
+                    <span className="text-primary font-heading text-sm sm:text-lg font-bold">
                       {b.initials}
                     </span>
                   )}
                 </div>
-                <h3 className="font-heading text-sm md:text-base font-bold text-foreground mb-2">
+                <h3 className="font-heading text-xs sm:text-sm md:text-base font-bold text-foreground mb-1 sm:mb-2 line-clamp-2">
                   {b.name}
                 </h3>
                 {b.url ? (
-                  <span className="flex items-center gap-1 text-gold text-xs font-body font-semibold group-hover:gap-2 transition-all">
-                    Visit Website <ExternalLink size={12} />
+                  <span className="flex items-center gap-1 text-gold text-[10px] sm:text-xs font-body font-semibold group-hover:gap-2 transition-all">
+                    Visit Website <ExternalLink size={10} className="sm:w-3 sm:h-3" />
                   </span>
                 ) : (
-                  <span className="text-muted-foreground text-xs font-body italic">
-                    Website coming soon
+                  <span className="text-muted-foreground text-[10px] sm:text-xs font-body italic">
+                    Coming soon
                   </span>
                 )}
               </div>
