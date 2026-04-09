@@ -198,13 +198,13 @@ const LeadQualification = ({ onShowAssessment }: { onShowAssessment?: () => void
                   className="flex items-center gap-1.5 font-body text-sm text-primary-foreground/40 hover:text-gold transition-colors"
                 >
                   <ArrowLeft size={15} />
-                  Back
+                  {t("leadQualification.back")}
                 </button>
                 <button
                   onClick={restart}
                   className="font-body text-xs text-primary-foreground/30 hover:text-gold transition-colors"
                 >
-                  Retake Assessment
+                  {t("leadQualification.retakeAssessment")}
                 </button>
               </div>
             </div>
