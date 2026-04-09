@@ -1,25 +1,28 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import svbbLogo from "@/assets/svbb-logo.png";
-
-const serviceLinks = [
-  { label: "Market Promotion in Vietnam", to: "/services/overseas-market-promotion" },
-  { label: "Business Development in Vietnam", to: "/services/business-development" },
-  { label: "Market Setup in Vietnam", to: "/services/setup-company-in-vietnam" },
-  { label: "Events Management in Vietnam", to: "/services/events-management" },
-];
-
-const aboutLinks = [
-  { label: "About SVBB", to: "/about#services" },
-  { label: "Why Vietnam", to: "/about#vietnam-market" },
-  { label: "Our Team", to: "/about#team" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+
+  const serviceLinks = [
+    { label: t("nav.marketPromotion"), to: "/services/overseas-market-promotion" },
+    { label: t("nav.businessDev"), to: "/services/business-development" },
+    { label: t("nav.marketSetup"), to: "/services/setup-company-in-vietnam" },
+    { label: t("nav.eventsManagement"), to: "/services/events-management" },
+  ];
+
+  const aboutLinks = [
+    { label: t("nav.aboutSvbb"), to: "/about#services" },
+    { label: t("nav.whyVietnam"), to: "/about#vietnam-market" },
+    { label: t("nav.ourTeam"), to: "/about#team" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/20">
@@ -31,13 +34,13 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <Link to="/" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            Home
+            {t("nav.home")}
           </Link>
 
           {/* About dropdown */}
           <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
             <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
-              About <ChevronDown size={14} className={`transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+              {t("nav.about")} <ChevronDown size={14} className={`transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
             </button>
             {aboutOpen && (
               <div className="absolute top-full left-0 pt-1 w-52">
@@ -55,7 +58,7 @@ const Navbar = () => {
           {/* Services dropdown */}
           <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
             <button className="flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap py-2">
-              Services <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              {t("nav.services")} <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
               <div className="absolute top-full left-0 pt-1 w-64">
@@ -71,33 +74,38 @@ const Navbar = () => {
           </div>
 
           <Link to="/packages" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            MRA Readiness
+            {t("nav.mraReadiness")}
           </Link>
 
           <Link to="/contact" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            Contact
+            {t("nav.contact")}
           </Link>
 
+          <LanguageSwitcher />
+
           <Link to="/contact" className="bg-gradient-gold text-secondary-foreground px-4 py-1.5 lg:px-5 lg:py-2 rounded-md text-xs lg:text-sm font-semibold font-body shadow-gold hover:opacity-90 transition-opacity whitespace-nowrap">
-            Get Started
+            {t("nav.getStarted")}
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-primary-foreground">
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitcher />
+          <button onClick={() => setOpen(!open)} className="text-primary-foreground">
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-navy border-t border-gold/20 px-4 pb-6">
           <Link to="/" onClick={() => setOpen(false)} className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10">
-            Home
+            {t("nav.home")}
           </Link>
 
           <div className="py-2 border-b border-gold/10">
-            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">Services</span>
+            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">{t("nav.services")}</span>
             {serviceLinks.map((s) => (
               <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block py-2 pl-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body">
                 {s.label}
@@ -106,11 +114,11 @@ const Navbar = () => {
           </div>
 
           <Link to="/packages" onClick={() => setOpen(false)} className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10">
-            MRA Readiness
+            {t("nav.mraReadiness")}
           </Link>
 
           <div className="py-2 border-b border-gold/10">
-            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">About</span>
+            <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">{t("nav.about")}</span>
             {aboutLinks.map((s) => (
               <Link key={s.to} to={s.to} onClick={() => setOpen(false)} className="block py-2 pl-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body">
                 {s.label}
@@ -119,11 +127,11 @@ const Navbar = () => {
           </div>
 
           <Link to="/contact" onClick={() => setOpen(false)} className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10">
-            Contact
+            {t("nav.contact")}
           </Link>
 
           <Link to="/contact" onClick={() => setOpen(false)} className="mt-4 block text-center bg-gradient-gold text-secondary-foreground px-5 py-3 rounded-md text-sm font-semibold font-body">
-            Get Started
+            {t("nav.getStarted")}
           </Link>
         </div>
       )}
