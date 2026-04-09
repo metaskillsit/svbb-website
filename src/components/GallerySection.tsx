@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import businessTripImg from "@/assets/business-trip.jpg";
 import galleryMinister from "@/assets/gallery-minister.png";
@@ -337,6 +338,7 @@ const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
 };
 
 const GallerySection = () => {
+  const { t } = useTranslation();
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   const openLightbox = (item: GalleryItem) => {
@@ -354,12 +356,12 @@ const GallerySection = () => {
     <section id="trips" className="py-24 bg-gradient-navy text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">See Us In Action</span>
+          <span className="text-gold font-body text-sm font-semibold tracking-widest uppercase">{t("gallery.sectionTag")}</span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3">
-            Trips & <span className="text-gradient-gold">Events</span>
+            {t("gallery.title1")} <span className="text-gradient-gold">{t("gallery.titleHighlight")}</span>
           </h2>
           <p className="font-body text-primary-foreground/70 mt-4 max-w-2xl mx-auto text-lg">
-            Real photos from SVBB-led business delegations, government meetings, and industry networking events in Vietnam.
+            {t("gallery.desc")}
           </p>
         </div>
 
@@ -367,7 +369,7 @@ const GallerySection = () => {
         <div className="mb-16">
           <h3 className="font-heading text-xl md:text-2xl font-bold mb-6 flex items-center gap-3">
             <Play size={22} className="text-gold" />
-            Videos
+            {t("gallery.videos")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {videoEmbeds.map((v) => (
@@ -391,9 +393,9 @@ const GallerySection = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-transparent to-transparent flex items-end">
             <div className="p-8 md:p-12">
-              <h3 className="font-heading text-2xl md:text-3xl font-bold">Singapore-Vietnam Business Delegation</h3>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold">{t("gallery.featuredTitle")}</h3>
               <p className="font-body text-primary-foreground/70 mt-2">
-                SVBB-led business trips connecting Singapore enterprises with Vietnamese industry partners and factories.
+                {t("gallery.featuredDesc")}
               </p>
             </div>
           </div>
@@ -410,7 +412,7 @@ const GallerySection = () => {
         </div>
 
         <p className="text-center mt-12 font-body text-primary-foreground/50 text-sm">
-          More photos and videos from our past business trips coming soon. Contact us to learn about upcoming trips.
+          {t("gallery.morePhotos")}
         </p>
       </div>
 
