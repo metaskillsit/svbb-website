@@ -205,7 +205,7 @@ const DetailedAssessment = () => {
               <p className="font-body text-primary-foreground/70 mb-4 leading-relaxed">{t("detailedAssessment.submittedDesc")}</p>
               <p className="font-body text-primary-foreground/50 text-sm mb-8 leading-relaxed">{t("detailedAssessment.submittedNote")}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/6591234567?text=Hi%2C%20I%20just%20completed%20the%20SVBB%20Detailed%20Assessment.%20I'd%20like%20to%20speak%20with%20a%20consultant." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-6 py-3.5 rounded-lg font-body font-semibold shadow-gold hover:opacity-90 transition-opacity">
+                <a href="https://wa.me/6589483482?text=Hi%2C%20I%20just%20completed%20the%20SVBB%20Detailed%20Assessment.%20I'd%20like%20to%20speak%20with%20a%20consultant." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-gradient-gold text-secondary-foreground px-6 py-3.5 rounded-lg font-body font-semibold shadow-gold hover:opacity-90 transition-opacity">
                   <MessageCircle size={18} /> {t("detailedAssessment.chatWhatsApp")}
                 </a>
                 <a href="#contact" className="inline-flex items-center justify-center gap-2 border border-gold/40 text-gold px-6 py-3.5 rounded-lg font-body font-semibold hover:bg-gold/10 transition-colors">
