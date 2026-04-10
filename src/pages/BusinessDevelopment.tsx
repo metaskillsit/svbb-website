@@ -394,7 +394,7 @@ const BusinessDevelopment = () => {
               <h4 className="font-body text-sm font-semibold text-primary-foreground mb-3">{t("businessDev.footerGetInTouch")}</h4>
               <div className="space-y-3">
                 <a href="mailto:info@svbb.sg" className="flex items-center gap-2 font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors"><Mail size={14} /> info@svbb.sg</a>
-                <a href="https://wa.me/6591234567" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors"><MessageCircle size={14} /> WhatsApp</a>
+                <a href="https://wa.me/6589483482" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors"><MessageCircle size={14} /> WhatsApp</a>
                 <a href="https://linkedin.com/company/svbb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-body text-sm text-primary-foreground/50 hover:text-gold transition-colors"><Linkedin size={14} /> LinkedIn</a>
               </div>
             </div>
