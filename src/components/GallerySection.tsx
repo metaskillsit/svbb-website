@@ -186,7 +186,7 @@ const categoriesData: { nameKey: string; items: GalleryItem[] }[] = [
 ];
 
 // Flatten for lightbox navigation
-const allItems = categories.flatMap((c) => c.items);
+const allItems = categoriesData.flatMap((c) => c.items);
 
 const videoEmbeds = [
   { id: "W0uwHiPFH8I", title: "SVBB Business Trip Highlights" },
@@ -402,9 +402,9 @@ const GallerySection = () => {
 
         {/* Category rows with horizontal scroll */}
         <div className="space-y-12">
-          {categories.map((cat) => (
-            <div key={cat.name}>
-              <h3 className="font-heading text-lg md:text-xl font-bold mb-4 text-gold/90">{cat.name}</h3>
+          {categoriesData.map((cat) => (
+            <div key={cat.nameKey}>
+              <h3 className="font-heading text-lg md:text-xl font-bold mb-4 text-gold/90">{t(cat.nameKey)}</h3>
               <ScrollRow items={cat.items} onSelect={openLightbox} />
             </div>
           ))}
