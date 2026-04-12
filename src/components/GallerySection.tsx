@@ -76,12 +76,11 @@ import galleryRON from "@/assets/gallery/RON05321.webp";
 
 type GalleryItem = { img: string; title: string; desc: string };
 
-const categories: { name: string; items: GalleryItem[] }[] = [
+const categoriesData: { nameKey: string; items: GalleryItem[] }[] = [
   {
-    name: "Government & Awards",
+    nameKey: "gallery.catGovt",
     items: [
       { img: galleryMinister, title: "Meeting with Vietnam's Minister of Trade", desc: "SVBB leadership with the Minister of Trade and Industry Affairs of Vietnam." },
-      { img: "https://svbb.sg/wp-content/uploads/2024/06/PL-NewspaperWithPresidentTop100Vntalentstorebuildcountry-300x192.jpg", title: "Top 100 Talent Invitation", desc: "President's invitation of Top 100 Talent to help build Vietnam." },
       { img: galleryAwards, title: "Receipt of Awards", desc: "SVBB leadership receiving awards for bilateral contributions." },
       { img: gallery3714, title: "Certificate of Appreciation", desc: "SVBB receiving a Certificate of Appreciation." },
       { img: gallery3848, title: "Certificate at Sunwah", desc: "Certificate presentation ceremony at Sunwah Innovation Centre." },
@@ -96,7 +95,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Factory & Site Visits",
+    nameKey: "gallery.catFactory",
     items: [
       { img: gallery3630, title: "Factory Visit", desc: "On-site factory and workshop inspection during a Vietnam business trip." },
       { img: gallery4250, title: "Factory Floor Tour", desc: "Factory floor tour with delegation in cleanroom gear." },
@@ -110,7 +109,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Seminars & Presentations",
+    nameKey: "gallery.catSeminars",
     items: [
       { img: gallery3586, title: "Business Presentation", desc: "SVBB presenting market entry strategies to Singapore enterprises." },
       { img: gallery3674, title: "SMU Academy Partnership", desc: "Handshake and partnership signing at SMU Academy." },
@@ -127,7 +126,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Kofi Kai & Coffee",
+    nameKey: "gallery.catKofi",
     items: [
       { img: gallery5970, title: "Kofi Kai Café Session", desc: "Delegation attending a presentation at Kofi Kai café." },
       { img: gallery5996, title: "Kofi Kai Video Screening", desc: "Video screening of coffee production at Kofi Kai." },
@@ -144,7 +143,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Products & Showcases",
+    nameKey: "gallery.catProducts",
     items: [
       { img: gallery6109, title: "Vietnamese Product Display", desc: "Showcase of Vietnamese products — vermicelli, coffee, and health drinks." },
       { img: gallery6112, title: "Bánh Hỏi Rau Củ", desc: "Vegetable fine rice vermicelli — specialty of Bình Định." },
@@ -160,7 +159,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Networking & Dinners",
+    nameKey: "gallery.catNetworking",
     items: [
       { img: gallery3705, title: "Networking Dinner", desc: "Group networking dinner connecting Singapore and Vietnamese business leaders." },
       { img: gallery4354, title: "Group Lunch at Chavi", desc: "Delegation sharing a group lunch at Chavi Garden." },
@@ -173,7 +172,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
     ],
   },
   {
-    name: "Group Photos & Tours",
+    nameKey: "gallery.catGroup",
     items: [
       { img: gallery3836, title: "Sunwah Group Photo", desc: "Group photo at Sunwah Innovation Centre in HCMC." },
       { img: gallery3839, title: "SMU Delegation at Sunwah", desc: "SMU Academy delegation group photo at Sunwah." },
@@ -187,7 +186,7 @@ const categories: { name: string; items: GalleryItem[] }[] = [
 ];
 
 // Flatten for lightbox navigation
-const allItems = categories.flatMap((c) => c.items);
+const allItems = categoriesData.flatMap((c) => c.items);
 
 const videoEmbeds = [
   { id: "W0uwHiPFH8I", title: "SVBB Business Trip Highlights" },
@@ -403,9 +402,9 @@ const GallerySection = () => {
 
         {/* Category rows with horizontal scroll */}
         <div className="space-y-12">
-          {categories.map((cat) => (
-            <div key={cat.name}>
-              <h3 className="font-heading text-lg md:text-xl font-bold mb-4 text-gold/90">{cat.name}</h3>
+          {categoriesData.map((cat) => (
+            <div key={cat.nameKey}>
+              <h3 className="font-heading text-lg md:text-xl font-bold mb-4 text-gold/90">{t(cat.nameKey)}</h3>
               <ScrollRow items={cat.items} onSelect={openLightbox} />
             </div>
           ))}
