@@ -302,36 +302,32 @@ const ScrollRow = ({
   );
 };
 
-const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
-  const [playing, setPlaying] = useState(false);
-
+const VideoCard = ({
+  videoId,
+  title,
+  onPlay,
+}: {
+  videoId: string;
+  title: string;
+  onPlay: () => void;
+}) => {
   return (
     <div className="rounded-2xl overflow-hidden border border-gold/20 aspect-video relative">
-      {!playing ? (
-        <button
-          onClick={() => setPlaying(true)}
-          className="w-full h-full relative group"
-        >
-          <img
-            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Play size={28} className="text-navy-dark ml-1" />
-            </div>
-          </div>
-        </button>
-      ) : (
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1&iv_load_policy=3&disablekb=0&fs=1&color=white`}
-          className="w-full h-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title={title}
+      <button
+        onClick={onPlay}
+        className="w-full h-full relative group"
+      >
+        <img
+          src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+          alt={title}
+          className="w-full h-full object-cover"
         />
-      )}
+        <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Play size={28} className="text-navy-dark ml-1" />
+          </div>
+        </div>
+      </button>
     </div>
   );
 };
@@ -339,6 +335,7 @@ const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
 const GallerySection = () => {
   const { t } = useTranslation();
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{ id: string; title: string } | null>(null);
 
   const openLightbox = (item: GalleryItem) => {
     const idx = allItems.findIndex((i) => i.title === item.title);
