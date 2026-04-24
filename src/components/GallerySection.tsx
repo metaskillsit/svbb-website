@@ -302,36 +302,32 @@ const ScrollRow = ({
   );
 };
 
-const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
-  const [playing, setPlaying] = useState(false);
-
+const VideoCard = ({
+  videoId,
+  title,
+  onPlay,
+}: {
+  videoId: string;
+  title: string;
+  onPlay: () => void;
+}) => {
   return (
     <div className="rounded-2xl overflow-hidden border border-gold/20 aspect-video relative">
-      {!playing ? (
-        <button
-          onClick={() => setPlaying(true)}
-          className="w-full h-full relative group"
-        >
-          <img
-            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Play size={28} className="text-navy-dark ml-1" />
-            </div>
-          </div>
-        </button>
-      ) : (
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1&iv_load_policy=3&disablekb=0&fs=1&color=white`}
-          className="w-full h-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title={title}
+      <button
+        onClick={onPlay}
+        className="w-full h-full relative group"
+      >
+        <img
+          src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+          alt={title}
+          className="w-full h-full object-cover"
         />
-      )}
+        <div className="absolute inset-0 bg-navy-dark/40 group-hover:bg-navy-dark/20 transition-colors flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Play size={28} className="text-navy-dark ml-1" />
+          </div>
+        </div>
+      </button>
     </div>
   );
 };
@@ -339,6 +335,7 @@ const VideoCard = ({ videoId, title }: { videoId: string; title: string }) => {
 const GallerySection = () => {
   const { t } = useTranslation();
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{ id: string; title: string } | null>(null);
 
   const openLightbox = (item: GalleryItem) => {
     const idx = allItems.findIndex((i) => i.title === item.title);
@@ -372,7 +369,7 @@ const GallerySection = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {videoEmbeds.map((v) => (
-              <VideoCard key={v.id} videoId={v.id} title={v.title} />
+              <VideoCard key={v.id} videoId={v.id} title={v.title} onPlay={() => setActiveVideo({ id: v.id, title: v.title })} />
             ))}
           </div>
         </div>
@@ -454,6 +451,34 @@ const GallerySection = () => {
           >
             <ChevronRight size={24} />
           </button>
+        </div>
+      )}
+
+      {/* Video lightbox — only one video plays at a time, large screen */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-navy-dark/95 backdrop-blur-sm p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <button
+            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-navy/80 border border-gold/30 text-primary-foreground flex items-center justify-center hover:bg-navy z-10"
+            onClick={() => setActiveVideo(null)}
+            aria-label="Close video"
+          >
+            <X size={20} />
+          </button>
+          <div
+            className="relative w-full max-w-6xl aspect-video rounded-2xl overflow-hidden border border-gold/30 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${activeVideo.id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1&iv_load_policy=3&disablekb=0&fs=1&color=white`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={activeVideo.title}
+            />
+          </div>
         </div>
       )}
     </section>
