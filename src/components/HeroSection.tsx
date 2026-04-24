@@ -56,11 +56,8 @@ const HeroSection = () => {
               {t("hero.cta1")}
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
-            <a href="#mra-grant" className="relative inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200">
+            <a href="#mra-grant" className="inline-flex items-center justify-center gap-2 border-2 border-gold/50 text-gold px-8 py-4 rounded-lg font-body font-semibold text-sm hover:bg-gold/10 hover:border-gold/70 transition-all duration-200">
               {t("hero.cta2")}
-              <span className="absolute -top-2.5 -right-2.5 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-navy-dark border border-gold/30 text-[9px] font-body font-medium text-gold/80 tracking-wide whitespace-nowrap">
-                {t("hero.ctaBadge")}
-              </span>
             </a>
           </div>
 
