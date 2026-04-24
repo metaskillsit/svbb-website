@@ -453,6 +453,34 @@ const GallerySection = () => {
           </button>
         </div>
       )}
+
+      {/* Video lightbox — only one video plays at a time, large screen */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-navy-dark/95 backdrop-blur-sm p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <button
+            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-navy/80 border border-gold/30 text-primary-foreground flex items-center justify-center hover:bg-navy z-10"
+            onClick={() => setActiveVideo(null)}
+            aria-label="Close video"
+          >
+            <X size={20} />
+          </button>
+          <div
+            className="relative w-full max-w-6xl aspect-video rounded-2xl overflow-hidden border border-gold/30 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${activeVideo.id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1&iv_load_policy=3&disablekb=0&fs=1&color=white`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={activeVideo.title}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
