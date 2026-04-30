@@ -3,6 +3,7 @@ import teamPhilong from "@/assets/team-philong.png";
 import teamJinghao from "@/assets/team-jinghao.jpeg";
 import teamChris from "@/assets/team-chris.jpeg";
 import teamAndrew from "@/assets/team-andrew.jpeg";
+import teamMindy from "@/assets/team-mindy.png";
 
 const TeamSection = () => {
   const { t } = useTranslation();
@@ -31,6 +32,12 @@ const TeamSection = () => {
       title: t("team.andrewTitle"),
       img: teamAndrew,
       objectPosition: "center 10%",
+    },
+    {
+      name: t("team.mindyName"),
+      title: t("team.mindyTitle"),
+      img: teamMindy,
+      objectPosition: "center 15%",
     },
   ];
 
