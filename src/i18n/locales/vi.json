@@ -845,7 +845,11 @@
     "stat2Value": "S$100K",
     "stat2Label": "Trợ cấp tối đa mỗi thị trường mới",
     "stat3Value": "100%",
-    "stat3Label": "Hỗ trợ nộp đơn bởi SVBB"
+    "stat3Label": "Hỗ trợ nộp đơn bởi SVBB",
+    "backToHome": "Về Trang Chủ",
+    "heroTitle1": "Đánh Giá Mức Độ Sẵn Sàng",
+    "heroTitleHighlight": "Tài Trợ MRA",
+    "heroDesc": "Tìm hiểu trong vài phút liệu doanh nghiệp của bạn có đủ điều kiện nhận hỗ trợ lên đến 50% theo Chương trình Tài trợ Hỗ trợ Sẵn sàng Thị trường (MRA) của Enterprise Singapore khi mở rộng sang Việt Nam."
   },
   "leadQualification": {
     "questionOf": "Câu hỏi {{current}} trên {{total}}",
