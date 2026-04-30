@@ -845,7 +845,11 @@
     "stat2Value": "S$100K",
     "stat2Label": "Max grant per new market",
     "stat3Value": "100%",
-    "stat3Label": "Application support by SVBB"
+    "stat3Label": "Application support by SVBB",
+    "backToHome": "Back to Home",
+    "heroTitle1": "MRA Grant",
+    "heroTitleHighlight": "Readiness Assessment",
+    "heroDesc": "Find out in minutes if your business qualifies for up to 50% support under Enterprise Singapore's Market Readiness Assistance (MRA) Grant for Vietnam expansion."
   },
   "leadQualification": {
     "questionOf": "Question {{current}} of {{total}}",

@@ -845,7 +845,11 @@
     "stat2Value": "S$100K",
     "stat2Label": "每个新市场最高补助",
     "stat3Value": "100%",
-    "stat3Label": "SVBB全程申请支持"
+    "stat3Label": "SVBB全程申请支持",
+    "backToHome": "返回首页",
+    "heroTitle1": "MRA 津贴",
+    "heroTitleHighlight": "资格评估",
+    "heroDesc": "只需几分钟即可了解您的企业是否有资格通过新加坡企业发展局的市场准备援助 (MRA) 津贴获得高达 50% 的越南市场拓展资助。"
   },
   "leadQualification": {
     "questionOf": "第{{current}}题，共{{total}}题",
