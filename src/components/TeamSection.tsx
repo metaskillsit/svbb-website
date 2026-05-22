@@ -74,16 +74,16 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto space-y-8">
           {team.map((member) => {
             const isOpen = !!expanded[member.key];
             const hasLongBio = member.bioFull && member.bioFull.length > BIO_THRESHOLD;
             return (
               <div
                 key={member.key}
-                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 flex flex-col"
+                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-gold/40 hover:shadow-gold transition-all duration-300 flex flex-col sm:flex-row"
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="sm:w-64 sm:flex-shrink-0 aspect-square overflow-hidden">
                   <img
                     src={member.img}
                     alt={member.name}
@@ -92,7 +92,7 @@ const TeamSection = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-6 sm:p-8 flex flex-col flex-1">
                   <h3 className="font-heading text-xl font-bold text-foreground">{member.name}</h3>
                   <p className="font-body text-gold-dark text-sm font-medium mt-1">{member.title}</p>
 
