@@ -906,7 +906,9 @@
     "routeCCta2": "Đặt lịch Gọi Giới thiệu"
   },
   "common": {
-    "backToHome": "Quay lại Trang chủ"
+    "backToHome": "Quay lại Trang chủ",
+    "showFullBio": "Xem tiểu sử đầy đủ",
+    "showLess": "Thu gọn"
   },
   "detailedAssessment": {
     "sectionTag": "Đánh giá Chi tiết",
