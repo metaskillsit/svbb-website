@@ -73,9 +73,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/packages" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            {t("nav.mraReadiness")}
-          </Link>
 
           <Link to="/contact" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
             {t("nav.contact")}
