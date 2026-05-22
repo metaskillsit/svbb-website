@@ -1083,5 +1083,51 @@
     "title": "404",
     "message": "Rất tiếc! Không tìm thấy trang",
     "returnHome": "Quay về Trang chủ"
+  },
+  "investorsExtras": {
+    "navLink": "Dành cho Nhà đầu tư",
+    "contactNote": "Nhà đầu tư: liên hệ chúng tôi để nhận mẫu NDA và bản tóm tắt mandate tiêu chuẩn.",
+    "galleryAppend": "Các mạng lưới và chuyến đi này cũng hỗ trợ các nhà đầu tư và family office Việt Nam tìm hiểu cơ hội tại Singapore.",
+    "businessesSubline": "Được các doanh nghiệp Việt Nam hàng đầu trong nhiều ngành tin tưởng, giúp chúng tôi hiểu rõ cách các nhà đầu tư Việt Nam đánh giá đối tác, rủi ro và hợp tác dài hạn.",
+    "partnersAppend": "Hệ sinh thái này hỗ trợ cả doanh nghiệp Singapore thâm nhập Việt Nam lẫn nhà đầu tư Việt Nam mở rộng sang Singapore và khu vực."
+  },
+  "investors": {
+    "sectionTag": "Dành cho Nhà đầu tư Việt Nam",
+    "title1": "Dành cho",
+    "titleHighlight": "Nhà đầu tư & Family Office Việt Nam",
+    "intro": "Chúng tôi đóng vai trò đại diện và giới thiệu tại Singapore cho các nhà đầu tư và family office Việt Nam. Đội ngũ của chúng tôi tìm kiếm, sàng lọc và điều phối các cơ hội tại Singapore và khu vực. Mọi hợp tác đều dựa trên NDA rõ ràng và mandate theo phí thành công — không mơ hồ về phạm vi hay thù lao.",
+    "card1Title": "Đại diện tại Singapore",
+    "card1Desc": "Chúng tôi đại diện cho lợi ích của bạn tại địa bàn — rà soát cơ hội, điều phối các cuộc gặp với nhà sáng lập và bên trung gian, và tóm tắt đề xuất theo định dạng mà đội ngũ của bạn có thể hành động.",
+    "card2Title": "Hợp tác theo Mandate có Cấu trúc",
+    "card2Desc": "Mọi công việc được điều chỉnh bởi mandate bằng văn bản với phạm vi, trách nhiệm và phí thành công rõ ràng, đảm bảo kỳ vọng nhất quán từ cuộc gặp đầu tiên đến bàn giao.",
+    "card3Title": "Mạng lưới Song phương Bạn Có thể Tận dụng",
+    "card3Desc": "Tận dụng quan hệ đối tác của chúng tôi với các phòng thương mại, ngân hàng và doanh nghiệp Việt Nam — cùng một hệ sinh thái đáng tin cậy mà chúng tôi sử dụng để hỗ trợ giao dịch xuyên biên giới theo cả hai chiều.",
+    "processTag": "Cách chúng tôi làm việc với Nhà đầu tư",
+    "processTitle": "Quy trình 3 Bước Rõ ràng",
+    "step1Title": "NDA & Xác định Mục tiêu",
+    "step1Desc": "Chúng tôi ký NDA song phương và làm rõ trọng tâm đầu tư, quy mô, ngành nghề và khẩu vị rủi ro trước khi chia sẻ bất kỳ cơ hội nào.",
+    "step2Title": "Cơ hội đã Sàng lọc & Điều phối",
+    "step2Desc": "Chúng tôi xác định các cơ hội phù hợp, chia sẻ teaser không bảo mật trước, sau đó chuyển sang thông tin chi tiết và tham quan khi có quan tâm thực sự.",
+    "step3Title": "Hỗ trợ Đàm phán & Bàn giao",
+    "step3Desc": "Chúng tôi hỗ trợ các cuộc thảo luận ban đầu và điều phối hậu cần, sau đó bàn giao cho đội ngũ nội bộ và cố vấn của bạn để thẩm định và quyết định đầu tư cuối cùng.",
+    "ctaButton": "Đọc Điều khoản Hợp tác"
+  },
+  "mandates": {
+    "pageTitle1": "Mandate, NDA &",
+    "pageTitleHighlight": "Phí Thành công",
+    "pageDesc": "Cách chúng tôi làm việc với nhà đầu tư và family office — thỏa thuận bằng văn bản rõ ràng, bảo mật song phương và thù lao theo kết quả.",
+    "introTitle": "Cách Chúng tôi Hợp tác",
+    "intro": "Chúng tôi làm việc thông qua các thỏa thuận bằng văn bản rõ ràng, xác định phạm vi, trách nhiệm và thù lao. Công việc của chúng tôi dựa trên kết quả, nghĩa là động lực của chúng tôi gắn liền với những kết quả thực tế, tạo giá trị cho khách hàng.",
+    "s1Title": "Cấu trúc Hợp tác",
+    "s1Desc": "Chúng tôi đóng vai trò giới thiệu và điều phối — không phải nhà quản lý tài sản tùy ý hay quỹ. Phạm vi của mọi hợp tác được ghi rõ trong mandate bằng văn bản, và thù lao dựa trên kết quả được xác định trước.",
+    "s2Title": "Bảo mật & NDA",
+    "s2Desc": "Chúng tôi khuyến nghị ký NDA song phương ngay từ đầu. Chúng tôi sẵn sàng sử dụng mẫu NDA tiêu chuẩn của bạn hoặc bản nháp của chúng tôi. Thông tin được chia sẻ chỉ dùng để đánh giá cơ hội liên quan và không tiết lộ cho bên thứ ba nếu không có sự đồng ý.",
+    "s3Title": "Nguyên tắc Phí Thành công",
+    "s3Desc": "Phí của chúng tôi là phần trăm trên giá trị giao dịch và phù hợp với thông lệ thị trường cho dịch vụ giới thiệu và điều phối. Mức cụ thể, mức trần và định nghĩa chỉ được công bố trong mandate đã ký, không bao giờ hiển thị trên website.",
+    "s4Title": "Vị thế Pháp lý",
+    "s4Desc": "Chúng tôi không cung cấp tư vấn đầu tư có quy định. Nhà đầu tư và family office dựa vào cố vấn pháp lý, thuế và tài chính của riêng họ để thẩm định và ra quyết định. Vai trò của chúng tôi giới hạn ở giới thiệu, điều phối và hỗ trợ quy trình.",
+    "ctaTitle": "Yêu cầu mẫu NDA & mandate tiêu chuẩn của chúng tôi",
+    "ctaDesc": "Cho chúng tôi biết một chút về trọng tâm đầu tư của bạn và chúng tôi sẽ gửi các tài liệu liên quan.",
+    "ctaButton": "Liên hệ Chúng tôi"
   }
 }
