@@ -357,7 +357,7 @@ const GallerySection = () => {
             {t("gallery.title1")} <span className="text-gradient-gold">{t("gallery.titleHighlight")}</span>
           </h2>
           <p className="font-body text-primary-foreground/70 mt-4 max-w-2xl mx-auto text-lg">
-            {t("gallery.desc")}
+            {t("gallery.desc")} {t("investorsExtras.galleryAppend")}
           </p>
         </div>
 

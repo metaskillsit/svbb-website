@@ -26,6 +26,7 @@ const Contact = () => {
             {t("contact.pageTitle1")} <span className="text-gradient-gold">{t("contact.pageTitleHighlight")}</span>
           </h1>
           <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">{t("contact.pageDesc")}</p>
+          <p className="font-body text-gold/90 text-sm md:text-base mt-4 max-w-2xl">{t("investorsExtras.contactNote")}</p>
         </div>
       </section>
       <ContactSection />

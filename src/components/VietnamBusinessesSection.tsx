@@ -34,8 +34,8 @@ const VietnamBusinessesSection = () => {
             {t("businesses.title1")}{" "}
             <span className="text-gradient-gold">{t("businesses.titleHighlight")}</span>
           </h2>
-          <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto">
-            {t("businesses.desc")}
+          <p className="font-body text-muted-foreground mt-4 max-w-3xl mx-auto">
+            {t("investorsExtras.businessesSubline")}
           </p>
         </div>
 
