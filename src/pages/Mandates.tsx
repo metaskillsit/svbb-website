@@ -33,7 +33,12 @@ const Mandates = () => {
       <section className="py-20 bg-cream">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">{t("mandates.introTitle")}</h2>
-          <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed mb-12">{t("mandates.intro")}</p>
+          <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed mb-10">{t("mandates.intro")}</p>
+
+          <div className="bg-card rounded-xl p-6 sm:p-8 border-2 border-gold/40 shadow-gold mb-12">
+            <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-3">{t("mandates.capRaiseTitle")}</h3>
+            <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed">{t("mandates.capRaiseDesc")}</p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             {sections.map(({ icon: Icon, title, desc }) => (
