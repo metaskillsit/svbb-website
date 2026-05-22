@@ -906,7 +906,9 @@
     "routeCCta2": "安排介绍电话"
   },
   "common": {
-    "backToHome": "返回首页"
+    "backToHome": "返回首页",
+    "showFullBio": "查看完整简介",
+    "showLess": "收起"
   },
   "detailedAssessment": {
     "sectionTag": "详细评估",
