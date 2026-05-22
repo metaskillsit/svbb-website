@@ -73,9 +73,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/packages" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
-            {t("nav.mraReadiness")}
-          </Link>
 
           <Link to="/contact" className="text-primary-foreground/80 hover:text-gold transition-colors text-xs lg:text-sm font-body font-medium tracking-wide whitespace-nowrap">
             {t("nav.contact")}
@@ -113,9 +110,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          <Link to="/packages" onClick={() => setOpen(false)} className="block py-3 text-primary-foreground/80 hover:text-gold transition-colors text-sm font-body border-b border-gold/10">
-            {t("nav.mraReadiness")}
-          </Link>
 
           <div className="py-2 border-b border-gold/10">
             <span className="block py-2 text-gold/60 text-xs font-body font-semibold uppercase tracking-widest">{t("nav.about")}</span>
