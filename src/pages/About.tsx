@@ -24,9 +24,9 @@ const About = () => {
           <p className="font-body text-primary-foreground/70 text-lg max-w-2xl">{t("about.pageDesc")}</p>
         </div>
       </section>
+      <TeamSection />
       <AboutServicesSection />
       <VietnamMarketSection />
-      <TeamSection />
       <Footer />
     </div>
   );
