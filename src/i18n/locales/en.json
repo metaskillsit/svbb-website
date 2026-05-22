@@ -906,7 +906,9 @@
     "routeCCta2": "Schedule Intro Call"
   },
   "common": {
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "showFullBio": "Show Full Bio",
+    "showLess": "Show Less"
   },
   "detailedAssessment": {
     "sectionTag": "Detailed Assessment",
