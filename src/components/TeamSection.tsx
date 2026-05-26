@@ -6,6 +6,7 @@ import teamJinghao from "@/assets/team-jinghao.jpeg";
 import teamChris from "@/assets/team-chris.jpeg";
 import teamAndrew from "@/assets/team-andrew.jpeg";
 import teamMindy from "@/assets/team-mindy.png";
+import teamAdrian from "@/assets/team-adrian.jpg";
 
 const BIO_THRESHOLD = 320;
 
@@ -48,6 +49,15 @@ const TeamSection = () => {
       bioShort: t("team.mindyBioShort"),
       bioFull: t("team.mindyBioFull"),
       img: teamMindy,
+      objectPosition: "center 15%",
+    },
+    {
+      key: "adrian",
+      name: t("team.adrianName"),
+      title: t("team.adrianTitle"),
+      bioShort: t("team.adrianBioShort"),
+      bioFull: t("team.adrianBioFull"),
+      img: teamAdrian,
       objectPosition: "center 15%",
     },
     {
