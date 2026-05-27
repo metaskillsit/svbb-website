@@ -104,7 +104,7 @@ const TeamSection = () => {
                 </div>
                 <div className="p-6 sm:p-8 flex flex-col flex-1">
                   <h3 className="font-heading text-xl font-bold text-foreground">{member.name}</h3>
-                  <p className="font-body text-gold-dark text-sm font-medium mt-1">{member.title}</p>
+                  <p className="font-body text-gold-dark text-sm font-medium mt-1 whitespace-pre-line">{member.title}</p>
 
                   <div className="mt-4 font-body text-sm text-muted-foreground leading-relaxed space-y-3 flex-1">
                     {isOpen ? (
