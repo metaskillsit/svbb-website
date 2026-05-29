@@ -61,6 +61,15 @@ const TeamSection = () => {
       objectPosition: "center 15%",
     },
     {
+      key: "matthew",
+      name: t("team.matthewName"),
+      title: t("team.matthewTitle"),
+      bioShort: t("team.matthewBioShort"),
+      bioFull: t("team.matthewBioFull"),
+      img: "/placeholder.svg",
+      objectPosition: "center 15%",
+    },
+    {
       key: "andrew",
       name: t("team.andrewName"),
       title: t("team.andrewTitle"),
