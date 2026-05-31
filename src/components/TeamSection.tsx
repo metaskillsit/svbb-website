@@ -68,7 +68,7 @@ const TeamSection = () => {
       bioShort: t("team.matthewBioShort"),
       bioFull: t("team.matthewBioFull"),
       img: teamMatthew,
-      objectPosition: "center 20%",
+      objectPosition: "center 25%",
     },
     {
       key: "andrew",
